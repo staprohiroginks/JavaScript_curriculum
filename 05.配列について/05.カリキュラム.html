@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>05.カリキュラム.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><strong><code>カリキュラム05</code></strong></p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>05.カリキュラム</title>
+</head>
+<body>
+    <h1>配列について学習をしましょう！</h1>
+    <h2><b>配列</b></h2>
+    <p>配列とは、複数のデータを一つにまとめて管理する箱のようなものです。<br>
+    スクラッチでリストを作成したかと思いますが、そのリストが配列というものになります。</p>
+    <p>このスクラッチの例でいくと、「問題文」という配列の中に文章が3つ格納されているという意味になります。</p>
+    <img src="../images/list.jpg" alt="配列の画像" height='300'  style="border: 1px solid black;">
+    <p>JavaScriptでも配列を使って、その配列から文字やデータを取り出して何かを実行するということがよくあります。</p>
+    <p>タイピングゲームでは、配列の中に問題文を格納しておき、そこから1問ずつ取り出して問題文を表示するという処理がされています。</p>
+ <p>それでは、実際の書き方や使い方を学習していきましょう！</p>
+ <hr>
+<h2><b>配列の書き方と使い方</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> color = [
+    <span class="hljs-string">'赤'</span>,
+    <span class="hljs-string">'青'</span>,
+    <span class="hljs-string">'緑'</span>
+];
+
+<span class="hljs-built_in">console</span>.log(color);
+</div></code></pre>
+<p>配列の中身は何度も変わるものではないため、一般的には定数<code>const</code>に入れます。<br>
+<code>color</code>は配列の名前になります。</p>
+<p>配列を作るには、各カッコ[]を使用し、その中に情報を入れていきます。<br>
+配列の中には文字や数字を入れることが出来ます。</p>
+<p>今回は色に関する配列を作成するため、配列の中には赤・青・緑という文字を入れています。<br>
+一つ一つの情報の後ろにコロン<code>（,）</code>を付けて情報を区切る必要があるので注意しましょう。</p>
+<p><b>配列の最後の要素にはコロン（,）はあってもなくてもどちらでも大丈夫です。</b></p>
+<p>これでcolorという配列の中に「赤・青・緑」という3つの情報を格納することが出来たので<br>
+index.htmlを開いて検証ツールで確認してみましょう。</p>
+<img src="../images/colorlist.jpg" alt="consoleの画像" height='250'  style="border: 1px solid black;">
+<p>console欄で見てみると、配列の中に3つの情報が入っていることを確認することが出来ます。</p>
+<p>よく見てみると、0:"赤" 1:"青" 2:"緑"と表示されています。<br>
+これは、配列の中に入っている情報の順番を示しています。</p>
+<p>プログラムは0から始まる仕組みになっているので、先頭にある赤は「0番目」の情報、次にある青は「1番目」の情報、<br>
+最後にある緑は「2番目」の情報という考え方になります。</p>
+<p>そのため、配列では「〇〇番目の情報を取得して表示する」ということも可能です。<br>
+試しに、配列の1番目の情報（青）を取得してみましょう。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> color = [
+    <span class="hljs-string">'赤'</span>,
+    <span class="hljs-string">'青'</span>,
+    <span class="hljs-string">'緑'</span>
+];
+
+<span class="hljs-built_in">console</span>.log(color[<span class="hljs-number">1</span>]);
+</div></code></pre>
+<p>「配列の〇〇番目」という指定をする時には、各カッコ[]の中に取得したい情報の位置を記述します。<br>
+今回は青（配列の1番目の情報）を取得したいので、各カッコ[]の中には1という数字が入ります。</p>
+<p>index.htmlを開いて検証ツールで確認し、青という情報が取得出来ていればOKです。<br>
+このように、自分で指定して配列から情報を取得してくることが出来ます。</p>
+<img src="../images/blue.jpg" alt="青の画像" height='250'  style="border: 1px solid black;">
+<hr>
+<h2><b>配列を変更するメソッド</b></h2>
+<p>メソッドとは、配列や文字列に対して特定の処理を実行する関数のことです。<br>
+メソッドを使えば、配列にデータを追加したり、データを削除したりと様々な操作を行うことが出来ます。</p>
+<p>それでは、実際の書き方や使い方を学習していきましょう。</p>
+<hr>
+<h2><b>メソッド①push()</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> fruits = [
+    <span class="hljs-string">'apple'</span>,
+    <span class="hljs-string">'banana'</span>
+];
+fruits.push(<span class="hljs-string">'orange'</span>); 
+
+<span class="hljs-built_in">console</span>.log(fruits);
+</div></code></pre>
+<p><code>push()</code>というメソッドは、配列の末尾（最後）に要素を追加します。</p>
+<p>今回の例では、<code>fruits</code>という配列に<code>「'apple'」</code>と<code>「'banana'」</code>の2つが入っていましたが</br>
+配列の末尾に<code>「'orange'」</code>という文字列を追加しています。</p>
+<p>上記コードの実行結果をconsoleに表示させるプログラムになっているので、
+index.htmlから検証ツールを開いて確認してみましょう。</p>
+<img src="../images/push.jpg" alt="pushの画像"  style="border: 1px solid black;" style="border: 1px solid black;"  width='350' >
+<hr>
+<h2><b>メソッド②pop()</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> fruits = [
+    <span class="hljs-string">'apple'</span>,
+    <span class="hljs-string">'banana'</span>,
+    <span class="hljs-string">'orange'</span>
+];
+fruits.pop(); 
+
+<span class="hljs-built_in">console</span>.log(fruits);
+</div></code></pre>
+<p><code>pop()</code>というメソッドは、配列の末尾（最後）から要素を1つ削除します。</p>
+<p>今回の例では、<code>fruits</code>という配列に<code>「'apple'」</code>と<code>「'banana'」</code>と<code>「'orange'」</code>の3つが入っており</br>
+配列の末尾の要素<code>「'orange'」</code>を削除するプログラムになります。</p>
+<p>上記コードの実行結果をconsoleに表示させるプログラムになっているので、
+index.htmlから検証ツールを開いて確認してみましょう。</p>
+<img src="../images/pop.jpg" alt="popの画像"  style="border: 1px solid black;"  width='350'>
+<hr>
+<h2><b>メソッド③shift()</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> fruits = [
+    <span class="hljs-string">'apple'</span>,
+    <span class="hljs-string">'banana'</span>,
+    <span class="hljs-string">'orange'</span>
+];
+fruits.shift(); 
+
+<span class="hljs-built_in">console</span>.log(fruits);
+</div></code></pre>
+<p><code>shift()</code>というメソッドは、配列の先頭から要素を1つ削除します。</p>
+<p>今回の例では、<code>「'apple'」</code>と<code>「'banana'」</code>と<code>「'orange'」</code>の3つが入っており</br>
+配列の先頭の要素<code>「'apple'」</code>を削除するプログラムになります。</p>
+<p>上記コードの実行結果をconsoleに表示させるプログラムになっているので、
+index.htmlから検証ツールを開いて確認してみましょう。</p>
+<img src="../images/shift.jpg" alt="shiftの画像"  style="border: 1px solid black;"  width='350'>
+<hr>
+<h2><b>メソッド④unshift()</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> fruits = [
+    <span class="hljs-string">'apple'</span>,
+    <span class="hljs-string">'banana'</span>,
+    <span class="hljs-string">'orange'</span>
+];
+fruits.unshift(<span class="hljs-string">'peach'</span>); 
+
+<span class="hljs-built_in">console</span>.log(fruits);
+</div></code></pre>
+<p><code>unshift()</code>というメソッドは、配列の先頭に要素を追加します。</p>
+<p>今回の例では、<code>fruits</code>という配列に<code>「'apple'」</code>と<code>「'banana'」</code>と<code>「'orange'」</code>の3つが入っており</br>
+配列の先頭に<code>「'peach'」</code>を追加するプログラムになります。</p>
+<p>上記コードの実行結果をconsoleに表示させるプログラムになっているので、
+index.htmlから検証ツールを開いて確認してみましょう。</p>
+<img src="../images/unshift.jpg" alt="unshiftの画像"  style="border: 1px solid black;"  width='350'>
+<hr>
+<h2><b>メソッド⑤splice()</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> fruits = [
+    <span class="hljs-string">'apple'</span>,
+    <span class="hljs-string">'banana'</span>,
+    <span class="hljs-string">'orange'</span>
+];
+
+fruits.splice(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'kiwi'</span>, <span class="hljs-string">'grape'</span>);
+
+<span class="hljs-built_in">console</span>.log(fruits); 
+</div></code></pre>
+<p><code>splice()</code>というメソッドは、配列に対して要素を追加、削除、または置き換えることが出来ます。</p>
+<p>このコードでは、<code>splice()</code>で<code>'banana'</code>を削除して<code>'kiwi'</code>と<code>'grape'</code>を追加します。<br>
+結果として、配列は<code>['apple', 'kiwi', 'grape', 'orange']</code>となります。</p>
+<p>それでは、<code>fruits.splice(1, 1, 'kiwi', 'grape');</code>の部分について、詳しく説明します。</p>
+<p>1: は、配列のインデックス1から操作を始めるという意味です。（'banana'が対象）。<br>
+1:は、 1つの要素を削除するという意味です。（'banana'を削除）。<br>
+<code>'kiwi', 'grape':</code>は、削除した位置に新しく<code>'kiwi'</code>と<code>'grape'</code>を追加するための要素です。</p>
+<p>上記コードの実行結果をconsoleに表示させるプログラムになっているので、
+index.htmlから検証ツールを開いて確認してみましょう。</p>
+<img src="../images/splice.jpg" alt="spliceの画像"  style="border: 1px solid black;"  width='350'>
+<hr>
+<h2><b>練習問題</b></h2>
+<p>①1から5までの数字を格納した配列を作成してください。</br>
+その後、「3」という数字を取得して、console欄に表示させてみましょう。</p>
+<img src="../images/3.jpg" alt="3の画像"  style="border: 1px solid black;"  width='350' height='200' >
+<br>
+<br>
+<p>②空の配列numbersを作成し、以下の操作を行ってください。</p>
+<p>1.push()メソッドを使って配列に1から3までの数字を追加し、console.log()で表示してください。</p>
+<p>2.unshift()メソッドを使って0を配列の先頭に追加し、console.log()で表示してください。</p>
+<p>3.pop()メソッドを使って配列の末尾の要素を削除し、console.log()で表示してください。</p>
+<p>4.splice()メソッドを使って、配列の2番目にある要素の前に、数字「4」を挿入してください。。</p>
+<img src="../images/mesod.jpg" alt="お手本の画像"  style="border: 1px solid black;"  width='350' >
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="open" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<pre class="hljs"><code><div><span class="hljs-comment">// 練習問題① </span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> numbers = [
+   <span class="hljs-number">1</span>,
+   <span class="hljs-number">2</span>,
+   <span class="hljs-number">3</span>,
+   <span class="hljs-number">4</span>,
+   <span class="hljs-number">5</span>
+];  
+<span class="hljs-built_in">console</span>.log(numbers[<span class="hljs-number">2</span>]); 
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// 練習問題②</span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> numbers = [];  
+
+<span class="hljs-comment">// 1. push()メソッドを使って1から3までの数字を追加</span>
+numbers.push(<span class="hljs-number">1</span>);
+numbers.push(<span class="hljs-number">2</span>);
+numbers.push(<span class="hljs-number">3</span>);
+<span class="hljs-built_in">console</span>.log(numbers); 
+
+<span class="hljs-comment">// 2. unshift()メソッドを使って0を配列の先頭に追加</span>
+numbers.unshift(<span class="hljs-number">0</span>);
+<span class="hljs-built_in">console</span>.log(numbers); 
+
+<span class="hljs-comment">// 3. pop()メソッドを使って配列の末尾の要素を削除</span>
+numbers.pop();
+<span class="hljs-built_in">console</span>.log(numbers);  
+
+<span class="hljs-comment">// 4. splice()メソッドを使って、配列の2番目の前に新しい数字4を挿入</span>
+numbers.splice(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>);  
+<span class="hljs-built_in">console</span>.log(numbers);  
+</div></code></pre>
+<!--// 折り畳まれ部分 -->
+</div>
+
+</body>
+</html>

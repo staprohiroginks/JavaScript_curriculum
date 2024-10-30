@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>04.カリキュラム.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><strong><code>カリキュラム04</code></strong></p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>04.カリキュラム</title>
+</head>
+<body>
+    <h1>ループ文について学習をしましょう！</h1>
+    <h2><b>ループ文</b></h2>
+    <p>ループ文とは、同じコードを繰り返し実行する際に使われる文です。<br>
+    ループを使用すると、プログラムが効率的に大量のデータを処理したり、特定の条件が満たされるまでコードを繰り返し実行したりすることができます。</p>
+    <p>具体的には、while文やfor文などがあります。</p>
+    <p>スクラッチでも出てきた「ずっと」や「〇〇まで繰り返す」がwhile文やfor文にあたります。</p>
+    <img src="../images/while.jpg" alt="while文の画像" height='300'  style="border: 1px solid black;">
+ <p>それでは、ループ文について実際の書き方や使い方を学習していきましょう！</p>
+ <hr>
+ <h2><b>while文について</b></h2>
+ <p>while文は、条件がtrueである間ずっとコードを実行し続けたい時に使用します。<br>
+    スクラッチで出てきた「ずっと」ブロックがこのwhile文にあたります。</p>
+    <img src="../images/zutto.jpg" alt="whileの画像" height='300'  style="border: 1px solid black;">
+ <p>それでは、実際の書き方や使い方を学習していきましょう！</p>
+ <hr>
+<h2><b>while文の書き方と使い方</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> number = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">while</span> (number &lt;= <span class="hljs-number">10</span>) {
+    <span class="hljs-built_in">console</span>.log(number);
+    number++;
+}
+</div></code></pre>
+<p>このコードは、変数<code> number</code> が10以下である間繰り返し<code> number</code> を表示し、<code> number</code> をプラス1ずつしていくというプログラムになります。</p>
+<p>while文を使用することで、設定した条件が満たされるまではプログラムが実行され続けます。<br>
+今回は変数<code> number</code> が10以下である限り、つまり11になるまで繰り返し処理が実行されています。</p>
+<p>処理の中身は、consoleに<code> number</code> を表示して、表示後<code> number</code> の値をプラスしています。<br>
+<code> ++</code> は「インクリメント演算子」と呼ばれ、変数の値を1つ増やすために使われます。</p>
+<img src="../images/whileten.jpg" alt="while文の画像" width='400' height='600'  style="border: 1px solid black;">
+<hr>
+<h2><b>for文について</b></h2>
+ <p>for文は、特定の条件が満たされるまでコードを繰り返し実行したい時に使用します。</p>
+    <p>スクラッチで出てきた「〇〇まで繰り返す」がこのfor文にあたります。</p>
+    <img src="../images/for.jpg" alt="for文の画像" height='300'  style="border: 1px solid black;">
+ <p>それでは、実際の書き方や使い方を学習していきましょう！</p>
+ <hr>
+<h2><b>for文の書き方と使い方</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
+    <span class="hljs-built_in">console</span>.log(i); 
+}
+</div></code></pre>
+<p>これは変数<code> i </code>が10以下である間、繰り返し変数<code> i </code>が1ずつ増加し、consoleに<code> i </code>の値を表示するプログラムになります。<br>
+1つずつ見ていきましょう。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">for</span>
+</div></code></pre>
+<p>まず、for文を書く時には先頭に<code>for</code>と書きます。<br>
+forの後ろのカッコ（）の中に、for文がどのように繰り返し処理を行うかを定義する3つの主要な要素を書きます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>;
+</div></code></pre>
+<p>まずは、先頭の部分の説明です。</p>
+<p>letは、変数を宣言するためのキーワードです。<br>
+<code> i </code>は、変数の名前です。任意の名前を付けられますが、一般的にi（イテレータの略）がよく使われます。<br>
+= 1は、 変数<code> i </code> に値 1 を代入しています。この設定により、繰り返しは<code> i </code> が 1 から始まります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+i &lt;= <span class="hljs-number">10</span>;
+</div></code></pre>
+<p>次に、真ん中の部分の説明です。</p>
+<p><code> i </code>は、現在の変数の値になります。<br>
+<code><=</code>は、「以下」を表す比較演算子です。カリキュラム03で学習しました。<br>
+10 は、ループの終了条件となる値になります。ここでは、<code>i</code>が10を超えたら繰り返しが止まります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+i++;
+</div></code></pre>
+<p>最後の部分の説明です。</p>
+<p><code>i++</code>は、<code> i </code>の値を1つ増やします。<code>++</code> は「インクリメント」と呼ばれ、変数の値を1つ増やす操作です。</p>
+<p>上記コードの実行結果をconsoleに表示させるプログラムになっているので、<br>
+index.htmlから検証ツールを開いて確認してみましょう。</p>
+<img src="../images/forten.jpg" alt="for文の画像" width='300'  height='400'  style="border: 1px solid black;">
+<hr>
+<h2><b>break文について</b></h2>
+ <p>break文は、ループを途中で終了させるために使われる文です。<br>
+ ループの中で特定の条件が満たされたときに、ループを強制的に抜けることができます。<br>
+ <p>それでは、実際の書き方や使い方を学習していきましょう！</p>
+<hr>
+<h2><b>break文の書き方と使い方</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
+    <span class="hljs-keyword">if</span> (i === <span class="hljs-number">5</span>) {
+        <span class="hljs-keyword">break</span>;
+    }
+    <span class="hljs-built_in">console</span>.log(i); 
+}
+</div></code></pre>
+<p>これは、1から10までの数値を繰り返して表示しますが、数値が5になったら繰り返しを終了するというプログラムになります。</p>
+<p>プログラムの途中にあるbreak文があるので、説明をします。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">if</span> (i === <span class="hljs-number">5</span>) {
+  <span class="hljs-keyword">break</span>;
+}
+</div></code></pre>
+<p>ここでbreak文を使用しています。<br>
+これは、もし変数<code> i </code>の値が5になったらbreak文を実行するという意味になります。</p>
+<p>break文を実行することで、その時点で繰り返し処理が終了されるので、それ以降の繰り返し処理は行われません。</p>
+<p>上記コードの実行結果をconsoleに表示させるプログラムになっているので、<br>
+index.htmlから検証ツールを開いて確認してみましょう。</p>
+<p>本来であれば、<code> i </code>が10以下の間は繰り返し処理が実行されるはずですが、<br>
+break文によって繰り返し処理が終了されているので、以下のような処理になっています。</p>
+<img src="../images/break.jpg" alt="break文の画像" width='300'   style="border: 1px solid black;">
+<hr>
+<h2><b>練習問題</b></h2>
+<p>①1から20までの数字をwhile文を使って繰り返して表示するプログラムを作成してください。</p>
+<img src="../images/practice20.jpg" alt="20の画像" width='300'   style="border: 1px solid black;">
+<p>②for文を使って、1から50までの数字を順番に表示するプログラムを作成してください。<br>
+ただし、数字が 30 になったら繰り返しを中止するプログラムにしてください。</p>
+<img src="../images/practice30.jpg" alt="30の画像" width='300'   style="border: 1px solid black;">
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="open" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<pre class="hljs"><code><div><span class="hljs-comment">// 練習問題① </span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> number = <span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">while</span> (number &lt;= <span class="hljs-number">20</span>) {
+   <span class="hljs-built_in">console</span>.log(number);
+   number++;
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// 練習問題②</span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">50</span>; i++) {
+    <span class="hljs-keyword">if</span> (i === <span class="hljs-number">30</span>) {
+        <span class="hljs-keyword">break</span>;
+    }
+    <span class="hljs-built_in">console</span>.log(i);
+}
+</div></code></pre>
+<!--// 折り畳まれ部分 -->
+</div>
+
+</body>
+</html>
