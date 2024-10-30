@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>09.カリキュラム(3問).md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><strong><code>カリキュラム09</code></strong></p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>09.カリキュラム(3問)</title>
+</head>
+<body>
+<h1>クイズゲームを作ろう！(3問)</h1>
+<p>前のカリキュラムでは、1問だけのクイズゲームを作成しました。<br>
+今回は問題数を増やし、3問のクイズゲームを作成してみましょう！</p>
+<h2><a href="./クイズゲーム見本(3問)/index.html" target="_blank" rel="noopener noreferrer">見本はこちら</a></h2>
+<h2><b>JavaScriptのコードの完成形を載せておくので、書く順番が分からなくなったら参考にしてください。</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> quizzes = [
+    {
+        <span class="hljs-attr">question</span>: <span class="hljs-string">"孫がおじいちゃんとボール遊びをしました。どんな遊びをした？"</span>,
+        <span class="hljs-attr">options</span>: [<span class="hljs-string">"野球"</span>, <span class="hljs-string">"サッカー"</span>, <span class="hljs-string">"ソフトボール"</span>],
+        <span class="hljs-attr">answer</span>: <span class="hljs-string">"ソフトボール"</span>
+    },
+    {
+        <span class="hljs-attr">question</span>: <span class="hljs-string">"1トンの鉄と1トンの紙はどちらが重い？"</span>,
+        <span class="hljs-attr">options</span>: [<span class="hljs-string">"1トンの鉄"</span>, <span class="hljs-string">"1トンの紙"</span>, <span class="hljs-string">"どちらも同じ"</span>],
+        <span class="hljs-attr">answer</span>: <span class="hljs-string">"どちらも同じ"</span>
+    },
+    {
+        <span class="hljs-attr">question</span>: <span class="hljs-string">"花束が2束と3束あります。合わせると何束になる？"</span>,
+        <span class="hljs-attr">options</span>: [<span class="hljs-string">"0束"</span>, <span class="hljs-string">"1束"</span>, <span class="hljs-string">"5束"</span>],
+        <span class="hljs-attr">answer</span>: <span class="hljs-string">"1束"</span>
+    }
+];
+
+<span class="hljs-keyword">let</span> currentQuizIndex = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> score = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showQuiz</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> quiz = quizzes[currentQuizIndex];
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'question'</span>).textContent = quiz.question;
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option1'</span>).textContent = quiz.options[<span class="hljs-number">0</span>];
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option2'</span>).textContent = quiz.options[<span class="hljs-number">1</span>];
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option3'</span>).textContent = quiz.options[<span class="hljs-number">2</span>];
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAnswer</span>(<span class="hljs-params">selectedAnswer</span>) </span>{
+    <span class="hljs-keyword">const</span> correctAnswer = quizzes[currentQuizIndex].answer;
+    <span class="hljs-keyword">if</span> (selectedAnswer === correctAnswer) {
+        score++;
+        alert(<span class="hljs-string">"正解！"</span>);
+    } <span class="hljs-keyword">else</span> {
+        alert(<span class="hljs-string">"不正解…"</span>);
+    }
+
+    currentQuizIndex++;
+    <span class="hljs-keyword">if</span> (currentQuizIndex &lt; quizzes.length) {
+        showQuiz();
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'result'</span>).textContent = <span class="hljs-string">`終了！あなたのスコアは <span class="hljs-subst">${score}</span> 点です。`</span>;
+    }
+}
+
+<span class="hljs-keyword">const</span> buttons = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.answerButton'</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; buttons.length; i++) {
+    buttons[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        checkAnswer(<span class="hljs-keyword">this</span>.textContent); 
+    });
+}
+
+showQuiz();
+</div></code></pre>
+<h3><b>クイズゲームの仕様</b></h3>
+<p>・問題文の下に回答ボタンがある</p>
+<p>・回答が正解だと「正解です！」というアラートが表示される</p>
+<p>・回答が不正解だと「不正解...」というアラートが表示される</p>
+<p>・回答を終えると次の問題に移る</p>
+<p>・3問全て終了した時点で、正解数に応じたスコアが表示される</p>
+<p><b>それでは、早速作っていきましょう！</b></p>
+<hr>
+<h2><b>HTML</b></h2>
+<p>①まずは、HTMLのコードを準備します。<br>
+以前はクイズの問題をHTMLにベタ書きしていましたが、今回は問題をJavaScriptから動的に表示する形に変更します。</p>
+<p>これにより、クイズの内容を簡単に更新したり拡張したりできるというメリットがあります。</p>
+<p>全体を囲っているdivタグには、レイアウトを調整するために<code>quizContainer</code>というclassを付けています。</p>
+<p>pタグに<code>question</code>というIDを付けていますが、これは後ほどJavaScriptからpタグの
+情報を取得し、そのpタグに問題文を表示させるために必要なので付けています。</p>
+<p>また、一つ一つのボタンの情報をJavaScriptで取得するため、それぞれにIDを振っていきます。<br>
+今回は上から順番に<code>「option1」</code><code>「option2」</code><code>「option3</code>」というIDを振ります。</p>
+<p>最後のpタグに<code>result</code>というIDを付けていますが、クイズが終了した際にスコアを表示させるために必要なので付けています。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>クイズゲーム<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"quizContainer"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"question"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"option1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"answerButton"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"option2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"answerButton"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"option3"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"answerButton"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"result"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<h2><b>IDがたくさん振ってありややこしく見えるかもしれませんが、「後ほどJavaScriptから
+情報を取得するために付けている」という感覚で大丈夫です！</b></h2>
+<hr>
+<h2><b>CSS</b></h2>
+<p>②次に、cssで見た目を整えていきます。<br>
+今回はcssの学習ではないため、コードの中身を覚えたりチェックする必要はありません。</p>
+<p>コードはそのままコピーして貼り付けてください。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-direction</span>: column;
+    <span class="hljs-attribute">align-items</span>: center;
+    <span class="hljs-attribute">justify-content</span>: center;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f0f8ff</span>;
+}
+
+<span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>;
+    <span class="hljs-attribute">text-align</span>: center;
+}
+
+<span class="hljs-selector-class">.quizContainer</span>{
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-direction</span>: column;
+    <span class="hljs-attribute">align-items</span>: center;
+}
+
+<span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">text-align</span>: center;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#444</span>;
+}
+
+<span class="hljs-selector-tag">button</span> {
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+    <span class="hljs-attribute">cursor</span>: pointer;
+    <span class="hljs-attribute">border</span>: none;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#4caf50</span>;
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">0.3s</span>;
+}
+
+<span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.7</span>;
+}
+
+<span class="hljs-selector-id">#result</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>;
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>;
+    <span class="hljs-attribute">text-align</span>: center;
+}
+</div></code></pre>
+<p>コードを記述後、リロードして確認してみましょう！<br>
+画像のようになっていれば上手くコードが記述出来ています。</p>
+<img src="../images/quiz-css.jpg" alt="quiz-cssの画像" style="border: 1px solid black;" width='400'>
+<hr>
+<h2><b>JavaScript</b></h2>
+<p>③次は、JavaScriptで問題の作成や正誤判定の作成を行います。<br>
+まずは、問題を3問作成していきましょう！</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> quizzes = [
+    {
+        <span class="hljs-attr">question</span>: <span class="hljs-string">"孫がおじいちゃんとボール遊びをしました。どんな遊びをした？"</span>,
+        <span class="hljs-attr">options</span>: [<span class="hljs-string">"野球"</span>, <span class="hljs-string">"サッカー"</span>, <span class="hljs-string">"ソフトボール"</span>],
+        <span class="hljs-attr">answer</span>: <span class="hljs-string">"ソフトボール"</span>
+    },
+    {
+        <span class="hljs-attr">question</span>: <span class="hljs-string">"1トンの鉄と1トンの紙はどちらが重い？"</span>,
+        <span class="hljs-attr">options</span>: [<span class="hljs-string">"1トンの鉄"</span>, <span class="hljs-string">"1トンの紙"</span>, <span class="hljs-string">"どちらも同じ"</span>],
+        <span class="hljs-attr">answer</span>: <span class="hljs-string">"どちらも同じ"</span>
+    },
+    {
+        <span class="hljs-attr">question</span>: <span class="hljs-string">"花束が2束と3束あります。合わせると何束になる？"</span>,
+        <span class="hljs-attr">options</span>: [<span class="hljs-string">"0束"</span>, <span class="hljs-string">"1束"</span>, <span class="hljs-string">"5束"</span>],
+        <span class="hljs-attr">answer</span>: <span class="hljs-string">"1束"</span>
+    }
+];
+</div></code></pre>
+<p>それでは、上記コードの意味を解説していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> quizzes = [
+   
+];
+</div></code></pre>
+<p>この部分は、クイズのデータを格納するための配列を定義しています。<br>
+分かりやすく説明すると<code>quizzes</code>という名前の配列を作成しているということになります。<p>
+<p>クイズを配列で作ることで、複数の問題を効率よく管理し、操作を簡単にすることが出来ます。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+  {
+        <span class="hljs-attr">question</span>: <span class="hljs-string">"孫がおじいちゃんとボール遊びをしました。どんな遊びをした？"</span>,
+        <span class="hljs-attr">options</span>: [<span class="hljs-string">"野球"</span>, <span class="hljs-string">"サッカー"</span>, <span class="hljs-string">"ソフトボール"</span>],
+        <span class="hljs-attr">answer</span>: <span class="hljs-string">"ソフトボール"</span>
+    },
+    {
+        <span class="hljs-attr">question</span>: <span class="hljs-string">"1トンの鉄と1トンの紙はどちらが重い？"</span>,
+        <span class="hljs-attr">options</span>: [<span class="hljs-string">"1トンの鉄"</span>, <span class="hljs-string">"1トンの紙"</span>, <span class="hljs-string">"どちらも同じ"</span>],
+        <span class="hljs-attr">answer</span>: <span class="hljs-string">"どちらも同じ"</span>
+    },
+    {
+        <span class="hljs-attr">question</span>: <span class="hljs-string">"花束が2束と3束あります。合わせると何束になる？"</span>,
+        <span class="hljs-attr">options</span>: [<span class="hljs-string">"0束"</span>, <span class="hljs-string">"1束"</span>, <span class="hljs-string">"5束"</span>],
+        <span class="hljs-attr">answer</span>: <span class="hljs-string">"1束"</span>
+    }
+</div></code></pre>
+<p>このコードで問題と回答を定義しています。</p>
+<p>詳しく説明すると、この部分のコードでは、quizzesという配列の中に3つのオブジェクトが入っています。<br>
+（<b>{}で囲ってある部分が1つのオブジェクトです）</b></p>
+<h2><b>オブジェクトとは？</b></h2>
+<p>オブジェクトとは、データをまとめて管理するためのデータ構造の一つです。<br>
+オブジェクトは、キーとバリューのペアから構成されており、関連するデータを一つのまとまりとして扱うことができます。</p>
+<h2><b>今回のクイズの例</b></h2>
+<p>このコードの場合、クイズの質問や選択肢、正解を一つのオブジェクトにまとめており、各オブジェクトは次のような構成になっています。</p>
+<p>question（キー）: クイズの質問(バリュー)<br>
+options（キー） : クイズの選択肢(バリュー)<br>
+answer（キー）  : クイズの正解(バリュー)</p></p>
+<p>色々難しいことが書いてありますが、<b>「オブジェクトにまとめておくことでコードが読みやすくなったりメンテナスが楽になる！」</b>ということが理解できれば大丈夫です！</p>
+<hr>
+<p>④次は、作成した問題を表示させるための関数を作成してきましょう！<br>
+先程のコードの続きに記述してください。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> currentQuizIndex = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> score = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showQuiz</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> quiz = quizzes[currentQuizIndex];
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'question'</span>).textContent = quiz.question;
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option1'</span>).textContent = quiz.options[<span class="hljs-number">0</span>];
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option2'</span>).textContent = quiz.options[<span class="hljs-number">1</span>];
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option3'</span>).textContent = quiz.options[<span class="hljs-number">2</span>];
+}
+
+showQuiz();
+</div></code></pre>
+<p>それでは、上記コードの意味を解説していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> currentQuizIndex = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> score = <span class="hljs-number">0</span>;
+</div></code></pre>
+<p>上の行では、<code>currentQuizIndex</code>という変数を定義し、初期値として0を設定しています。</p>
+<p>下の行では、<code>score</code>という変数を定義し、初期値として0を設定しています。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showQuiz</span>(<span class="hljs-params"></span>) </span>{
+  
+}
+</div></code></pre>
+<p>ここで、<code>showQuiz</code>という名前の関数を定義しています。<br>
+クイズを表示させるという意味で、showQuizという関数名にしています。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> quiz = quizzes[currentQuizIndex];
+</div></code></pre>
+<p>ここでは、<code>quizzes</code> という配列の中から<code>currentQuizIndex</code>番目のクイズを取得し、<code>quiz</code>という定数に代入をしています。</p>
+<p><code>currentQuizIndex</code>には先程0を代入しているので、<code>quizzes</code>配列の0番目の問題、<br>
+つまり最初の問題を取得しているという意味になります。</p>
+<img src="../images/first-quiz.jpg" alt="first-quiz.jpgの画像" style="border: 1px solid black;" width='600'>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'question'</span>).textContent = quiz.question;
+</div></code></pre>
+<p>このコードは、クイズの質問を表示するためのものです。<br>
+分かりやすいように、まずイコール「=」の右側の部分を説明します。</p>
+<p><code>quiz</code>の中には最初の問題が入っています。<br>
+そのクイズの中にある<code>question</code>、つまり「孫がおじいちゃんとボール遊びをしました〜」の部分を<br>
+取得するというのがイコール「=」の右側の部分になります。</p>
+<p><code>document.getElementById('question').textContent</code>では、<code>question</code>というIDが付いた要素を取得し、<code>textContent</code>でテキストを変えるという意味になります。</p>
+<p>つまり、<code>question</code>というIDが付いているpタグの部分に、<br>
+「"孫がおじいちゃんとボール遊びをしました。どんな遊びをした？"」という問題を表示させるという意味になります。</p>
+<img src="../images/quiz-p.jpg" alt="quiz-pの画像" style="border: 1px solid black;" width='400'>
+<p><b>画像は該当の箇所をイメージしてもらうために貼ってありますが、まだ関数を呼び出していないので、画像のように文字は表示されません。</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option1'</span>).textContent = quiz.options[<span class="hljs-number">0</span>];
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option2'</span>).textContent = quiz.options[<span class="hljs-number">1</span>];
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option3'</span>).textContent = quiz.options[<span class="hljs-number">2</span>];
+</div></code></pre>
+<p>この3行も先程解説したコードと同じことをしています。</p>
+<p>まずイコール「=」の右側の部分では、<code>quiz</code>の中にある<code>options</code>の<br>
+0番目・1番目・2番目の部分を取得してきています。</p>
+<p>つまり、optionsのバリューである「"野球", "サッカー", "ソフトボール"」の部分を取得してきているという意味になります。</p>
+<img src="../images/first-quiz.jpg" alt="first-quiz.jpgの画像" style="border: 1px solid black;" width='600'>
+<p>そして、取得してきたものをそれぞれのIDが付いたボタン要素に表示させています。</p>
+<img src="../images/quiz-options.jpg" alt="quiz-optionsの画像" style="border: 1px solid black;" width='400'>
+<p>画像は該当の箇所をイメージしてもらうために貼ってありますが、まだ関数を呼び出していないので、画像のように文字は表示されません。</p>
+<p>そのため、関数を呼び出して問題を表示させていきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+showQuiz();
+</div></code></pre>
+<p>ここで<code>showQuiz</code>という関数を呼び出しています。<br>
+関数を呼び出すことで、先程設定した<code>showQuiz</code>の関数が実行され、問題が表示されるようになります。</p>
+<img src="../images/showquiz.jpg" alt="showquizの画像" style="border: 1px solid black;" width='400'>
+<h2><b>これで作成した問題を表示させるための関数が出来ました！</b></h2>
+<hr>
+<p>⑤次に、各ボタン（クイズの選択肢）に対してクリックイベントを設定していきましょう！<br>
+showQuiz()の上に記述してください。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> buttons = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.answerButton'</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; buttons.length; i++) {
+    buttons[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        checkAnswer(<span class="hljs-keyword">this</span>.textContent); 
+    });
+}
+</div></code></pre>
+<p>それでは、上記コードの意味を解説していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> buttons = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.answerButton'</span>);
+</div></code></pre>
+<p><code>document.querySelectorAll</code>は、指定した CSS セレクタに一致するすべての要素を取得するメソッドです。<br>
+この場合、クラス名が <code>answerButton</code> のすべてのボタン要素を取得しています。</p>
+<p>そして、取得してきた情報を<code>buttons</code>という変数に格納しています。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; buttons.length; i++) {
+
+}
+</div></code></pre>
+<p><code>let i = 0;</code>は、ループのカウンターとなる変数<code>「i」</code>を0に初期化しています。<br>
+<code>「i」</code> は、処理を何回繰り返したかを数える役割を果たします。</p>
+<p><code>i < buttons.length;</code>は、ループを続ける条件を指定しています。<br>
+<code>buttons.length</code> は、ボタンの数（buttonsの長さ）を表しているので、今回の場合は3回ということになります。</p>
+<p><code>i++</code>は、ループが1回終了するごとに<code> i </code>の値を1つ増やすことを意味します。<br>
+たとえば、最初は<code> i = 0</code> ですが、ループが1回実行されると<code> i </code>が 1 になります。</p>
+<p>そのため、上記コードを簡単に説明すると「i がbuttons.length未満（今回は3未満）のときに繰り返し処理を行う」という意味になります。<br>行う処理の内容は次に説明する処理になります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+buttons[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    checkAnswer(<span class="hljs-keyword">this</span>.textContent); 
+});
+</div></code></pre>
+<p><code>buttons[i]</code> は<code> i </code>番目のボタンを指しています。最初は<code> i </code>が 0 から始まるので、<br>
+繰り返し処理の1回目は最初のボタン<code>（buttons[0]）</code>にクリックイベントを設定します。</p>
+<p>繰り返し処理の2回目は2つ目のボタン<code>（buttons[1]）</code>、3回目は3つ目のボタン<code>（buttons[2]）</code>に対して同様にクリックイベントを設定します。</p>
+<p>この繰り返しによって、「すべてのボタンに1つずつクリックイベントを設定している」ということになります。</p>
+<p>このクリックイベントは、<code>.addEventListener('click', function() </code>で追加されています。</p> 
+<p>イベントリスナー内では<code> checkAnswer(this.textContent); </code>というコードで、<code>checkAnswer </code>という関数を実行しています。<br>
+（この関数については後ほど説明します）</p>
+<p>関数の引数に<code>this.textContent</code>と入っていますが、<code>this</code>はクリックされたボタン自身を指します。</p>
+<p><code>this.textContent</code>の部分ですが、<code>this</code> はクリックされたボタン自体を指しています。<br>
+つまり、1つ目のボタンがクリックされれば、<code>this</code> は1つ目のボタンを指し、同様に、2つ目や3つ目のボタンがクリックされた場合も、そのボタン自体が <code>this</code> となります。</p>
+<p>さらに、<code>textContent</code> プロパティを使うことで、その要素（ボタン）に含まれているテキストを取得できます。</p>
+<p>したがって、<code>this.textContent</code> という命令で「クリックされたボタンのテキストを取得する」という意味になります。</p>
+<p>この取得したテキストがクイズの回答として <code>checkAnswer</code> 関数に渡され、正解か不正解かを判定するために使われます。</p>
+</p>
+<hr>
+<p>⑥最後に、回答をチェックする関数を作成してきましょう！<br>
+⑤で作成したコードの上に記述してください。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAnswer</span>(<span class="hljs-params">selectedAnswer</span>) </span>{
+    <span class="hljs-keyword">const</span> correctAnswer = quizzes[currentQuizIndex].answer;
+    <span class="hljs-keyword">if</span> (selectedAnswer === correctAnswer) {
+        score++;
+        alert(<span class="hljs-string">"正解！"</span>);
+    } <span class="hljs-keyword">else</span> {
+        alert(<span class="hljs-string">"不正解…"</span>);
+    }
+
+    currentQuizIndex++;
+    <span class="hljs-keyword">if</span> (currentQuizIndex &lt; quizzes.length) {
+        showQuiz();
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'result'</span>).textContent = <span class="hljs-string">`終了！あなたのスコアは <span class="hljs-subst">${score}</span> 点です。`</span>;
+    }
+}
+</div></code></pre>
+<p>それでは、上記コードの意味を解説していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAnswer</span>(<span class="hljs-params">selectedAnswer</span>) </span>{
+   
+}
+</div></code></pre>
+<p>ここで、<code>checkAnswer</code>という名前の関数を定義しています。<br>
+回答をチェックするという意味で、<code>checkAnswer</code>という関数名にしています。</p>
+<p><code>checkAnswer</code>関数の引数<code>selectedAnswer</code>には、<br>
+ユーザーがクリックしたボタンのテキスト（つまり、ユーザーが選んだ答え）が入ります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> correctAnswer = quizzes[currentQuizIndex].answer;
+</div></code></pre>
+<p>このコードでは、現在のクイズの答えを<code>correctAnswer</code>という変数に代入しています。</p>
+<p><code>quizzes[currentQuizIndex]</code>では、quizzes配列のcurrentQuizIndex番目を参照しています。</p>
+<p><code>currentQuizIndex</code>には初期値として0が入っているので、配列の0番目（つまり最初の問題）
+の<code>answer</code>の情報を取得しています。</p>
+<p>最初の問題の<code>answer</code>とは、「"ソフトボール"」の箇所になります。</p>
+<img src="../images/softbool.jpg" alt="staproquiz.jpgの画像" style="border: 1px solid black;" width='400'>
+<p>そして取得してきた情報（今回だとソフトボール）を<code>correctAnswer</code>に代入しています。</p>
+<p>これらを分かりやすくまとめると「クイズのデータが入った配列の中から、今解いているクイズの正解を取得し、それを <code>correctAnswer</code>という変数に格納している」ということになります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">if</span> (selectedAnswer === correctAnswer) {
+        score++;
+        alert(<span class="hljs-string">"正解！"</span>);
+    } <span class="hljs-keyword">else</span> {
+        alert(<span class="hljs-string">"不正解…"</span>);
+}
+</div></code></pre>
+<p>この部分のコードは、ユーザーが選んだ答え（selectedAnswer）が正解かどうかをチェックし、<br>
+正解・不正解に応じてメッセージを表示する部分です。</p>
+<p><code>if(selectedAnswer === correctAnswer)</code>は、「選択された答え（selectedAnswer）が<br>
+正解（correctAnswer）と一致する場合に、その後の処理を実行する」という意味になります。</p>
+<p>正解の場合、<code>score</code>（スコア）が1つ増えます。++ は「インクリメント演算子」と呼ばれ、変数の値を1増やします。<br>
+したがって、<code>score++;</code>は「正解したらスコアを1つ増やす」という意味です。</p>
+<p>また、正解の場合はアラートで「正解です！」というメッセージが表示されます。<p>
+<p><code>else { alert("不正解…"); }</code>は正解ではなかった時（つまり不正解の時）に実行されます。<br>
+不正解の場合はアラートで「不正解…」」というメッセージが表示されます。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+currentQuizIndex++;
+    <span class="hljs-keyword">if</span> (currentQuizIndex &lt; quizzes.length) {
+        showQuiz();
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'result'</span>).textContent = <span class="hljs-string">`終了！あなたのスコアは <span class="hljs-subst">${score}</span> 点です。`</span>;
+    }
+</div></code></pre>
+<p>この部分のコードは、現在のクイズを進めるための処理を行い、クイズがすべて終了したかどうかを確認して結果を表示する部分です。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+currentQuizIndex++;
+</div></code></pre>
+<p><code>currentQuizIndex</code>は現在表示されているクイズの番号を保持する変数です。
+++ はインクリメント演算子で、この行は <code>currentQuizIndex</code>の値を1つ増やします。</p>
+<p>つまり、次のクイズに進むために、現在のクイズの番号を更新しているということです。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">if</span> (currentQuizIndex &lt; quizzes.length)
+</div></code></pre>
+<p>この部分では、現在のクイズの番号<code>currentQuizIndex</code>が
+クイズ全体の数<code>quizzes.length</code>よりも小さいかどうかを確認しています。</p>
+<p><code>quizzes.length</code> は、クイズの配列内に含まれるクイズの総数を表します。<br>
+（今回はクイズが3問あるので、<code>quizzes.length</code> は3になります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+showQuiz();
+</div></code></pre>
+<p>クイズがまだ残っている場合、クイズを表示するための<code>showQuiz()</code>関数が呼ばれます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">else</span>{
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'result'</span>).textContent = <span class="hljs-string">`終了！あなたのスコアは <span class="hljs-subst">${score}</span> 点です。`</span>;
+    }
+</div></code></pre>
+<p>このコードは<code>if</code>この条件が満たされなかった場合、つまり<code>currentQuizIndex</code>が<br>
+クイズの総数以上になった場合（クイズがすべて終わった場合）に実行される部分です。</p>
+<p><code>document.getElementById('result')<code>でHTML内の</code> id="result"</code>を持つ要素を取得しています。<p>
+<p><code>${score} </code>は、テンプレートリテラルと呼ばれる機能を使って、変数 score の値を文字列の中に埋め込んで表示するための記法です。<p>
+<p>例えば、クイズ終了時点で全問正解だった場合、変数<code>score</code>の値は3になっています。<br>
+その変数<code>score</code>の値をそのまま文字列に埋め込むことが出来るのが、テンプレートリテラルになります。</p>
+<p>上記コードをまとめると、id="result" を持つ要素（今回だとpタグ）に<br>
+「終了！あなたのスコアは〇点です。」というメッセージを表示するという意味になります。</p>
+<h2><b>これで3問のクイズゲームが完成しました！</b></h2>
+<hr>
+<h2><b>練習問題</b></h2>
+<p>次のクイズゲームを作成してみましょう！<br>
+（先程まで書いていたコードは消して、一から作成してみましょう！）</p>
+<h3><b>仕様</b></h3>
+<ul>
+    <li>クイズの問題数を全部で5問にする</li>
+    <li>回答選択肢は5つのボタンを用意する</li>
+    <li>問題内容と解答は自分で考えて作成する</li>
+    <li>cssはこれまで使用したものをそのままコピーして使ってください</li>
+</ul>
+<img src="../images/fukuoka.jpg" alt="fukuoka.jpgの画像" style="border: 1px solid black;" width='500'>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>08.カリキュラム</title>
+</head>
+<body>
+<h1>クイズゲームを作ろう！</h1>
+<p>これまで学習した内容を活かし、クイズゲームを作成してみましょう！<br>
+まずは、1問だけのクイズゲームを作成していきます！</p>
+<h3><b>クイズゲームの仕様</b></h3>
+<p>・問題文の下に回答ボタンがある</p>
+<p>・回答が正解だと「正解です！」というアラートが表示される</p>
+<p>・間違えてしまうと「残念...正解は〇〇です！」というアラートが表示される</p>
+<h2><a href="./クイズゲーム見本(1問)/index.html" target="_blank" rel="noopener noreferrer">見本はこちら</a></h2>
+<p>それでは、早速作っていきましょう！</p>
+<hr>
+<h2><b>ボタン編</b></h2>
+<h2><b>HTML</b></h2>
+<p>①まずは、htmlのコードを準備します。<br>
+h1タグとpタグでタイトルと問題を表示し、回答用のボタンを準備します。</p>
+<p>一つ一つのボタンの情報をJavaScriptで取得するため、それぞれにIDを振っておきましょう！<br>
+今回は上から順番に<code>「button1」「button2」「button3」</code>というIDを振ります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>クイズゲーム<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1日に最も多くの時間を寝て過ごす動物はどれでしょう？<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"button1"</span>&gt;</span>コアラ<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>    
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"button2"</span>&gt;</span>ライオン<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>    
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"button3"</span>&gt;</span>ネコ<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>    
+</div></code></pre>
+<p>コードを記述後、リロードして確認してみましょう！<br>
+画像のようになっていれば上手くコードが記述出来ています。</p>
+<img src="../images/quiz1.jpg" alt="quiz1の画像" style="border: 1px solid black;">
+<hr>
+<h2><b>CSS</b></h2>
+<p>②次に、cssで見た目を整えていきます。<br>
+今回はcssの学習ではないため、コードの中身を覚えたりチェックする必要はありません。</p>
+<p>コードはそのままコピーして貼り付けてください。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-direction</span>: column;
+    <span class="hljs-attribute">align-items</span>: center;
+    <span class="hljs-attribute">justify-content</span>: center;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f0f8ff</span>;
+}
+
+<span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>;
+    <span class="hljs-attribute">text-align</span>: center;
+}
+
+<span class="hljs-selector-tag">p</span>{
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">text-align</span>: center;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#444</span>;
+}
+
+<span class="hljs-selector-tag">button</span> {
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+    <span class="hljs-attribute">cursor</span>: pointer;
+    <span class="hljs-attribute">border</span>: none;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#4caf50</span>;
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">0.3s</span>;
+}
+
+<span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span>{
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.7</span>;
+}
+</div></code></pre>
+<p>コードを記述後、リロードして確認してみましょう！<br>
+画像のようになっていれば上手くコードが記述出来ています。</p>
+<img src="../images/quiz2.jpg" alt="quiz2の画像" style="border: 1px solid black;" width='500'>
+<hr>
+<h2><b> JavaScript</b></h2>
+<p>③次は、JavaScriptで正誤判定を作っていきます。<br>
+この問題の正解は「コアラ」なので、ボタン1が正解ということになります。</p>
+<p>そのため、「ボタン1がクリックされたら正解のアラートを表示」、<br>
+「ボタン2かボタン3がクリックされたら不正解のアラートを表示」という考え方になります。</p>
+<p>まずは、ボタン1がクリックされたら正解のアラートを表示するプログラムを作りましょう！</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button1'</span>).addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
+    alert(<span class="hljs-string">'正解です！'</span>)
+});
+</div></code></pre>
+<p>コードが記述出来たら、一度動きを確認してみましょう！<br>
+ボタン1を押して、正解のアラートが出てきたら成功です！</p>
+<img src="../images/correct.jpg" alt="correctの画像" style="border: 1px solid black;" width='500'>
+<p>それでは、上記コードの意味を解説していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button1'</span>).addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
+
+});
+</div></code></pre>
+<p>まず、<code>getElementById</code>を使ってID<code>「button1」</code>の情報を取得しています。<p>
+<p>そして、その取得した情報（つまりボタン1）がクリックされたら〜という意味で<br>
+<code>.addEventListener('click', () =>　</code>というクリックイベントが設定されています。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+alert(<span class="hljs-string">'正解です！'</span>)
+</div></code></pre>
+<p>ボタン1がクリックされるとアラートを表示させたいので、「正解です！」というアラートを表示させています。</p>
+<h2><b>これでボタン1がクリックされると正解のアラートが表示されるプログラムが出来ました！</b></h2>
+<hr>
+<p>④次は、不正解の判定を作っていきます。<br>
+「ボタン2かボタン3がクリックされたら不正解のアラートを表示」というプログラムを作っていきましょう！</p>
+<p>先程のコードの続きに記述していきましょう！</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button2'</span>).addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
+    alert(<span class="hljs-string">'残念...正解はコアラです！'</span>)
+});
+
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button3'</span>).addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
+    alert(<span class="hljs-string">'残念...正解はコアラです！'</span>)
+});
+</div></code></pre>
+<p>コードが記述出来たら、一度動きを確認してみましょう！<br>
+ボタン2と3を押して、不正解のアラートが出てきたら成功です！</p>
+<img src="../images/button2batsu.jpg" alt="button2batsuの画像" style="border: 1px solid black;" width='500'>
+<p>それでは、上記コードの意味を解説していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button2'</span>).addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
+
+});
+
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button3'</span>).addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
+});
+</div></code></pre>
+<p>まず、<code>getElementById</code>を使ってID<code>「button2」</code>の情報を取得しています。<br>
+<code>「button3」</code>も同じ処理になっています。<p>
+<p>そして、その取得した情報（ボタン2もしくはボタン3）がクリックされたら〜という意味で<br>
+<code>.addEventListener('click', () =>　</code>というクリックイベントが設定されています。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+    alert(<span class="hljs-string">'残念...正解はコアラです！'</span>)
+</div></code></pre>
+<p>ボタン2もしくはボタン3がクリックされると不正解のアラートを表示させたいので、<br>
+「残念...正解はコアラです！」というアラートを表示させています。<p>
+<h2><b>これでボタン2もしくはボタン3がクリックされると不正解のアラートが表示されるプログラムが出来ました！</b></h2>
+<hr>
+<p>次は、先程のコードをリファクタリング（コードを短くしたり綺麗にしたり、分かりやすく修正すること）をしていきたいと思います！</p>
+<img src="../images/book_13833603.png" alt="book_13833603の画像" style="border: 1px solid black;" width='200'>
+<p>これまで学習したif文や関数などを使用し、より使いやすく分かりやすいコードにしていきましょう！</p>
+<p><b>※HTMLは新たにクラスを付ける必要があるので以下のclassを追加で記述しましょう！<br>
+CSSは以前のコードのままで大丈夫です。</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>クイズゲーム<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1日に最も多くの時間を寝て過ごす動物はどれでしょう？<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"button1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"answerButton"</span>&gt;</span>コアラ<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>    
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"button2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"answerButton"</span>&gt;</span>ライオン<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>    
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"button3"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"answerButton"</span>&gt;</span>ネコ<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>    
+</div></code></pre>
+<hr>
+<h2><b>リファクタリング編</b></h2>
+<p>まずは、今回作成するコードを全て記述しておきます。<br>
+ただし、みんなはこの段階でコードを写すのではなく、最初に書いたコードとどこが変わっているかをチェックしてみてください。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-comment">// 最初に書いたコード</span>
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button1'</span>).addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
+    alert(<span class="hljs-string">'正解です！'</span>)
+});
+
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button2'</span>).addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
+    alert(<span class="hljs-string">'残念...正解はコアラです！'</span>)
+});
+
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button3'</span>).addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
+    alert(<span class="hljs-string">'残念...正解はコアラです！'</span>)
+});
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-comment">// リファクタリングしたコード</span>
+<span class="hljs-keyword">const</span> correctAnswer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button1'</span>);
+
+<span class="hljs-keyword">const</span> checkAnswer = <span class="hljs-function">(<span class="hljs-params">selectedButton</span>) =&gt;</span>{
+    <span class="hljs-keyword">if</span> (selectedButton === correctAnswer) {
+        alert(<span class="hljs-string">'正解です！'</span>)
+    } <span class="hljs-keyword">else</span> {
+        alert(<span class="hljs-string">'残念...正解はコアラです！'</span>)
+    }
+}
+
+<span class="hljs-keyword">const</span> buttons = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.answerButton'</span>);
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; buttons.length; i++) {
+    buttons[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        checkAnswer(<span class="hljs-keyword">this</span>);
+    });
+}
+</div></code></pre>
+<p>コードが長くなっているように見えますが、リファクタリングをすることで今後新しい問題を追加しても応用が効くようになりとても便利になります。</p>
+<p>それでは、このコードの意味を一つずつ解説していくのでここからコードを書いていきましょう！</p>
+<hr>
+<p>①まずは、正解であるボタン1の要素を取得し変数に入れていきます。<br>
+この変数は、後ほど正誤判定で使用します。
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> correctAnswer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button1'</span>);
+</div></code></pre>
+<p><code>getElementById</code>を使ってID<code>「button1」</code>の情報を取得し、その情報を<code>「correctAnswer」</code>という変数に代入しています。</p>
+<hr>
+<p>②次に、「それぞれのボタンにクリックイベントを追加して、クリックされたボタンに対して関数を実行する」
+というプログラムを作成していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> buttons = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.answerButton'</span>);
+</div></code></pre>
+<p><code>querySelectorAll</code>を使ってclass名が<code>「answerButton」</code>の情報を取得し、その情報を<code>「buttons」</code>という変数に代入しています。</p>
+<p>これにより、複数のボタンをまとめて処理できるようになります。</p>
+<hr>
+<p>③次に、<code>「buttons」</code>に格納されたすべてのボタンに対して順番に処理を追加したいため、for文で処理を回していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; buttons.length; i++) {
+  
+}
+</div></code></pre>
+<p><code>let i = 0;</code>は、ループのカウンターとなる変数<code>「i」</code>を0に初期化しています。<br>
+<code>「i」</code> は、処理を何回繰り返したかを数える役割を果たします。</p>
+<p><code>i < buttons.length;</code>は、ループを続ける条件を指定しています。<br>
+<code>buttons.length</code> は、ボタンの数（buttonsの長さ）を表しているので、今回の場合は3回ということになります。</p>
+<p><code>i++</code>は、ループが1回終了するごとに<code> i </code>の値を1つ増やすことを意味します。<br>
+たとえば、最初は<code> i = 0</code> ですが、ループが1回実行されると<code> i </code>が 1 になります。</p>
+<p>そのため、上記コードを簡単に説明すると「i がbuttons.length未満（今回は3未満）のときに繰り返し処理を行う」という意味になります。<br>行う処理の内容は次に説明する④の処理になります。</p>
+<hr>
+<p>④次に、各ボタンが押されたら正誤判定の関数を呼び出すというプログラムを作成していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+ buttons[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        checkAnswer(<span class="hljs-keyword">this</span>);
+    });
+</div></code></pre>
+<p><code>buttons[i]</code> は<code> i </code>番目のボタンを指しています。最初は<code> i </code>が 0 から始まるので、<br>
+繰り返し処理の1回目は最初のボタン<code>（buttons[0]）</code>にクリックイベントを設定します。</p>
+<p>繰り返し処理の2回目は2つ目のボタン<code>（buttons[1]）</code>、3回目は3つ目のボタン<code>（buttons[2]）</code>に対して同様にクリックイベントを設定します。</p>
+<p>このクリックイベントは、<code>.addEventListener('click', function() </code>で追加されています。</p> 
+<p>イベントリスナー内では<code> checkAnswer(this); </code>というコードで、<code>checkAnswer </code>という関数を実行しています。<br>
+（この関数については後ほど説明します）</p>
+<p>関数の引数に<code>this</code>が入っていますが、これはクリックされたボタン自身を指します。</p>
+<p>つまり、1つ目のボタンがクリックされれば、<code>this </code>は1つ目のボタンを指します。<br>
+同様に、2つ目や3つ目のボタンがクリックされた場合も、そのボタン自身が<code> this </code>となります。</p>
+<p>これで「各ボタンが押されたら正誤判定の関数を呼び出す」というプログラムが出来ました！</p>
+<p><b>今回アロー関数ではなく無名関数を使用していますが、イベントリスナーで<code> this</code>が<br>クリックされた要素を正しく指すようにするためには、無名関数を使用するのがベストなので覚えておきましょう！</b></p>
+<hr>
+<p>⑤先程<code>checkAnswer</code>という関数を実行しましたが、この関数内で正誤判定を実装したいので作成していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> checkAnswer = <span class="hljs-function">(<span class="hljs-params">selectedButton</span>) =&gt;</span>{
+    <span class="hljs-keyword">if</span> (selectedButton === correctAnswer) {
+        alert(<span class="hljs-string">'正解です！'</span>)
+    } <span class="hljs-keyword">else</span> {
+        alert(<span class="hljs-string">'残念...正解はコアラです！'</span>)
+    }
+}
+</div></code></pre>
+<p>少し分かりにくいので、1つずつコードを区切って解説をしていきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> checkAnswer = <span class="hljs-function">(<span class="hljs-params">selectedButton</span>) =&gt;</span>{
+  
+}
+</div></code></pre>
+<p>これは<code>checkAnswer</code>という名前の関数を定義している部分です。</p>
+<p>この関数は、ボタンがクリックされたときに呼び出され、引数としてクリックされたボタンの情報<code>selectedButton</code>を受け取ります。</p>
+<p><code>selectedButton</code>という引数名は自由に決めることが出来るので、プログラムに関連のある分かりやすい名前にしましょう。</p>
+<p>具体的には、イベントリスナーの無名関数内で <code>this</code> はクリックされたボタンを指します。<br>
+この <code>this</code> を <code>checkAnswer</code> 関数の引数として渡し、<code>checkAnswer</code> 関数内で <code>selectedButton</code> という名前で受け取って処理を行います。</p>
+<p>もっと簡単にいうと、押されたボタンの情報が<code>selectedButton</code>の中に入っているということです。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">if</span> (selectedButton === correctAnswer) {
+        alert(<span class="hljs-string">'正解です！'</span>)
+    } <span class="hljs-keyword">else</span> {
+        alert(<span class="hljs-string">'残念...正解はコアラです！'</span>)
+    }
+</div></code></pre>
+<p>このコードは、選択されたボタンが正解かどうかを判定し、それに応じて異なるメッセージを表示する処理です。</p>
+<p><code>if (selectedButton === correctAnswer)</code>は、「クリックされたボタン（<code>selectedButton</code>）が正解のボタン（<code>correctAnswer</code>）と等しい場合」に<br>その後の処理を実行するという意味になります。</p>
+<p>今回は、ボタン1を正解としているので、ボタン1がクリックされた場合にアラートで「正解です！」というメッセージが表示されます。</p>
+<p>そうでなければ（つまりボタン1以外がクリックされたら）不正解なので<br>
+else文が実行されアラートで「残念...正解はコアラです！」というメッセージが表示されます。</p>
+<h2><b>これでリファクタリングが出来ました！<br>
+リファクタリングをしたことで応用が効くようになったので、次の練習問題で実践してみましょう！</b></h2>
+<hr>
+<h2><b>練習問題</b></h2>
+<p>次のクイズゲームを作成してみましょう！<br>
+（先程まで書いていたコードは消して、一から作成してみましょう！）</p>
+<h3><b>仕様</b></h3>
+<ul>
+    <li>クイズの問題数は5問にする</li>
+    <li>回答選択肢はの5つのボタンを用意する</li>
+    <li>正解の箇所は自分で設定する</li>
+    <li>今回学習したリファクタリング済みのコードを参考に、<code>if</code> 文と <code>else</code> 文を使って正誤判定を作成する</li>
+    <li>cssはこれまで使用したものをそのままコピーして使ってください</li>
+</ul>
+<img src="../images/quiz5.jpg" alt="staproquiz.jpgの画像" style="border: 1px solid black;" width='500'>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="open" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- 練習問題 --&gt;</span>
+<span class="hljs-comment">&lt;!-- html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>クイズゲーム<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"quizContainer"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"question"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"option1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"answerButton"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"option2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"answerButton"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"option3"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"answerButton"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"option4"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"answerButton"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"option5"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"answerButton"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"result"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// 練習問題</span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> quizzes = [
+  {
+    <span class="hljs-attr">question</span>: <span class="hljs-string">"ハンガーを使わなさそうな都道府県はどこでしょう？"</span>,
+    <span class="hljs-attr">options</span>: [<span class="hljs-string">"広島県"</span>, <span class="hljs-string">"山梨県"</span>, <span class="hljs-string">"福井県"</span>, <span class="hljs-string">"福島県"</span>, <span class="hljs-string">"福岡県"</span>],
+    <span class="hljs-attr">answer</span>: <span class="hljs-string">"福岡県"</span>
+},
+  {
+    <span class="hljs-attr">question</span>: <span class="hljs-string">"読書中にサイコロを振ると何の目が出るでしょう？"</span>,
+    <span class="hljs-attr">options</span>: [<span class="hljs-string">"1"</span>, <span class="hljs-string">"2"</span>, <span class="hljs-string">"3"</span>, <span class="hljs-string">"4"</span>, <span class="hljs-string">"5"</span>],
+    <span class="hljs-attr">answer</span>: <span class="hljs-string">"4"</span>
+},
+{
+  <span class="hljs-attr">question</span>: <span class="hljs-string">"曲がった弓の矢が多い都道府県はどこでしょう？"</span>,
+  <span class="hljs-attr">options</span>: [<span class="hljs-string">"山梨県"</span>, <span class="hljs-string">"広島県"</span>, <span class="hljs-string">"山形県"</span>, <span class="hljs-string">"北海道"</span>, <span class="hljs-string">"群馬県"</span>],
+  <span class="hljs-attr">answer</span>: <span class="hljs-string">"山形県"</span>
+},
+{
+  <span class="hljs-attr">question</span>: <span class="hljs-string">"礼儀正しく座って空の方を見ている人は何を見ているでしょう？"</span>,
+  <span class="hljs-attr">options</span>: [<span class="hljs-string">"星座"</span>, <span class="hljs-string">"夜空"</span>, <span class="hljs-string">"太陽"</span>, <span class="hljs-string">"流れ星"</span>, <span class="hljs-string">"流星群"</span>],
+  <span class="hljs-attr">answer</span>: <span class="hljs-string">"星座"</span>
+},
+{
+  <span class="hljs-attr">question</span>: <span class="hljs-string">"火事から全員の命を助けることが出来た。何人助けたでしょう？"</span>,
+  <span class="hljs-attr">options</span>: [<span class="hljs-string">"1名"</span>, <span class="hljs-string">"5名"</span>, <span class="hljs-string">"9名"</span>, <span class="hljs-string">"18名"</span>, <span class="hljs-string">"100名"</span>],
+  <span class="hljs-attr">answer</span>: <span class="hljs-string">"9名"</span>
+}
+];
+
+<span class="hljs-keyword">let</span> currentQuizIndex = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> score = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showQuiz</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> quiz = quizzes[currentQuizIndex];
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'question'</span>).textContent = quiz.question;
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option1'</span>).textContent = quiz.options[<span class="hljs-number">0</span>];
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option2'</span>).textContent = quiz.options[<span class="hljs-number">1</span>];
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option3'</span>).textContent = quiz.options[<span class="hljs-number">2</span>];
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option4'</span>).textContent = quiz.options[<span class="hljs-number">3</span>];
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'option5'</span>).textContent = quiz.options[<span class="hljs-number">4</span>];
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAnswer</span>(<span class="hljs-params">selectedAnswer</span>) </span>{
+  <span class="hljs-keyword">const</span> correctAnswer = quizzes[currentQuizIndex].answer;
+  <span class="hljs-keyword">if</span> (selectedAnswer === correctAnswer) {
+      score++;
+      alert(<span class="hljs-string">"正解！"</span>);
+  } <span class="hljs-keyword">else</span> {
+      alert(<span class="hljs-string">"不正解…"</span>);
+  }
+
+  currentQuizIndex++;
+  <span class="hljs-keyword">if</span> (currentQuizIndex &lt; quizzes.length) {
+      showQuiz();
+  } <span class="hljs-keyword">else</span> {
+      <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'result'</span>).textContent = <span class="hljs-string">`終了！あなたのスコアは <span class="hljs-subst">${score}</span> 点です。`</span>;
+  }
+}
+
+<span class="hljs-keyword">const</span> buttons = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.answerButton'</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; buttons.length; i++) {
+  buttons[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      checkAnswer(<span class="hljs-keyword">this</span>.textContent); 
+  });
+}
+
+showQuiz();
+</div></code></pre>
+<!--// 折り畳まれ部分 -->
+</div>
+
+</body>
+</html>

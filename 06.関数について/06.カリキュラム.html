@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>06.カリキュラム.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><strong><code>カリキュラム06</code></strong></p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>06.カリキュラム</title>
+</head>
+<body>
+<h1>関数について学習をしましょう！</h1>
+<h2><b>関数について</b></h2>
+<p>関数とは、プログラムの中で特定の処理をまとめたものです。<br>
+関数を使うことで、繰り返し行う処理を一箇所にまとめて管理でき、同じ処理を何度も書かずに再利用することができます。</p>
+<p>スクラッチでブロック定義が出てきたと思いますが、それが関数にあたります。</p>
+<img src="../images/function.jpg" alt="functionの画像" width='300' style="border: 1px solid black;" >
+<p>それでは、実際の書き方や使い方を学習していきましょう！</p>
+<hr>
+<h2><b>関数の書き方と使い方</b></h2>
+<p>JavaScriptで関数を作るには、<code>function</code>というキーワードを使います。<br>
+関数には「名前」「引数」「処理内容」「戻り値」があります。</p>
+<p>まずは、簡単な関数の作り方を見ていきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'こんにちは！'</span>);
+  }
+  
+<span class="hljs-comment">// 関数を呼び出す</span>
+greet(); 
+</div></code></pre>
+<p>このコードは、<code>greet</code>という関数を作り、その関数を呼び出すとconsole欄に「'こんにちは！'」と<br>
+表示されるプログラムになっています。</p>
+<p>実際にconsole欄で実行結果を確認してみましょう。</p>
+<img src="../images/functionhello.jpg" alt="functionhelloの画像" style="border: 1px solid black;" >
+<p>それでは、この関数の意味を説明していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params"></span>) 
+</span></div></code></pre>
+<p>関数を作る際には、<code>function</code>と記述します。<br>
+<code>greet</code>というのは関数の名前になっており、任意の関数名を付けることが出来ます。</p>
+<p>今回は挨拶に関するプログラムだったので、挨拶を意味する「greet」という関数名にしました。<br>
+関数名を付けるときには、そのコードに関連する、意味のある名前にしましょう。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+greet(); 
+</div></code></pre>
+<p>これは、作成した関数<code>greet</code>を呼び出しています。<br>
+関数を呼び出す時には、関数名+()で呼び出すことが出来ます。</p>
+<p>これが関数の作り方と呼び出し方になります。</p>
+<hr>
+<h2><b>引数を使った関数</b></h2>
+<p>次に、引数を使った関数について説明します。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">user</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'こんにちは、'</span> + name + <span class="hljs-string">'さん！ようこそ。'</span>);
+}
+
+<span class="hljs-comment">// 関数を呼び出して使う</span>
+user(<span class="hljs-string">'スタプロ太郎'</span>);   
+</div></code></pre>
+<p>このコードは、<code>user</code>という関数を作り、その関数を呼び出すとconsole欄に「こんにちは、スタプロ太郎さん！ようこそ！」と<br>
+表示されるプログラムになっています。</p>
+<p>実際にconsole欄で実行結果を確認してみましょう。</p>
+<img src="../images/staprotaro.jpg" alt="staprotaroの画像" style="border: 1px solid black;" >
+<p>それでは、この関数の意味を説明していきます。</p>
+<p><code>function user(name) </code>の部分で、user という関数を定義しています。<br>
+<code>name</code>は引数で、この関数に渡されるデータです。この例では名前を受け取る役割をしています。</p>
+<p>関数の中の<code>console.log('こんにちは、' + name + 'さん！ようこそ！'); </code>で、<code>name</code> の値を使って挨拶のメッセージを作り、それを画面に表示します。</p>
+<p>たとえば、<code>name </code>が 'スタプロ太郎' であれば、「こんにちは、スタプロ太郎さん！ようこそ！」と表示されます。</p>
+<p>また、<code>「+」</code>を使うことで、複数の文字列をつなげることが出来ます。<br>
+文字列同士をつなげるときに使う場合、<code> 「+」</code> は「結合演算子」と呼ばれます。</p>
+<p>最後に、<code>user('スタプロ太郎'); </code>で関数を呼び出し、'スタプロ太郎' という文字列を引数として渡しています。<br>
+この呼び出しにより、<code>name</code> に 'スタプロ太郎' が代入され、関数の中でメッセージが表示されます。</p>
+<p>これが引数を使った関数になります。</p>
+<hr>
+<h2><b>無名関数</b></h2>
+<p>無名関数とは、名前のない関数でその場で使う一時的な処理に適しています。<br>
+変数に代入して使うことが多いです。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> greet = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'こんにちは、'</span> + name + <span class="hljs-string">'さん！'</span>);
+};
+
+greet(<span class="hljs-string">'ミンクル'</span>); 
+</div></code></pre>
+<p>今回の例では、<code>function(name)</code> の部分で無名関数を定義し、その関数を<br>
+<code>greet</code>という変数に代入しています。</p>
+<p>ここで<code>greet</code>は関数を代入した変数となり、関数名のように扱うことができます。</p>
+<p><code>greet('ミンクル');</code>とすることで、<code>greet</code> に代入された関数を呼び出し、<br>
+'ミンクル' という文字列を <code>name</code> の引数として渡します。</p>
+<p>この結果、<code>console.log</code> が実行され、画面に「こんにちは、ミンクルさん！」と表示されます。</p>
+<img src="../images/hellominkuru.jpg" alt="hellominkuruの画像" style="border: 1px solid black;" >
+<hr>
+<h2><b>アロー関数</b></h2>
+<p>アロー関数とは、<code>function</code>と記述しなくても短い構文で関数を作れる書き方です。<br>
+無名関数のシンプルな形で、特に簡単な処理に使いやすいです。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> greet = <span class="hljs-function">(<span class="hljs-params">name</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'こんにちは、'</span> + name + <span class="hljs-string">'さん！'</span>);
+  };
+  
+  greet(<span class="hljs-string">'ミンクル'</span>); 
+</div></code></pre>
+<p><code>(name) => </code>の部分がアロー関数になります。<code>function</code>を使わずに、代わりに<code>「=>」</code>を使って<br>
+関数を定義することが出来ます。</p>
+<p>関数の書き方が無名関数と少し違うだけで、関数の呼び出し方などは一緒です。<br>
+コードを短く簡潔に書けるので、無名関数ではなくアロー関数で記述をしていきましょう。</p>
+<p>実行結果は、上で行った無名関数の処理と全く同じです。</p>
+<img src="../images/hellominkuru.jpg" alt="hellominkuruの画像" style="border: 1px solid black;" >
+<hr>
+<h2><b>コールバック関数</b></h2>
+<p>コールバック関数とは、関数の引数として別の関数を渡し、後にその関数が実行されるようにする仕組みです。<br>
+処理の順番を決めたり、特定のタイミングで何かを実行したいときに使います。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'こんにちは、'</span> + name + <span class="hljs-string">'さん！'</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span>(<span class="hljs-params">callback</span>) </span>{
+  <span class="hljs-keyword">const</span> userName = <span class="hljs-string">'ミンクル'</span>; 
+  callback(userName); 
+}
+
+getName(greet); 
+</div></code></pre>
+<p>少し難しいですが、一つずつ順番に解説をしていきます。</p>
+<h3><b>実行される順番</b></h3>
+<p>①<code>getName(greet);</code> の呼び出し<br>
+<code>getName</code> 関数が <code>greet</code> 関数をコールバック関数として受け取りながら呼び出されます。</p>
+<p>②<code>getName</code> 関数内の実行<br>
+<code>getName</code> 関数が実行され、まず <code>const userName = 'ミンクル';</code> で <code>userName</code> に 'ミンクル' という値が代入されます。</p>
+<p>③<code>callback(userName);</code>の実行<br>
+<code>callback(userName); </code>が実行されます。<code>callback</code> は <code>greet</code> 関数のことです。
+つまり、実際には <code>greet('ミンクル'); </code>と同じことが起こります。</p>
+<p>④<code>greet(name) </code>関数内の実行<br>
+<code>greet</code> 関数が実行され、<code>console.log('こんにちは、' + name + 'さん！');</code> という処理が行われ、画面に「こんにちは、ミンクルさん！」と表示されます。</p>
+<img src="../images/hellominkuru.jpg" alt="hellominkuruの画像" style="border: 1px solid black;" >
+<hr>
+<h2><b>組み込み関数について</b></h2>
+<p>組み込み関数とは、JavaScriptなどのプログラミング言語であらかじめ用意されている関数のことです。<br>
+これらの関数は特定の動作を簡単に実行できるように設計されており、開発者が一から作らなくても便利に使える機能がたくさんあります。</p>
+<p>これまで何度も出てきた<code>console.log()</code>なども組み込み関数になります。</p>
+<p>たくさん種類がありますが、ここではよく使うものを紹介します。</p>
+<hr>
+<h2><b>組み込み関数①ランダム関数</b></h2>
+<p>ランダム関数は、指定された範囲内でランダムな値を作り出す関数です。<br>
+JavaScriptには、ランダムな数を作るための <code>Math.random()</code> という関数があります。この関数は、0以上1未満の間でランダムな数（小数）を返します。</p>
+<p>タイピングゲームでは、配列の中に入っている問題文の中からランダムに一つを選び、そこから問題文を表示するという処理で使用されています。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> number = <span class="hljs-built_in">Math</span>.random();
+<span class="hljs-built_in">console</span>.log(number); 
+</div></code></pre>
+<p>実行結果を見てみると、0以上1未満のランダムな小数が生成されています。</p>
+<img src="../images/random.jpg" alt="randomの画像" style="border: 1px solid black;" >
+<p>ただし、小数点のままだと使いにくいので、小数点以下を切り捨てるという関数もあります。<br>
+それが、<code>Math.floor()</code>という関数になります。</p>
+<p><code>Math.floor() </code>は小数点以下を切り捨てる関数なので、<code>Math.random()</code> の結果に適用すると常に0になってしまいます。<br>そのため、0 から 9 までの整数を得たい場合は、生成された小数に10倍することで0以上10未満のランダムな数を取得することが出来ます。
+</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> number = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>); 
+<span class="hljs-built_in">console</span>.log(number);
+</div></code></pre>
+<p>実行結果を見てみると、0 から 9 までのランダムな値が生成されています。</p>
+<img src="../images/nine.jpg" alt="nineの画像" style="border: 1px solid black;" >
+<p>これらを応用して、次は配列からランダムに言葉を取得するプログラムを作ってみましょう！</p>
+<hr>    
+<h2><b>ランダム関数の書き方と使い方</b></h2>
+<h3>①1から10までのランダムな値を生成する</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> randomNum = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>) + <span class="hljs-number">1</span>;
+
+<span class="hljs-built_in">console</span>.log(randomNum);
+</div></code></pre>
+<p>まず、<code>Math.random()</code> という部分は、0以上1未満のランダムな小数を作ります。例えば、0.3や0.7のような数です。</p>
+<p>次に、そのランダムな小数に10をかけます。すると、0から10未満のランダムな小数ができます。<br>
+例えば、0.3を10倍すると3、0.7を10倍すると7のような感じです。</p>
+<p>その次に、<code>Math.floor()</code> という部分で、小数点以下を切り捨てて整数にします。例えば、3.6なら3に、7.9なら7になります。<br>
+これで、0から9までのランダムな整数ができます。</p>
+<p>その後に、そのランダムな整数に1を足します。これで、上の計算で0という結果になっても、1が足されるので<br>
+1から10までのランダムな整数ができます。出来た整数は変数<code>randomNum</code>に代入されます。</p>
+<p>最後に、<code>console.log(randomNum) </code>で、作られたランダムな数を画面に表示します。<br>
+このコードを実行すると、1から10までのどれかの数がランダムに選ばれて表示されます。</p>
+<p>index.htmlを開き、検証ツールで確認してみましょう。</p>
+<hr>
+<h3>②配列の中にある言葉をランダムに取得</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> words = [<span class="hljs-string">"りんご"</span>,
+             <span class="hljs-string">"ばなな"</span>, 
+             <span class="hljs-string">"ぶどう"</span>,
+             <span class="hljs-string">"いちご"</span>, 
+             <span class="hljs-string">"みかん"</span>
+];
+
+<span class="hljs-keyword">let</span> currentKey = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * words.length);
+<span class="hljs-keyword">let</span> currentWord = words[currentKey];
+
+<span class="hljs-built_in">console</span>.log(currentWord);
+</div></code></pre>
+<p>ここでは、5つの言葉（「りんご」、「ばなな」、「ぶどう」、「いちご」、「みかん」）をリスト（配列）に入れています。<br>
+このリストの名前は <code>words</code> です。</p>
+<p><code>Math.random()</code> は、0から1までのランダムな小数（例えば、0.5や0.9）を作ります。</p>
+<p><code>words.length</code> は、リストの長さ（つまり、リストに入っている言葉の数）を返します。
+今回はリストに5つ情報が入っているので、5になります。</p>
+<p><code>Math.random() * words.length</code>は、先程決められたランダムな少数と5という数字を掛け算しています。<br>
+これにより、0から5未満のランダムな小数を作ります。</p>
+<p><code>Math.floor() </code>は、小数点以下を切り捨てて、整数にします。これで、0から4までのランダムな整数（インデックス）が作られます。</p>
+<p>次に、<code>currentKey</code>を使ってランダムに選ばれた言葉を取り出します。
+例えば、<code>currentKey</code>の中身が2なら、<code>words[2]</code> は「ぶどう」です。</p>
+<p>最後に、<code>console.log(currentWord)</code> で、ランダムに選ばれた言葉を画面に表示します。<br>
+例えば、選ばれた言葉が「ばなな」なら、画面に「ばなな」と表示されます。</p>
+<p>index.htmlを開き、検証ツールで確認してみましょう。<br>
+リロードするたびにランダムで言葉が選ばれて表示されるはずです。</p>
+<p>実際のタイピングゲームでも、このように配列の中にある問題をランダムで取得して表示をしています！</p>
+<hr>
+<h2><b>組み込み関数②タイマー関数</b></h2>
+<p>タイマー関数とは、一定時間後に何かの処理を行いたいときや、少しの遅延を加えたい場合に使います。<br>
+タイピングゲームでも利用されている、タイマーなどを作ることも出来ます。</p>
+<h2><b>setTimeout()</b></h2>
+<p>まず、<code>setTimeout()</code>という関数を説明します。<br>
+この関数は、指定した時間が経過した後に一度だけ関数を実行します。</p>
+<p>一定時間後に何かの処理を行いたいときや、少しの遅延を加えたい場合に使います。</p>
+<pre class="hljs"><code><div>setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1秒後に実行されました'</span>);
+}, <span class="hljs-number">1000</span>);
+</div></code></pre>
+<p>今回の例では、1秒後にconsole欄に文字が出力されるというプログラムになっています。</p>
+<p>1000というのは1000ミリ秒を意味しており、1000ミリ秒は1秒になります。</p>
+<p>実行結果を見てみると、1秒後にconsole欄に文字が出力されています。</p>
+<img src="../images/settimer.jpg" alt="timerの画像" style="border: 1px solid black;" >
+<h2><b>setInterval()</b></h2>
+<p>次に、<code>setInterval()</code>という関数を説明します。<br>
+この関数は、指定した間隔で繰り返し関数を実行します。指定の時間ごとに同じ処理を繰り返すときに使います。</p>
+<pre class="hljs"><code><div>setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1秒ごとに繰り返し実行されます'</span>);
+}, <span class="hljs-number">1000</span>); 
+</div></code></pre>
+<p>今回の例では、1秒ごとにconsole欄に文字が出力されるというプログラムになっています。</p>
+<h2><b>clearInterval()</b></h2>
+<p><code>setInterval()</code> は指定した時間ごとに処理を繰り返し実行しますが、一度開始すると自動では止まりません。<br>
+その繰り返し処理を停止させるには、<code>clearInterval() </code>という関数を使用する必要があります。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>; 
+
+<span class="hljs-keyword">const</span> intervalId = setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  count++;
+  <span class="hljs-built_in">console</span>.log(count);
+
+  <span class="hljs-keyword">if</span> (count &gt;= <span class="hljs-number">5</span>) {
+    clearInterval(intervalId); 
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'繰り返し処理が停止しました'</span>);
+  }
+}, <span class="hljs-number">1000</span>); 
+</div></code></pre>
+<p>上記コードは、<code>setInterval() </code>を使って1秒ごとにカウントを増やし、5以上になったら
+<code>clearInterval()</code> で繰り返し処理を停止するプログラムです。<br>
+1行ずつ詳しく説明します。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>; 
+</div></code></pre>
+<p>変数 <code>count </code>を初期化しています。初期値は 0 で、カウント用の変数として使われます。<br>
+この変数は、<code>setInterval()</code> の中で1秒ごとに増加していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> intervalId = setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> 
+</div></code></pre>
+<p><code>setInterval()</code>という関数の実行時に<b>「タイマーID」</b>というものが返されるのですが、
+このタイマーIDを<code>clearInterval()</code>に渡すことで、繰り返し処理を停止することが出来ます。</p>
+<p>そのため、そのIDを<code>intervalId</code>という変数に保存しておく必要があるので、上記のように<br>
+<code>setInterval()</code>が返す値を<code>intervalId</code>という変数に保存しています。</p>
+<pre class="hljs"><code><div>count++;
+</div></code></pre>
+<p>変数 <code>count</code> の値を1つずつ増やします。</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">console</span>.log(count);
+</div></code></pre>
+<p>現在の <code>count</code> の値をコンソールに表示します。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">if</span> (count &gt;= <span class="hljs-number">5</span>) 
+</div></code></pre>
+<p>if文を使って、<code>count</code> が5以上になったかどうかをチェックしています。</p>
+<pre class="hljs"><code><div>clearInterval(intervalId);
+</div></code></pre>
+<p><code>clearInterval()</code> を使って、<code>setInterval() </code>で設定した繰り返し処理を停止します。<br>
+引数には、先ほど取得した<code>intervalId</code>を渡し、特定の繰り返し処理を終了させます。</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'繰り返し処理が停止しました'</span>);
+</div></code></pre>
+<p>繰り返しが停止されたことを示すメッセージをコンソールに表示します。<br>
+このメッセージが表示されるのは、<code>count</code> が5以上になり、繰り返しが停止されたときです。</p>
+<pre class="hljs"><code><div>}, <span class="hljs-number">1000</span>); <span class="hljs-comment">// 1秒ごとに実行</span>
+</div></code></pre>
+<p>1秒（1000ミリ秒）ごとに関数を実行するように設定しています。</p>
+<hr>
+<h2><b>練習問題</b></h2>
+<p>①ランダム関数を使い、サイコロアプリを作ってみましょう。<br>
+ページをリロードするたびに、1から6までのランダムな数字がconsole欄に表示されるようなプログラムを作成してみましょう！</p>
+<img src="../images/saikoro.jpg" alt="saikoroの画像" style="border: 1px solid black;" >
+<br>
+<p>②タイマー関数を使い、変数の値を1秒ごとに1ずつ減らし、0以下になったら停止するプログラムを作成してみましょう！</p>
+<p><b>仕様</b></p>
+<p>・変数 count を初期値 10 で定義してください。</p>
+<p>・setInterval() を使用して、1秒ごとに count の値を1減らしてください。</p>
+<p>・count の値が 0 以下になったら、clearInterval() を使って繰り返し処理を停止し、「カウントダウンが終了しました」というメッセージを表示してください。</p>
+<img src="../images/countdown.jpg" alt="countdownの画像" style="border: 1px solid black;" >
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="open" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<pre class="hljs"><code><div><span class="hljs-comment">// 練習問題① </span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> diceRoll = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">6</span>) + <span class="hljs-number">1</span>;
+<span class="hljs-built_in">console</span>.log(diceRoll);
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// 練習問題②</span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> count = <span class="hljs-number">10</span>;
+
+<span class="hljs-keyword">const</span> intervalId = setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(count);
+  count--;
+
+<span class="hljs-keyword">if</span> (count &lt; <span class="hljs-number">0</span>) {
+    clearInterval(intervalId);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"カウントダウンが終了しました"</span>);
+  }
+}, <span class="hljs-number">1000</span>);
+
+</div></code></pre>
+<!--// 折り畳まれ部分 -->
+</div>
+
+</body>
+</html>
