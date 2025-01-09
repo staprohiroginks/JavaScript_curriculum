@@ -1,0 +1,7 @@
+.images img{
+    width: 50%;
+}
+
+.images img.hovered {
+    opacity: 0.5; 
+}
