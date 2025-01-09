@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>12.カリキュラム.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><strong><code>カリキュラム12</code></strong></p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>12.スライダー</title>
+</head>
+<body>
+<h1>写真が自動で切り替わるスライダーを作成してみよう！</h1>
+<p>今回の学習では、写真が自動で切り替わる「スライダー」と呼ばれる部分の作成をしていきましょう！</p>
+<h2><a href="../jsポートフォリオ/index.html" target="_blank" rel="noopener noreferrer">見本はこちら</a></h2>
+<h2><b>「12.ポートフォリオ編集用」というフォルダの中に入っているファイルを編集して使ってください。</b></h2>
+<hr>
+<h2><b>HTML</b></h2>
+<p>①まずは、HTMLで画像を入れていきます。<br>
+コードを記述する場所は、下記画像を参考にしてください。<p>
+<img src="images/headerimg.jpg" alt="htmlの画像" width="700">
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"slider-bg"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc1.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像1枚目"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc2.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像2枚目"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc3.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像3枚目"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<p>ここでは、トップページでスライドさせる写真を3枚用意しています。<br>
+画像はimagesフォルダの中に入っているので、そちらを使用してください。</p>
+<hr>
+<p>②次に、このスライダーを適用させる範囲をhtmlで記述していきます。</p>
+<p>これまでのようにJavaScriptにコードを記述するやり方だと、全てのページにコードが反映されてしまいエラーになってしまいます。<br>
+例えば、トップページだけにある「スライダー」に関するコードが他のページで実行されると、スライダーが存在しないためエラーになります。</p>
+<p>これを防ぐため、特定のページだけにJavaScriptを適用する方法が必要です。<br>
+今回はindex.htmlだけにしかスライダーがないので、index.htmlだけにスライダーを適用させていきます。</p>
+<p>方法として、<code>data-page="index" </code>という属性をbodyタグに追加することで、「このページはトップページです」という情報をJavaScriptに伝えることができます。<br>
+このようにして、JavaScriptはトップページかどうかを判別し、必要なコードだけを実行できます。</p>
+<img src="images/dataindex.jpg" alt="htmlの画像" width="700">
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">data-page</span>=<span class="hljs-string">"index"</span>&gt;</span>
+</div></code></pre>
+<h2><b>これでHTMLの記述は終了です！次はCSSを記述していきましょう！</b></h2>
+<hr>
+<h2><b>CSS</b></h2>
+<p>③次に、cssでスライダーの視覚的な部分（画像の配置や切り替え効果）を制御する処理を書いていきます。<br>
+画像のようにcssがすでに書かれているので、続きから記述しましょう！</p>
+<img src="images/slidercss.jpg" alt="cssの画像" width="400">
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-class">.slider-bg</span> <span class="hljs-selector-tag">img</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">object-fit</span>: cover; <span class="hljs-comment">/*画像の縦横比を保ったまま、画像を表示*/</span>
+    <span class="hljs-attribute">position</span>: absolute; <span class="hljs-comment">/*画像同士が重なり合うように設定*/</span>
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; <span class="hljs-comment">/*画像を完全に透明にする（非表示）*/</span>
+    <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">1s</span>; <span class="hljs-comment">/*opacity（透明度）の変化を1秒間かけてスムーズに行います*/</span>
+}
+
+<span class="hljs-selector-class">.slider-bg</span> <span class="hljs-selector-tag">img</span><span class="hljs-selector-class">.active</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>; <span class="hljs-comment">/*activeというクラスが付いた画像を完全に表示します（透明度を100%にする）*/</span>
+}
+</div></code></pre>
+<p>ここで実現させたいこととして、<br>
+①初期状態では、opacity: 0; の設定によりすべての画像が非表示。<br>
+②JavaScriptによって、特定の画像に .active クラスが付けられると、その画像だけ opacity: 1; で表示される。<br>
+③CSSの transition: opacity 1s; により、画像がフェードインするアニメーション効果が付く。<br>
+という流れになります。</p>
+<p>「どのタイミングでクラスを付けたり外したりするか」ということはJavaScriptで記述するので、
+今は流れを理解しておきましょう！</p>
+<h2><b>これでCSSの記述は終了です！最後にJavaScriptを記述していきましょう！</b></h2>
+<hr>
+<h2><b>JavaScript</b></h2>
+<p>④まず、HTMLのbodyタグに設定されたカスタム属性<code>data-page</code>を読み取り、その値を基に現在のページがどの種類であるかを判定します。</p>
+<p>以下のコードはscript.jsの上から2行目に記述してください。</p>
+<img src="images/datajs.jpg" alt="jsの画像" width="700">
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> pageType = <span class="hljs-built_in">document</span>.body.getAttribute(<span class="hljs-string">'data-page'</span>);
+</div></code></pre>
+<p><code>document.body.getAttribute('data-page');</code>は、HTMLのbodyタグに設定された<br><code>data-page</code>属性の値（例: "index"）を取得するコードです。</p>
+<p>
+そして、取得した情報を<code>pageType</code>という定数に保存しています。<br>
+この<code>pageType</code>の値を利用して、ページごとに異なる処理を実行することができます。
+</p>
+<hr>
+<p>⑤次に、どのページにスライダー機能を実装するのかということを<code>if</code>文を用いて記述します。<br>
+前回の学習でハンバーガーメニューのコードを書いているので、そのコードの下に書いていきましょう。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">if</span> (pageType === <span class="hljs-string">'index'</span>) {
+}
+</div></code></pre>
+<p><code>if (pageType === 'index')</code> の条件は、<code>pageType</code>が<code>"index"</code>である場合に処理を実行するという意味です。</p>
+<p>つまり、このコードを使うことでスライダー機能をindex.html（トップページ）でのみ動作させることができます。</p></p>
+<hr>
+<p>⑥最後に、写真が自動で切り替わるスライダーを実装していきます。<br>
+今回の実装では、以下の3つのステップで進めます。</p>
+<p>1. 画像を取得 - スライダー内に表示する画像を用意します。<br>
+2. 画像を表示 - 最初の画像だけを画面に表示します。<br>
+3. 画像を切り替え - 3秒ごとに次の画像に切り替わる仕組みを作ります。</p>
+<p>これにより、写真が順番に自動で切り替わる動きを実現します！</p>
+<p>⑤で書いたコードの中に、以下のコードを書いていきましょう！<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">if</span> (pageType === <span class="hljs-string">'index'</span>) {
+<span class="hljs-keyword">const</span> SliderImages = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.slider-bg img'</span>);
+<span class="hljs-keyword">let</span> currentIndex = <span class="hljs-number">0</span>;
+
+SliderImages[currentIndex].classList.add(<span class="hljs-string">'active'</span>);
+
+<span class="hljs-keyword">const</span> changeSlide = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    SliderImages[currentIndex].classList.remove(<span class="hljs-string">'active'</span>);
+    currentIndex = (currentIndex + <span class="hljs-number">1</span>) % SliderImages.length; 
+    SliderImages[currentIndex].classList.add(<span class="hljs-string">'active'</span>);
+};
+setInterval(changeSlide, <span class="hljs-number">3000</span>);
+}
+</div></code></pre>
+<p>それでは、上記コードを解説していきます。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> SliderImages = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.slider-bg img'</span>);
+</div></code></pre>
+<p>上記コードでは、<code>querySelectorAll</code>を使用して<code>slider-bg</code>というクラスが付いたdivタグの中にある画像（img）を取得し、<br>取得した情報を変数<code>SliderImages</code>に保存しています。<p>
+<p>つまり、スライドさせる画像の情報をここで取得しているということになります。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> currentIndex = <span class="hljs-number">0</span>;
+</div></code></pre>
+<p><code>currentIndex</code>という変数を用意し、初期値を0にしています。<br>
+この変数を使って、現在表示している画像の位置を管理していきます。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+SliderImages[currentIndex].classList.add(<span class="hljs-string">'active'</span>);
+</div></code></pre>
+<p>このコードを直訳すると、「<code>SliderImages</code>の<code>currentIndex</code>番目に対して、<code>active</code>というクラスを付ける」という意味になります。</p>
+<p>まず、<code>SliderImages</code>には<code>querySelectorAll</code>を使用して取得した画像の情報が入っています。<br>
+その画像の<code>currentIndex</code>番目に対してクラスを付けるのですが、現在<code>currentIndex</code>には初期値の0が入っています。</p>
+<p>よって、「画像の0番目（つまり1枚目）に対して<code>active</code>というクラスを付ける」という命令になります。<br>
+このクラスを付けることで、CSSで設定されたスタイル（画像を表示するための<code>opacity: 1</code>）が適用され、1枚目の画像が画面に表示される仕組みです。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> changeSlide = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+
+};
+</div></code></pre>
+<p>このコードは、関数 <code>changeSlide</code>を宣言しています。<br>
+この関数はスライダーの画像を切り替えるための処理を記述する場所になります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+SliderImages[currentIndex].classList.remove(<span class="hljs-string">'active'</span>);
+</div></code></pre>
+<p>このコードを直訳すると、「<code>SliderImages</code>の<code>currentIndex</code>番目に対して、<code>active</code>というクラスを取り外す」という意味になります。</p>
+<p>もう少し簡単に説明すると、現在表示されている画像を取得して、その画像からactiveクラスを取り外すという命令になります。</p>
+<p><code>active</code>クラスを取り外すことで、CSSで設定されたスタイル（画像を表示するための<code>opacity: 1</code>）が適用されなくなり、画像が非表示になる仕組みです。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+currentIndex = (currentIndex + <span class="hljs-number">1</span>) % SliderImages.length; 
+</div></code></pre>
+<p>このコードは、スライダーで次の画像に移動するための計算を行っています。</p>
+<p><code>(currentIndex + 1)</code>は、現在表示されている画像のインデックス（<code>currentIndex</code>）を1増やします。</p>
+<p><code>SliderImages.length</code>は、スライダー内の画像の総数を表します。</p>
+<p>次に表示する画像を決定するために、<code>(currentIndex + 1) % SliderImages.length</code> を使って、画像の総数を超えないように余りを計算しています。</p>
+<p>%は、モジュロ演算子と呼ばれ、 割り算の余りを計算する演算子です。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// 例）</span>
+<span class="hljs-number">5</span> % <span class="hljs-number">3</span>;  <span class="hljs-comment">//  結果は 2（5 ÷ 3 の余り）</span>
+<span class="hljs-number">10</span> % <span class="hljs-number">4</span>; <span class="hljs-comment">//  結果は 2（10 ÷ 4 の余り）</span>
+<span class="hljs-number">9</span> % <span class="hljs-number">3</span>; <span class="hljs-comment">// 結果は 0（9 ÷ 3 の余りはなし）</span>
+</div></code></pre>
+<p>例えば、画像が3枚ある場合、インデックスは以下のように繰り返します。</p>
+<ul>
+<li>現在のインデックスが 0<br>
+(0 + 1) % 3 = 1 → 次は 1（2枚目の画像）</li>
+<li>現在のインデックスが 1<br>
+(1 + 1) % 3 = 2 → 次は 2(3枚目の画像）</li>
+<li>現在のインデックスが 2<br>
+(2 + 1) % 3 = 0 → 次は 0（最初に戻る）</li>
+</ul>
+<img src="images/%.jpg" alt="割り算の画像" width="700">
+<p>このようにして、画像が順番に切り替わり、最後の画像の後は最初の画像に戻る仕組みを実現しています。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+SliderImages[currentIndex].classList.add(<span class="hljs-string">'active'</span>);
+</div></code></pre>
+<p>ここで、選択された画像に<code>active</code>クラスを付けることで画像を表示させています。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+setInterval(changeSlide, <span class="hljs-number">3000</span>);
+</div></code></pre>
+<p>このコードの役割は、<code>changeSlide</code>関数を3秒ごと（3000ミリ秒ごと）に繰り返し実行することです。<br>
+これにより、3秒ごとに次の画像に切り替わるようになります。</p>
+<h2><b>これで全てのコードの記述が終わり、スライダーが完成しました！</b></h2>
+<hr>
+<h2><b>練習問題</b></h2>
+<p>ボタンを追加して、ユーザーが手動で次のスライドに移動できるように機能を拡張してください。</p>
+<p><b>仕様</b></p>
+<p>・新しくindex.htmlとscript.jsのファイルを作成<br>
+・index.htmlにスライダー用の画像を3枚追加（画像は何でも大丈夫です）<br>
+・次のスライドに移動するためのボタンをHTMLに追加<br>
+・ボタンがクリックされたときに、activeクラスを付けたり外したりするコードをJavaScriptで記述<br>
+・cssは下記コードをそのままコピーして使用してください
+</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-class">.slider-bg</span>{
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">overflow</span>: hidden;
+    <span class="hljs-attribute">z-index</span>: -<span class="hljs-number">1</span>;
+}
+
+<span class="hljs-selector-class">.slider-bg</span> <span class="hljs-selector-tag">img</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">object-fit</span>: cover; 
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; 
+    <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">1s</span> ease; 
+}
+
+<span class="hljs-selector-class">.slider-bg</span> <span class="hljs-selector-tag">img</span><span class="hljs-selector-class">.active</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>; 
+}
+</div></code></pre>
+<h2><a href="./12.練習問題見本/index.html" target="_blank" rel="noopener noreferrer">見本はこちら</a></h2>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="open" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"ja"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"script.js"</span> <span class="hljs-attr">defer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PORTFOLIO<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"slider-bg"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc1.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像1枚目"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc2.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像2枚目"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc3.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像3枚目"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nextButton"</span>&gt;</span>次の画像にいく<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-meta">"use strict"</span>;
+
+<span class="hljs-keyword">const</span> SliderImages = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.slider-bg img'</span>);
+<span class="hljs-keyword">let</span> currentIndex = <span class="hljs-number">0</span>;
+
+SliderImages[currentIndex].classList.add(<span class="hljs-string">'active'</span>);
+
+<span class="hljs-keyword">const</span> nextButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'nextButton'</span>)
+
+nextButton.addEventListener(<span class="hljs-string">'click'</span>,() =&gt;{
+    SliderImages[currentIndex].classList.remove(<span class="hljs-string">'active'</span>);
+    currentIndex = (currentIndex + <span class="hljs-number">1</span>) % SliderImages.length; 
+    SliderImages[currentIndex].classList.add(<span class="hljs-string">'active'</span>);
+});
+</div></code></pre>
+
+</body>
+</html>
