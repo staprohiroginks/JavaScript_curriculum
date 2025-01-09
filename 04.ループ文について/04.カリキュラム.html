@@ -449,6 +449,34 @@ i++;
 index.htmlから検証ツールを開いて確認してみましょう。</p>
 <img src="../images/forten.jpg" alt="for文の画像" width='300'  height='400'  style="border: 1px solid black;">
 <hr>
+<h2><b>forEach文について</b></h2>
+<p>forEachは、配列の各要素に対して順番にコードを実行したい時に使用します。</p>
+<p>それでは、実際の書き方や使い方を学習していきましょう！</p>
+<hr>
+<h2><b>forEach文の書き方と使い方</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].forEach(<span class="hljs-function"><span class="hljs-params">i</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(i); 
+});
+</div></code></pre>
+<p>これは配列の各要素（1から5まで）が順番に変数<code> i </code>に渡され、<code> console.log(i) </code>でその値が表示されるプログラムです。<br>
+1つずつ見ていきましょう。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+</div></code></pre>
+<p>配列を作成しています。この配列には、1から5までの数が順番に格納されています。<br>
+( JavaScriptの配列についてはカリキュラム05で学習します)</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+.forEach(<span class="hljs-function"><span class="hljs-params">i</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(i); 
+});
+</div></code></pre>
+<p>forEach メソッドを使って、配列の各要素を順番に処理します。<br>
+配列の各要素が変数<code> i </code>に順に渡され、<code>console.log(i)</code> でその値を表示します。</p>
+<p><code>for</code> 文では、変数 <code> i </code> を使ってループの回数を指定し、<code> i </code> の値を自動的に増加させてループを回しますが、<br>
+<code>forEach</code> では配列の各要素に対して自動的に処理が行われるため、インデックスを管理する必要がなく、コードが簡潔になります。</p>
+<p>このように、<code>forEach</code> を使えば、特にインデックスやループの回数を気にせずに、配列の要素を順番に処理することができます。</p>
+<hr>
 <h2><b>break文について</b></h2>
  <p>break文は、ループを途中で終了させるために使われる文です。<br>
  ループの中で特定の条件が満たされたときに、ループを強制的に抜けることができます。<br>
