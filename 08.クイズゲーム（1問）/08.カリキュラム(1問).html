@@ -383,7 +383,7 @@ code {
 <p>・問題文の下に回答ボタンがある</p>
 <p>・回答が正解だと「正解です！」というアラートが表示される</p>
 <p>・間違えてしまうと「残念...正解は〇〇です！」というアラートが表示される</p>
-<h2><a href="../クイズゲーム見本(1問)/index.html" target="_blank" rel="noopener noreferrer">見本はこちら</a></h2>
+<h2><a href="./クイズゲーム見本(1問)/index.html" target="_blank" rel="noopener noreferrer">見本はこちら</a></h2>
 <p>それでは、早速作っていきましょう！</p>
 <hr>
 <h2><b>ボタン編</b></h2>
@@ -656,15 +656,13 @@ else文が実行されアラートで「残念...正解はコアラです！」�
 リファクタリングをしたことで応用が効くようになったので、次の練習問題で実践してみましょう！</b></h2>
 <hr>
 <h2><b>練習問題</b></h2>
-<p>次のクイズゲームを作成してみましょう！<br>
-（先程まで書いていたコードは消して、一から作成してみましょう！）</p>
+<p>①次のクイズゲームを作成してみましょう！<br>
+（先程まで書いていたコードに追加で記述していきましょう）</p>
 <h3><b>仕様</b></h3>
 <ul>
     <li>クイズの内容を「スタートプログラミングがある県はどこでしょう？」に変更する</li>
     <li>回答選択肢は「山口県・島根県・岡山県・鳥取県・広島県」の5つのボタンを用意する</li>
     <li>正解は「ボタン5（広島県）」</li>
-    <li>今回学習したリファクタリング済みのコードを参考に、<code>if</code> 文と <code>else</code> 文を使って正誤判定を作成する</li>
-    <li>cssはこれまで使用したものをそのままコピーして使ってください</li>
 </ul>
 <img src="../images/staproquiz.jpg" alt="staproquiz.jpgの画像" style="border: 1px solid black;" width='500'>
 <!-- 折り畳み展開ポインタ -->
@@ -690,7 +688,6 @@ else文が実行されアラートで「残念...正解はコアラです！」�
 <span class="hljs-comment">// script.js</span>
 <span class="hljs-keyword">const</span> correctAnswer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button5'</span>);
 
-<span class="hljs-comment">// 正誤判定の関数</span>
 <span class="hljs-keyword">const</span> checkAnswer = <span class="hljs-function">(<span class="hljs-params">selectedButton</span>) =&gt;</span> {
     <span class="hljs-keyword">if</span> (selectedButton === correctAnswer) {
         alert(<span class="hljs-string">'正解です！'</span>);
@@ -699,7 +696,6 @@ else文が実行されアラートで「残念...正解はコアラです！」�
     }
 }
 
-<span class="hljs-comment">// すべてのボタンを取得してクリックイベントを追加</span>
 <span class="hljs-keyword">const</span> buttons = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.answerButton'</span>);
 
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; buttons.length; i++) {
@@ -707,6 +703,74 @@ else文が実行されアラートで「残念...正解はコアラです！」�
         checkAnswer(<span class="hljs-keyword">this</span>);
     });
 }
+</div></code></pre>
+<!--// 折り畳まれ部分 -->
+</div>
+<p>②次のコードの意味を言語化してみましょう！<br>
+下のコードをコピーしてVScodeに貼り付けて、「ここにコードの意味を記述」と書いてあるところにコードの意味を書いていきましょう！</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> correctAnswer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button5'</span>); <span class="hljs-comment">/*ここにコードの意味を記述*/</span>
+
+<span class="hljs-keyword">const</span> checkAnswer = <span class="hljs-function">(<span class="hljs-params">selectedButton</span>) =&gt;</span> { <span class="hljs-comment">/*ここにコードの意味を記述*/</span>
+    <span class="hljs-keyword">if</span> (selectedButton === correctAnswer) { <span class="hljs-comment">/*ここにコードの意味を記述*/</span>
+        alert(<span class="hljs-string">'正解です！'</span>); <span class="hljs-comment">/*ここにコードの意味を記述*/</span>
+    } <span class="hljs-keyword">else</span> { <span class="hljs-comment">/*ここにコードの意味を記述*/</span>
+        alert(<span class="hljs-string">'残念...正解は広島県です！'</span>); <span class="hljs-comment">/*ここにコードの意味を記述*/</span>
+    }
+}
+
+<span class="hljs-keyword">const</span> buttons = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.answerButton'</span>); <span class="hljs-comment">/*ここにコードの意味を記述*/</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; buttons.length; i++) { <span class="hljs-comment">/*ここにコードの意味を記述*/</span>
+    buttons[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-comment">/*ここにコードの意味を記述*/</span>
+        checkAnswer(<span class="hljs-keyword">this</span>); <span class="hljs-comment">/*ここにコードの意味を記述*/</span>
+    });
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('opens').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="opens" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> correctAnswer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'button5'</span>); 
+<span class="hljs-comment">// id属性が 'button5' であるHTML要素（5番目のボタン）を取得し、変数 correctAnswer に格納</span>
+
+<span class="hljs-keyword">const</span> checkAnswer = <span class="hljs-function">(<span class="hljs-params">selectedButton</span>) =&gt;</span> { 
+<span class="hljs-comment">// 選択されたボタン（selectedButton）を引数として受け取るcheckAnswer関数</span>
+
+    <span class="hljs-keyword">if</span> (selectedButton === correctAnswer) { 
+    <span class="hljs-comment">// もし、選択されたボタンが正解のボタン（correctAnswer）と一致するなら</span>
+
+        alert(<span class="hljs-string">'正解です！'</span>); 
+        <span class="hljs-comment">// アラートで「正解です！」と表示</span>
+
+    } <span class="hljs-keyword">else</span> { 
+    <span class="hljs-comment">// でなければ（選択されたボタンが正解ではなかったら）</span>
+
+        alert(<span class="hljs-string">'残念...正解は広島県です！'</span>); 
+        <span class="hljs-comment">// アラートで「残念...正解は広島県です！」と表示</span>
+    }
+}
+
+<span class="hljs-keyword">const</span> buttons = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.answerButton'</span>); 
+<span class="hljs-comment">// クラス 'answerButton' を持つ全てのボタン要素を取得し、buttons という変数に格納</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; buttons.length; i++) { 
+<span class="hljs-comment">// iがbuttons.length未満のときに繰り返し処理を行う（ループが1回終了するごとに i の値を1つ増やす）</span>
+
+    buttons[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ 
+    <span class="hljs-comment">// 現在のボタン（i番目）にクリックイベントを追加</span>
+
+        checkAnswer(<span class="hljs-keyword">this</span>); 
+        <span class="hljs-comment">// クリックされたボタン（this）を引数として、先ほどの checkAnswer 関数を実行。this はクリックされたボタン自身を指している</span>
+    });
+}
+
 </div></code></pre>
 <!--// 折り畳まれ部分 -->
 </div>
