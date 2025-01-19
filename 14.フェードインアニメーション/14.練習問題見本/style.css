@@ -1,0 +1,18 @@
+.box{
+    text-align: center;
+}
+
+.box img{
+    width: 50%;
+}
+
+.fade-in {
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 0.6s,transform 0.6s; 
+}
+
+.fade-in.show {
+    opacity: 1; 
+    transform: translateY(0); 
+}

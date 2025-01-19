@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>14.カリキュラム.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><strong><code>カリキュラム14</code></strong></p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>14.フェードインアニメーション</title>
+</head>
+<body>
+<h1>フェードインアニメーションを実装してみましょう！</h1>
+<p>今回の学習では、要素が下からふわっと出てくるフェードインアニメーションの実装方法を学習します！<br>
+透明度（opacity）を0から1に変化させ、位置を少し下から上に移動させることで、ふわっとした動きを作り出します!</p>
+<h2><a href="../jsポートフォリオ/index.html" target="_blank" rel="noopener noreferrer">見本はこちら</a></h2>
+<h2><b>「14.ポートフォリオ編集用」というフォルダの中に入っているファイルを編集して使ってください。</b></h2>
+<hr>
+<h2><b>HTML</b></h2>
+<p>①最初は要素を非表示にし、フェードインアニメーションを使って徐々に表示させるということを実装するために、<br>
+HTMLのdivタグに対して<code>fade-in</code>クラスを追加していきます。</p>
+<p>「後ほどこのクラスに対して何かするんだな」という認識で今は大丈夫です！<br>
+コードを記述する場所は、下記画像を参考にしてください。<p>
+<p><img src="images/fadein1.jpg" alt="フェードインの画像" width="600" height="150px"><br>
+<img src="images/fadein2.jpg" alt="フェードインの画像" width="600"><br>
+<img src="images/fadein3.jpg" alt="フェードインの画像" width="600"><br>
+<img src="images/fadein4.jpg" alt="フェードインの画像" width="600"><br></p>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"about_profile fade-in"</span>&gt;</span> 
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"production fade-in"</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"learning fade-in"</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"contact fade-in"</span>&gt;</span>
+</div></code></pre>
+<h2><b>これでHTMLの記述は終わりました！次はJavaScriptを記述していきましょう！</b></h2>
+<hr>
+<h2><b> JavaScript</b></h2>
+<p>②次に、JavaScriptで要素が表示されるタイミングを監視し、フェードインアニメーションを実行していきます。</p>
+<p>簡単に説明すると、要素に<code>fade-in</code>というクラスが付いたものが画面内に表示されたときに、<br><code>show</code>というクラスを追加して、フェードインの効果（ふわっと出てくる）を実装するということになります。</p>
+<p>コードを記述する場所は、下記画像を参考にしてください。</p>
+<img src="images/js.jpg" alt="jsの画像" width="600">
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> target = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">".fade-in"</span>);
+
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">"scroll"</span>, () =&gt;{
+    
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; target.length; i ++){
+        <span class="hljs-keyword">const</span> getDistance = target[i].getBoundingClientRect().top + target[i].clientHeight * <span class="hljs-number">0.5</span>
+        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">window</span>.innerHeight &gt; getDistance){
+            target[i].classList.add(<span class="hljs-string">'show'</span>);
+        }
+    }
+})
+</div></code></pre>
+<p>それでは、上記コードの意味を解説していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> target = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">".fade-in"</span>);
+</div></code></pre>
+<p>このコードは、<code>document.querySelectorAll</code> を使って、クラス名が <code>fade-in</code> の要素を全て取得し、<br>その要素を <code>target</code> という変数に代入しています。</p> 
+<p><code>fade-in</code> クラスが付いているすべての要素を対象に、スクロール時に処理を実行するために取得しています。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">"scroll"</span>, () =&gt;{
+    
+})
+</div></code></pre>
+<p>このコードは、<code>addEventListener</code> メソッドを使って、<code>scroll</code>イベントが発生したときに実行する処理を設定しています。<br><code>scroll</code> イベントは、ユーザーがページをスクロールするたびに発生します。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; target.length; i ++){
+
+}
+</div></code></pre>
+<p><code>let i = 0</code>;は、ループのカウンターとなる変数「i」を0に初期化しています。<br>
+「i」 は、処理を何回繰り返したかを数える役割を果たします。
+<p><code>i &lt; target.length;</code>は、ループを続ける条件を指定しています。<br>
+<code>target.length </code>は、要素の数（targetの長さ）を表しているので、今回の場合は4回ということになります。</p>
+<p><code>i++</code>は、ループが1回終了するごとに<code> i </code>の値を1つ増やすことを意味します。<br>
+たとえば、最初は<code> i = 0 </code>ですが、ループが1回実行されると <code>i </code>が 1 になり、<code>i</code> が 4 になると条件が満たされなくなり、ループが終了します。</p>
+<p>そのため、上記コードを簡単に説明すると「iがtarget.length未満（今回は4未満）のときに繰り返し処理を行う」という意味になります。</p></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">const</span> getDistance = target[i].getBoundingClientRect().top + target[i].clientHeight * <span class="hljs-number">0.5</span>
+</div></code></pre>
+<p>このプログラムでは、画面の一番上からの距離と要素の高さを取得し、どのくらいスクロールされているのかを判定しています。</p>
+<p><code>getBoundingClientRect().top</code> というメソッドを使うと、各要素がパソコン画面の一番上からどのくらい離れているか（距離）を取得することができます。</p>
+<p>今回は、変数<code>target</code> に格納されている要素について、その中の各要素が画面の一番上からどれくらいの距離にあるのかを調べたいので、<br>
+<code>target[i].getBoundingClientRect().top </code>を使って、個々の要素の位置を取得します。</p>
+<p>また、<code>target[i].clientHeight * 0.5</code> では、<code>clientHeight</code> で要素の高さを取得し、それに 0.5 を掛けて、要素の高さの半分の値を計算しています。</p>
+<p>これらを足し合わせる（+）することで「要素の中心がパソコン画面の上端からどのくらいの距離にあるのか」を求めています。<br>
+これは、後で「もし要素が半分くらい画面内に見えたら処理を行う」というプログラムを書く際に必要になる数値です。</p>
+<p>そして、これらの計算結果を変数 <code>getDistance</code> に代入しています。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">if</span>(<span class="hljs-built_in">window</span>.innerHeight &gt; getDistance){
+    target[i].classList.add(<span class="hljs-string">'show'</span>);
+}
+</div></code></pre>
+<p>ここでは、if文を使って「もし画面の半分くらい要素が見えたらclassを付ける」というプログラムを実装しています。</p>
+<p><code>window.innerHeight</code> は、ブラウザの高さを取得します。<br>
+<code>getDistance </code>は、前の行で計算した要素の中央位置の距離です。この条件式では、ブラウザの高さが要素の中央位置よりも大きいかどうか」を確認しています。</p>
+<p>つまり、要素の中央が画面内に現れたかどうかをチェックしていることになります。</p>
+<p>スクロールをしていき、各要素が画面の半分ほど見えると、<code>target</code>の<code>i</code>番目、<br>
+つまりそれぞれの要素に<code>show</code>というclassを付けてあげます。</p>
+<p>最後に、<code>show</code>というclassが付いたら要素をふわっと表示させる命令をcssで書けば完成です！</p>
+<h2><b>これでJavaScriptの記述は終わりました！最後にCSSを記述していきましょう！</b></h2>
+<hr>
+<h2><b>CSS</b></h2>
+<p>③最後に、<code>show</code>というclassが付いた時のプログラムを記述します。<br>
+CSSを記述する場所は画像を参考にしてください。</p>
+<img src="images/css.jpg" alt="cssの画像" width="600">
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-class">.fade-in</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; 
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">50px</span>); 
+    <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.6s</span>,transform <span class="hljs-number">0.6s</span>; 
+}
+
+<span class="hljs-selector-class">.fade-in</span><span class="hljs-selector-class">.show</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>; 
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">0</span>); 
+}
+</div></code></pre>
+<p>それでは、上記コードの意味を解説していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-class">.fade-in</span> {
+
+}
+</div></code></pre>
+<p><code>fade-in</code>クラスに対してスタイルを設定していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-tag">opacity</span>: 0;
+</div></code></pre>
+<p>要素の透明度を0（完全に見えない）に設定します。最初は要素が見えないようにします。<br> つまり、最初に付けたクラス <code>fade-in</code> の部分は最初は透明にしておき、スクロールするとふわっと出てくるように見えるように設定しています。</p> 
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-tag">transform</span>: <span class="hljs-selector-tag">translateY</span>(50<span class="hljs-selector-tag">px</span>);
+</div></code></pre>
+<p>このプロパティは、要素をY軸（縦方向）に50px下に移動させます。これにより、要素がページ下に隠れているように見えます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-tag">transition</span>: <span class="hljs-selector-tag">opacity</span> 0<span class="hljs-selector-class">.6s</span>, <span class="hljs-selector-tag">transform</span> 0<span class="hljs-selector-class">.6s</span>;
+</div></code></pre>
+<p>CSS の transition プロパティを使用して、要素の変化にアニメーションを適用するための記述です。</p> <p><code>opacity 0.6s</code> は、opacity（透明度）が変化する際に、0.6 秒かけて滑らかに変化することを意味します。<br> 一瞬で変わるのではなく、0.6 秒かけて自然に変化させたい場合に使用します。</p> <p><code>transform 0.6s</code> は、要素を垂直方向に移動させる変化を 0.6 秒かけて滑らかに行うことを意味します。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-class">.fade-in</span><span class="hljs-selector-class">.show</span> {
+  
+}
+</div></code></pre>
+<p><code>fade-in</code>クラスに<code>show</code>クラスが追加された場合のスタイルを設定します。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-tag">opacity</span>: 1; 
+</div></code></pre>
+<p><code>show</code>というクラスが付いたら要素を表示させたいので、透明度を1（完全に見える状態）にします。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-tag">transform</span>: <span class="hljs-selector-tag">translateY</span>(0); 
+</div></code></pre>
+<p>要素が垂直方向に0px移動し、元の位置に戻ることを意味します。<br>
+これにより、最初は50px下にあった要素が、スクロールなどでアクティブになったタイミングで元の位置にふわっと戻るように見えます。</p>
+<h2><b>これでフェードインアニメーションの実装が出来ました！</b></h2>
+<hr>
+<h2><b>練習問題</b></h2>
+<p>画面をスクロールした時に写真がふわっと出てくるフェードインアニメーションを実装してみましょう！</p>
+<p><b>仕様</b></p>
+<p>・新しくindex.html・style.css・script.jsのファイルを作成<br>
+・index.htmlとstyle.cssに以下のコードをコピーして使用（続きは自分で記述）<br>
+・style.cssに、画像がふわっと出てくるアニメーションを実装<br>
+・script.jsに、要素が画面の半分まで来たら「show」というクラスを付ける命令を実装
+</p>
+<h2><a href="./14.練習問題見本/index.html" target="_blank" rel="noopener noreferrer">見本はこちら</a></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box fade-in"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>これはパソコンの画像です<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc1.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像1枚目"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box fade-in"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>これはパソコンの画像です<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc2.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像1枚目"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box fade-in"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>これはパソコンの画像です<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc3.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像1枚目"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-class">.box</span>{
+    <span class="hljs-attribute">text-align</span>: center;
+}
+
+<span class="hljs-selector-class">.box</span> <span class="hljs-selector-tag">img</span>{
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="open" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"ja"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"script.js"</span> <span class="hljs-attr">defer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PORTFOLIO<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box fade-in"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>これはパソコンの画像です<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc1.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像1枚目"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box fade-in"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>これはパソコンの画像です<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc2.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像1枚目"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box fade-in"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>これはパソコンの画像です<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pc3.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"トップ画像1枚目"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
+<span class="hljs-selector-class">.box</span>{
+    <span class="hljs-attribute">text-align</span>: center;
+}
+
+<span class="hljs-selector-class">.box</span> <span class="hljs-selector-tag">img</span>{
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;
+}
+
+<span class="hljs-selector-class">.fade-in</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; 
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">50px</span>); 
+    <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.6s</span>,transform <span class="hljs-number">0.6s</span>; 
+}
+
+<span class="hljs-selector-class">.fade-in</span><span class="hljs-selector-class">.show</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>; 
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">0</span>); 
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-meta">"use strict"</span>;
+
+<span class="hljs-keyword">const</span> target = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">".fade-in"</span>);
+
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">"scroll"</span>, () =&gt;{
+    
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; target.length; i ++){
+        <span class="hljs-keyword">const</span> getDistance = target[i].getBoundingClientRect().top + target[i].clientHeight * <span class="hljs-number">0.5</span>
+        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">window</span>.innerHeight &gt; getDistance){
+            target[i].classList.add(<span class="hljs-string">'show'</span>);
+        }
+    }
+})
+</div></code></pre>
+
+</body>
+</html>
