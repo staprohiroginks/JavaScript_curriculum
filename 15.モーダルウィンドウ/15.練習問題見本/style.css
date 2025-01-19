@@ -1,0 +1,28 @@
+.box{
+    text-align: center;
+}
+
+.box img{
+    width: 50%;
+}
+
+.modal {
+    display: none; 
+    border: none; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.modal[open] {
+    display: block; 
+}
+
+.modal-content {
+    width: 700px; 
+    height: 500px; 
+    object-fit: contain; 
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
