@@ -449,6 +449,90 @@ i++;
 index.htmlから検証ツールを開いて確認してみましょう。</p>
 <img src="../images/forten.jpg" alt="for文の画像" width='300'  height='400'  style="border: 1px solid black;">
 <hr>
+<h2><b>for...of文について</b></h2> <p><code>for...of</code> は、配列の各要素を順番に取り出して処理を行いたいときに使用します。</p> <p>それでは、実際の書き方や使い方を学習していきましょう！</p> <hr>
+<h2><b>for...of文の書き方と使い方</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> animals = [<span class="hljs-string">"犬"</span>, <span class="hljs-string">"猫"</span>, <span class="hljs-string">"鳥"</span>, <span class="hljs-string">"魚"</span>, <span class="hljs-string">"ウサギ"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> animal <span class="hljs-keyword">of</span> animals) {
+    <span class="hljs-built_in">console</span>.log(animal);
+}
+</div></code></pre>
+<p>このコードでは、配列 `animals` に格納された動物の名前を1つずつ取り出して処理しています。</p>
+<p><code>for...of</code> 文では、`animals` 配列の各要素が順番に変数 <code>animal</code> に格納され、その都度 <code>console.log(animal)</code> によって表示されます。</p>
+<p>例えば、最初に配列から取り出されるのは <code>犬</code> で、次に <code>猫</code>、そして順番に <code>鳥</code>、<code>魚</code>、<code>ウサギ</code> が表示されます。</p>
+<p>このように、<code>for...of</code> を使うと、インデックスを気にせずに配列の要素を1つずつ簡単に処理することができます。</p>
+<hr>
+<h2><b>for...inについて</b></h2>
+<p>for...in は、オブジェクトや配列のインデックスを順番に取り出して処理を行いたいときに使用します。<br>
+それでは、実際の書き方や使い方を学習していきましょう！</p>
+<hr>
+<h2><b>for...inの書き方と使い方</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> fitnessTest = {
+    <span class="hljs-string">"50m走"</span>: <span class="hljs-number">55</span>,
+    <span class="hljs-string">"握力"</span>: <span class="hljs-number">40</span>,
+    <span class="hljs-string">"上体起こし"</span>: <span class="hljs-number">35</span>,
+    <span class="hljs-string">"反復横跳び"</span>: <span class="hljs-number">60</span>,
+    <span class="hljs-string">"長座体前屈"</span>: <span class="hljs-number">70</span>
+};
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> event <span class="hljs-keyword">in</span> fitnessTest) {
+    <span class="hljs-keyword">if</span> (fitnessTest[event] &gt;= <span class="hljs-number">50</span>) {
+        <span class="hljs-built_in">console</span>.log(event + <span class="hljs-string">" は合格です"</span>);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(event + <span class="hljs-string">" は不合格です"</span>);
+    }
+}
+</div></code></pre>
+<p>上記プログラムは生徒の運動テストの結果をオブジェクトで管理し、各種目のスコアをチェックして「合格」または「不合格」を判定するプログラムです。<br>
+それでは、一つずつ解説していきます。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> fitnessTest = {
+    <span class="hljs-string">"50m走"</span>: <span class="hljs-number">55</span>,
+    <span class="hljs-string">"握力"</span>: <span class="hljs-number">40</span>,
+    <span class="hljs-string">"上体起こし"</span>: <span class="hljs-number">35</span>,
+    <span class="hljs-string">"反復横跳び"</span>: <span class="hljs-number">60</span>,
+    <span class="hljs-string">"長座体前屈"</span>: <span class="hljs-number">70</span>
+};
+</div></code></pre>
+<p>ここでは、<code> fitnessTest</code> というオブジェクトを作成しています。<br>
+各種目を キー（"50m走"、"握力" など）、スコアを 値（55, 40 など） として登録しています。</p>
+<h2><b>オブジェクトとは？</b></h2>
+<p>オブジェクトとは、データをまとめて管理するためのデータ構造の一つです。<br>
+オブジェクトは、キーとバリューのペアから構成されており、関連するデータを一つのまとまりとして扱うことができます。</p>
+<h2><b>今回の例では？</b></h2>
+<p>このコードでは、運動テストの各種目とスコアを一つのオブジェクトとしてまとめています。</p>
+<ul>
+    <li><strong>キー</strong>: 各種目名（例："50m走", "握力"）</li>
+    <li><strong>バリュー</strong>: その種目のスコア（例: 55, 40）</li>
+</ul>
+<h2><b>オブジェクトを使うメリット</b></h2>
+<p>オブジェクトにまとめておくことで、<strong>コードが読みやすくなったり、メンテナンスが楽になる</strong> というメリットがあります！</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> event <span class="hljs-keyword">in</span> fitnessTest)
+</div></code></pre>
+<p><code>for...in </code>を使うと、オブジェクトの キー（種目名）を順番に取得 できます。<br>
+簡単にいうと、<code>fitnessTest</code> の中にある "50m走", "握力", "上体起こし", "反復横跳び", "長座体前屈" を1つずつ取り出すという意味になります。</p>
+<p>例えば… 1回目のループでは event = "50m走"<br>
+2回目のループでは event = "握力"<br>
+というふうに、オブジェクトのキーが順番に<code> event</code> に入ります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">if</span> (fitnessTest[event] &gt;= <span class="hljs-number">50</span>)
+</div></code></pre>
+<p>このコードでは、<code>fitnessTest[event] </code>を使って オブジェクトのキー（種目名）に対応するスコアを取得 しています。</p>
+<p>例えば、<code>event </code>に "50m走" が入っている場合、<br>
+<code>fitnessTest[event]</code> は<code> fitnessTest["50m走"] </code>となり、その値 55 を取得します。</p>
+<p>55点は 50点以上なので「合格」と表示されます。</p>
+<p>実行結果</p>
+<pre class="hljs"><code><div><span class="hljs-number">50</span>m走 は合格です
+握力 は不合格です
+上体起こし は不合格です
+反復横跳び は合格です
+長座体前屈 は合格です
+</div></code></pre>
+<hr>
 <h2><b>forEach文について</b></h2>
 <p>forEachは、配列の各要素に対して順番にコードを実行したい時に使用します。</p>
 <p>それでは、実際の書き方や使い方を学習していきましょう！</p>
@@ -476,6 +560,31 @@ index.htmlから検証ツールを開いて確認してみましょう。</p>
 <p><code>for</code> 文では、変数 <code> i </code> を使ってループの回数を指定し、<code> i </code> の値を自動的に増加させてループを回しますが、<br>
 <code>forEach</code> では配列の各要素に対して自動的に処理が行われるため、インデックスを管理する必要がなく、コードが簡潔になります。</p>
 <p>このように、<code>forEach</code> を使えば、特にインデックスやループの回数を気にせずに、配列の要素を順番に処理することができます。</p>
+<hr>
+<!-- 次はここから -->
+<h2><b>continue文について</b></h2> 
+<p><code>continue</code> は、ループの中で特定の条件に合った場合に、その回の処理をスキップし、次の繰り返しへ進むために使用します。</p> 
+<p>それでは、実際の書き方や使い方を学習していきましょう！</p> 
+<hr>
+<h2><b>continue文の書き方と使い方</b></h2>
+<h3> 例: 特定の値をスキップする</h3>
+<p>以下のコードでは、1から5までの数値を順番に表示しますが、<code>3</code> のときだけスキップします。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> (i === <span class="hljs-number">3</span>) {
+        <span class="hljs-keyword">continue</span>; <span class="hljs-comment">// 3 のときはスキップ</span>
+    }
+    <span class="hljs-built_in">console</span>.log(i);
+}
+</div></code></pre>
+<p>実行すると、<code>1, 2, 4, 5</code> が表示され、<code>3</code> はスキップされます。</p>
+<h3>continue のポイント</h3>
+<ul>
+    <li>ループの処理を途中でスキップし、次の繰り返しへ進む</li>
+    <li><code>if</code> 文と組み合わせて条件を指定する</li>
+    <li><code>while</code> ループでも使用可能</li>
+</ul>
+<p>このように <code>continue</code> を活用すると、特定の条件に合った処理を簡単にスキップできます！</p>
 <hr>
 <h2><b>break文について</b></h2>
  <p>break文は、ループを途中で終了させるために使われる文です。<br>
@@ -507,12 +616,128 @@ index.htmlから検証ツールを開いて確認してみましょう。</p>
 break文によって繰り返し処理が終了されているので、以下のような処理になっています。</p>
 <img src="../images/break.jpg" alt="break文の画像" width='300'   style="border: 1px solid black;">
 <hr>
+<h2><b>switch文について</b></h2>
+ <p>switch文は、ある式の値に基づいて、複数の処理を分岐したい時に使用します。<br>
+それでは、実際の書き方や使い方を学習していきましょう！</p>
+<hr>
+<h2><b>switch文の書き方と使い方</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].forEach(<span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> {
+    <span class="hljs-keyword">switch</span> (num) {
+        <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"これは1です"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"これは2です"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"これは3です"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"これは4です"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"これは5です"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">default</span>:
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"範囲外の数値です"</span>);
+    }
+});
+</div></code></pre>
+<p>このプログラムでは、配列 [1, 2, 3, 4, 5] の各要素を<code>forEach</code>で順番に<code>switch</code>文に渡し<br>
+それぞれの数値に応じたメッセージを <code>console.log</code>で表示します。</p>
+<p><code>switch (num)</code> によって、num の値に応じた処理を実行します。</p>
+<p><code>case 1: </code>のように、num が 1 の場合は "これは1です" と表示されます。</p>
+<p><code>break;</code> を使って、それぞれの case の処理が終わったら switch 文を抜けます。</p>
+<p><code>default: </code>では、num が 1 ～ 5 以外の場合に "範囲外の数値です" と表示します。</p>
+<p>このように、switch 文を使うことで、複数の条件に応じた処理をシンプルに記述できます！</p>
+<hr>
+<h2><b>includes()について</b></h2>
+ <p>includes() は、配列や文字列の中に特定の要素が含まれているかを調べるメソッドです。<br>
+それでは、実際の書き方や使い方を学習していきましょう！</p>
+<hr>
+<h2><b>includes()の書き方と使い方</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> colors = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"青"</span>, <span class="hljs-string">"緑"</span>, <span class="hljs-string">"黄"</span>, <span class="hljs-string">"黒"</span>];
+
+<span class="hljs-keyword">if</span> (colors.includes(<span class="hljs-string">"青"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"青はリストに含まれています"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"青はリストに含まれていません"</span>);
+}
+
+<span class="hljs-keyword">if</span> (colors.includes(<span class="hljs-string">"白"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"白はリストに含まれています"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"白はリストに含まれていません"</span>);
+}
+</div></code></pre>
+<p>それでは、上記コードについて説明していきます。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> colors = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"青"</span>, <span class="hljs-string">"緑"</span>, <span class="hljs-string">"黄"</span>, <span class="hljs-string">"黒"</span>];
+</div></code></pre>
+<p>ここでは、5つの色 ("赤", "青", "緑", "黄", "黒") を格納した配列を作成しています。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">if</span> (colors.includes(<span class="hljs-string">"青"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"青はリストに含まれています"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"青はリストに含まれていません"</span>);
+}
+</div></code></pre>
+<p><code>colors.includes("青") </code>を使うことで、配列<code> colors </code>の中に "青" という値が含まれているかどうかを調べることができます。</p>
+<p>このメソッドは <code>true</code> か<code> false </code>を返すため、<code>if</code> 文を使って条件分岐を行います。<br>
+もし "青" が <code>colors </code>に含まれていれば <code>true</code> となり、console.log("青はリストに含まれています") が実行されます。</p>
+<p>一方、"青" がリストに含まれていない場合は false となり、console.log("青はリストに含まれていません") が実行される仕組みです。</p>
+<hr>
+<h2><b>indexOf()について</b></h2>
+ <p><code> indexOf()</code>  は、配列の中で特定の要素が何番目にあるのかを調べることができます。<br>
+それでは、実際の書き方や使い方を学習していきましょう！</p>
+<hr>
+<h2><b>indexOf()の書き方と使い方</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> books = [<span class="hljs-string">"国語"</span>, <span class="hljs-string">"数学"</span>, <span class="hljs-string">"英語"</span>, <span class="hljs-string">"理科"</span>, <span class="hljs-string">"社会"</span>];
+<span class="hljs-keyword">let</span> num = books.indexOf(<span class="hljs-string">"英語"</span>);
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"英語は左から"</span> + (num + <span class="hljs-number">1</span>) + <span class="hljs-string">"番目に置いてあります"</span>);
+</div></code></pre>
+<p>それでは、上記コードについて説明していきます。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> books = [<span class="hljs-string">"国語"</span>, <span class="hljs-string">"数学"</span>, <span class="hljs-string">"英語"</span>, <span class="hljs-string">"理科"</span>, <span class="hljs-string">"社会"</span>];
+</div></code></pre>
+<p>ここでは、5つの本 ("国語", "数学", "英語", "理科", "社会" ) を格納した配列を作成しています。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> num = books.indexOf(<span class="hljs-string">"英語"</span>);
+</div></code></pre>
+<p><code> books.indexOf("英語")</code>  によって、配列の中で "英語" が 何番目にあるか を取得します。<br>
+インデックスは 0 から始まるため、"英語" のインデックスは 2 になります。</p>
+<hr>
 <h2><b>練習問題</b></h2>
 <p>①1から20までの数字をwhile文を使って繰り返して表示するプログラムを作成してください。</p>
 <img src="../images/practice20.jpg" alt="20の画像" width='300'   style="border: 1px solid black;">
 <p>②for文を使って、1から50までの数字を順番に表示するプログラムを作成してください。<br>
 ただし、数字が 30 になったら繰り返しを中止するプログラムにしてください。</p>
 <img src="../images/practice30.jpg" alt="30の画像" width='300'   style="border: 1px solid black;">
+<p>③配列 ["日本", "アメリカ", "フランス", "ドイツ", "イタリア"] の各要素を for...of 文を使って表示するプログラムを作成してください。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> countries = [<span class="hljs-string">"日本"</span>, <span class="hljs-string">"アメリカ"</span>, <span class="hljs-string">"フランス"</span>, <span class="hljs-string">"ドイツ"</span>, <span class="hljs-string">"イタリア"</span>];
+
+<span class="hljs-comment">// ここに処理を記述</span>
+</div></code></pre>
+<p>実行結果</p>
+<pre class="hljs"><code><div>日本
+アメリカ
+フランス
+ドイツ
+イタリア
+</div></code></pre>
+<p>④配列 ["サッカー", "野球", "バスケットボール", "テニス", "バレーボール"] の中に <br>
+"野球" が含まれているかどうかを includes() を使って判定し、<br>
+<br>
+含まれていれば "野球はリストに含まれています"<br>
+含まれていなければ "野球はリストに含まれていません"<br>
+と表示するプログラムを作成してください。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> sports = [<span class="hljs-string">"サッカー"</span>, <span class="hljs-string">"野球"</span>, <span class="hljs-string">"バスケットボール"</span>, <span class="hljs-string">"テニス"</span>, <span class="hljs-string">"バレーボール"</span>];
+</div></code></pre>
 <!-- 折り畳み展開ポインタ -->
  <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
     <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
@@ -538,6 +763,24 @@ break文によって繰り返し処理が終了されているので、以下の
         <span class="hljs-keyword">break</span>;
     }
     <span class="hljs-built_in">console</span>.log(i);
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// 練習問題③</span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> countries = [<span class="hljs-string">"日本"</span>, <span class="hljs-string">"アメリカ"</span>, <span class="hljs-string">"フランス"</span>, <span class="hljs-string">"ドイツ"</span>, <span class="hljs-string">"イタリア"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> country <span class="hljs-keyword">of</span> countries) {
+    <span class="hljs-built_in">console</span>.log(country);
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// 練習問題④</span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> sports = [<span class="hljs-string">"サッカー"</span>, <span class="hljs-string">"野球"</span>, <span class="hljs-string">"バスケットボール"</span>, <span class="hljs-string">"テニス"</span>, <span class="hljs-string">"バレーボール"</span>];
+
+<span class="hljs-keyword">if</span> (sports.includes(<span class="hljs-string">"野球"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"野球はリストに含まれています"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"野球はリストに含まれていません"</span>);
 }
 </div></code></pre>
 <!--// 折り畳まれ部分 -->
