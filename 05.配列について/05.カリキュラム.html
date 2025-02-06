@@ -539,6 +539,33 @@ fruits.splice(<span class="hljs-number">1</span>, <span class="hljs-number">0</s
 </div></code></pre>
  <p>結果として、配列は<code>['apple', 'kiwi', 'grape', 'banana', 'orange']</code>となります。</p> <p>このコードでは、<code>splice()</code> の第2引数を <code>0</code> にすることで、要素を削除せずに新しい要素を追加できます。</p>
 <hr>
+<h2><b>メソッド⑥reverse()</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+
+numbers.reverse();
+<span class="hljs-built_in">console</span>.log(numbers);
+</div></code></pre>
+<p>reverse()は、配列の要素を逆順に並び替えるメソッドです。<br>
+数値・文字列のどちらの配列にも使用できます。</p>
+<p>実行結果<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+[<span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>]
+</div></code></pre>
+<hr>
+<h2><b>メソッド⑦sort()</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>];
+
+numbers.sort();
+<span class="hljs-built_in">console</span>.log(numbers);
+</div></code></pre>
+<p>sort()は、配列の要素を逆順に並び替えるメソッドです。</p>
+<p>実行結果<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>]
+</div></code></pre>
+<hr>
 <h2><b>練習問題</b></h2>
 <p>①1から5までの数字を格納した配列を作成してください。</br>
 その後、「3」という数字を取得して、console欄に表示させてみましょう。</p>
