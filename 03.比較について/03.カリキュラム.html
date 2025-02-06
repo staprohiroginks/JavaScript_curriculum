@@ -456,7 +456,8 @@ index.htmlから検証ツールを開いて確認してみましょう。</p>
 <h2><b>「==」と「===」の違いについて</b></h2>
 「==」も「===」も、どちらも値を比較するための記号です。<br>
 しかし、この2つの記号には大きな違いがあります。実際の例をもとに、その違いを見てみましょう。
-<pre class="hljs"><code><div><span class="hljs-comment">// == の場合</span>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-comment">// == の場合</span>
 <span class="hljs-keyword">let</span> number = <span class="hljs-number">10</span>;
 <span class="hljs-keyword">let</span> text = <span class="hljs-string">"10"</span>;
 
@@ -474,7 +475,8 @@ index.htmlから検証ツールを開いて確認してみましょう。</p>
 上記のように文字列と数値の比較の場合でも、値が同じであれば「等しい」という判断になります。</p>
 <p>本来文字列と数値は別の型であり、「等しい」という判断になってしまうと<br>
 予期せぬエラーの原因になってしまうため、「==」を使用することはほとんどありません。<p>
-<pre class="hljs"><code><div><span class="hljs-comment">// === の場合</span>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-comment">// === の場合</span>
 <span class="hljs-keyword">let</span> number = <span class="hljs-number">10</span>;
 <span class="hljs-keyword">let</span> text = <span class="hljs-string">"10"</span>;
 
@@ -503,7 +505,8 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <h2><b>比較演算子の書き方と使い方</b></h2>
 <p>比較演算子はいくつか種類があります。一つずつ見ていきましょう。</p>
 <p>①厳密等価演算子(===)</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">let</span> number = <span class="hljs-number">20</span>;
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> number = <span class="hljs-number">20</span>;
 
 <span class="hljs-keyword">if</span>(number === <span class="hljs-number">20</span>){
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'数字は20です'</span>);
@@ -512,7 +515,8 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <p>厳密等価演算子(===)は、2つの値が型も含めて等しいかどうかを比較します。<br>
 今回の場合、変数<code>number</code>と20は等しいのでconsoleに文字が出力されます。</p>
 <p>②厳密不等価演算子(!==)</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">let</span> userInput = <span class="hljs-string">"20"</span>; 
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> userInput = <span class="hljs-string">"20"</span>; 
 
 <span class="hljs-keyword">if</span> (userInput !== <span class="hljs-number">20</span>) {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"入力された値は数値の20とは異なります"</span>);
@@ -521,7 +525,8 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <p>厳密不等価演算子(!==)は、2つの値が型も含めて等しくないかどうかを比較します。<br>
 今回の場合、<code>userInput</code> は "20" という文字列であり、数値の20とは型が異なるため、consoleに文字が出力されます。</p>
 <p>③大なり演算子(>)</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">let</span> score = <span class="hljs-number">100</span>;
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> score = <span class="hljs-number">100</span>;
 
 <span class="hljs-keyword">if</span> (score &gt; <span class="hljs-number">70</span>) {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"合格です"</span>);
@@ -530,7 +535,8 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <p>大なり演算子(>)は左側の値が右側の値よりも大きいかどうかを比較します。<br>
 今回の場合、変数<code>score</code>には100が代入されており70よりも大きいため、consoleに文字が出力されます。</p>
 <p>④小なり演算子 (<)</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">16</span>;
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">16</span>;
 
 <span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">18</span>) {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"年齢制限があります"</span>);
@@ -539,7 +545,8 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <p>小なり演算子 (<)は左側の値が右側の値より小さいかどうかを比較するために使用します。<br>
 今回の場合、変数<code>age</code>には16が代入されており18よりも小さいため、consoleに文字が出力されます。</p>
 <p>⑤大なりイコール演算子 (>=)</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">18</span>;
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">18</span>;
 
 <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">18</span>) {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"成人です"</span>);
@@ -549,7 +556,8 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 今回のif文では、「18以上であるか」を確認しているため、18も含むことになります。</p>
 <p>よって、consoleに文字が出力されます。</p>
 <p>⑥小なりイコール演算子（<=）</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">12</span>;
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">12</span>;
 
 <span class="hljs-keyword">if</span> (age &lt;= <span class="hljs-number">12</span>) {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"このアトラクションに参加できます"</span>);
@@ -560,6 +568,67 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 今回のif文では、「12以下であるか」を確認しているため、12も含むことになります。</p>
 <p>よって、consoleに文字が出力されます。</p>
 <hr>
+<h2><b>剰余演算子（%）について</b></h2>
+<p>「%」は剰余演算子と呼ばれ、割り算の余りを求めるために使います。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">10</span> % <span class="hljs-number">3</span>); <span class="hljs-comment">// 実行結果は1</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">15</span> % <span class="hljs-number">4</span>); <span class="hljs-comment">// 実行結果は3</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">20</span> % <span class="hljs-number">5</span>); <span class="hljs-comment">// 実行結果は0</span>
+</div></code></pre>
+<style>
+        table {
+            width: 30%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+</style>
+<table>
+        <tr>
+            <th>式</th>
+            <th>計算</th>
+            <th>結果</th>
+        </tr>
+        <tr>
+            <td>10 % 3</td>
+            <td>10 ÷ 3 = 3あまり1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>15 % 4</td>
+            <td>15 ÷ 4 = 3あまり3</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>20 % 5</td>
+            <td>20 ÷ 5 = 4あまり0</td>
+            <td>0</td>
+        </tr>
+</table>
+<h3><b>if文との組み合わせ</b></h3>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> num = <span class="hljs-number">7</span>;
+
+<span class="hljs-keyword">if</span> (num % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) {
+    <span class="hljs-built_in">console</span>.log(num + <span class="hljs-string">" は偶数です"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(num + <span class="hljs-string">" は奇数です"</span>);
+}
+</div></code></pre>
+<p>num % 2 は num を 2 で割った余り を求めています。<br>
+今回は7 % 2　= 余りが1なので、以下のような実行結果になります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-number">7</span> は奇数です
+</div></code></pre>
+<hr>
 <h2><b>三項演算子について</b></h2>
 <p>三項演算子（または条件演算子）は、JavaScriptをはじめとする多くのプログラミング言語で使用される<br>
 簡潔な条件分岐を実現するための演算子です。</p>
@@ -568,7 +637,8 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <h2><b>三項演算子の書き方と使い方</b></h2>
 <p>三項演算子は、「条件式 ? trueの場合の値 : falseの場合の値」 という形で書かれます。<br>
 実際に例を見ていきましょう！</p>
-<pre class="hljs"><code><div><span class="hljs-comment">// == の場合</span>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-comment">// == の場合</span>
 <span class="hljs-keyword">let</span> score = <span class="hljs-number">20</span>;
 
 <span class="hljs-keyword">let</span> highScore = (score &gt; <span class="hljs-number">15</span>) ? <span class="hljs-string">"ハイスコアです！"</span> : <span class="hljs-string">"もっと頑張りましょう！"</span>;
@@ -585,7 +655,8 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <hr>
 <h2><b>練習問題</b></h2>
 <p>①num1とnum2の大小関係を比較して、以下の条件に従って結果を表示するプログラムを作成してください。</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num1 = <span class="hljs-number">8</span>;
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> num1 = <span class="hljs-number">8</span>;
 <span class="hljs-keyword">let</span> num2 = <span class="hljs-number">5</span>;
 
 <span class="hljs-comment">// ここにコードを書いてください</span>
@@ -596,7 +667,8 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <p>・もしnum2がnum1より小さい場合、consoleに「'num2はnum1より小さい'」 と出力してください。</p>
 <hr>
 <p>②指定された条件に従ってif文とelse文を使ってコードを完成させてください。</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">20</span>;  
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">20</span>;  
 
 <span class="hljs-comment">// ここにif-else文を書いてください</span>
 
@@ -606,7 +678,8 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <p>・それ以外の場合は、consoleに「'あなたは未成年です'」と出力してください。</p>
 <hr>
 <p>③比較演算子と else if を使って、変数 temperature に応じたメッセージを表示するプログラムを作成してください。</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">let</span> temperature = <span class="hljs-number">28</span>;
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> temperature = <span class="hljs-number">28</span>;
 
 <span class="hljs-comment">// ここに else ifを使ったコードを書いてください</span>
 
@@ -617,7 +690,8 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <p>temperature が 20 未満の場合は、"今日は寒いです" と出力してください。</p>
 <hr>
 <p>④三項演算子を使って、変数 score の値によって異なるメッセージを出力するプログラムを作成してください。</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">let</span> score = <span class="hljs-number">75</span>;
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> score = <span class="hljs-number">75</span>;
 
 <span class="hljs-comment">// ここに三項演算子を使ったコードを書いてください</span>
 
@@ -678,7 +752,7 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <span class="hljs-built_in">console</span>.log(result);
 </div></code></pre>
 <!--// 折り畳まれ部分 -->
-  </div>
+</div>
 
 </body>
 </html>
