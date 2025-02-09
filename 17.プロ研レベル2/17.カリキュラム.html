@@ -1,0 +1,3035 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>17.カリキュラム.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><strong><code>カリキュラム17</code></strong></p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>プロ研JavaScriptレベル2</title>
+</head>
+<style>
+p {
+  font-size: 16px;
+}
+
+h2{
+  display:inline;
+}
+</style>
+<body>
+    <h1>プロ研JavaScriptレベル2</h1>
+   <h2><b>試験概要</b></h2>
+   <table border="1" style="border-collapse: collapse;">
+		<tr>
+			<th>問題数</th>
+			<td>25問</td>
+		</tr>
+		<tr>
+			<th>試験時間</th>
+			<td>40分</td>
+		</tr>
+		<tr>
+			<th>合格ライン</th>
+			<td>60%(15問)</td>
+		</tr>
+	</table>
+  <br>
+   <h2><b>出題範囲</b></h2>
+<table border="1" style="border-collapse: collapse;">
+		<tr>
+			<th>区分</th>
+			<th>概念</th>
+			<th>JavaScript</th>
+		</tr>
+    	<tr>
+      <td>制御</td>
+      <td>反復処理(for文)</td>
+      <td>for()</td>
+		</tr>
+		<tr>
+			<td rowspan="5">演算子</td>
+			<td>文字列連結</td>
+      <td>"" + ""</td>
+		</tr>
+		<tr>
+			<td>論理積</td>
+			<td>&&</td>
+		</tr>
+		<tr>
+			<td>論理和</td>
+			<td>||</td>
+		</tr>
+		<tr>
+			<td>否定</td>
+			<td>！</td>
+		</tr>
+		<tr>
+			<td>不等価</td>
+			<td>！=</td>
+		</tr>
+		<tr>
+			<td rowspan="3">配列</td>
+			<td>配列宣言</td>
+			<td>let arr = [];</td>
+		</tr>
+		<tr>
+			<td>値の取得</td>
+			<td>arr[0]</td>
+		</tr>
+		<tr>
+			<td>配列の長さ</td>
+			<td>length</td>
+		</tr>
+		<tr>
+	</table>
+  <br>
+<h2><b>練習問題について</b></h2>
+<p>全部で50問ありますが、前半25問（問題1〜25）・後半25問（問題26〜50）という形で分けています。<br>
+まず前半25問を解いたら答え合わせをして、そのあと後半25問に進んでください。</p>
+<hr>
+<h1><b>前半</b></h1>
+<h2><b>問題1</b></h2>
+<p>「りんごとバナナ」出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruit1 = <span class="hljs-string">"りんご"</span>;
+<span class="hljs-keyword">let</span> fruit2 = <span class="hljs-string">"バナナ"</span>;
+
+<span class="hljs-built_in">console</span>.log(fruit1 <span class="hljs-string">"と"</span> fruit2)
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruit1 = <span class="hljs-string">"りんご"</span>;
+<span class="hljs-keyword">let</span> fruit2 = <span class="hljs-string">"バナナ"</span>;
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"fruit1 + と + fruit2"</span>)
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruit1 = <span class="hljs-string">"りんご"</span>;
+<span class="hljs-keyword">let</span> fruit2 = <span class="hljs-string">"バナナ"</span>;
+
+<span class="hljs-built_in">console</span>.log(fruit1 + <span class="hljs-string">"と"</span> + fruit2)
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruit1 = <span class="hljs-string">"りんご"</span>;
+<span class="hljs-keyword">let</span> fruit2 = <span class="hljs-string">"バナナ"</span>;
+
+<span class="hljs-built_in">console</span>.log(fruit1 &amp; <span class="hljs-string">"と"</span> &amp; fruit2)
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('1').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="1" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>③</h2>
+</div>
+<hr>
+<h2><b>問題2</b></h2>
+<p>このプログラムを実行した際に出力される結果を選択しなさい。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">"1"</span>,<span class="hljs-string">"2"</span>,<span class="hljs-string">"3"</span>];
+<span class="hljs-keyword">let</span> str = <span class="hljs-string">""</span>;
+
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i&lt; <span class="hljs-number">3</span>; i++){
+  <span class="hljs-keyword">if</span>(i !=<span class="hljs-number">2</span>){
+    str = str + arr[i];
+  }
+}
+<span class="hljs-built_in">console</span>.log(str);
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-number">3</span>
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-number">12</span>
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>+<span class="hljs-number">3</span>
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>+<span class="hljs-number">1</span>+<span class="hljs-number">2</span>
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('2').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="2" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題3</b></h2>
+<p>「このプールを使用できません」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-number">110</span>;
+
+<span class="hljs-keyword">if</span>((age &gt; <span class="hljs-number">7</span>) || (height == <span class="hljs-number">120</span>)){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"このプールを使用できます"</span>);
+}<span class="hljs-keyword">else</span>{
+  <span class="hljs-built_in">console</span>.log(このプールを使用できません);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-number">110</span>;
+
+<span class="hljs-keyword">if</span>((age &gt; <span class="hljs-number">7</span>) &amp;&amp; (height == <span class="hljs-number">120</span>)){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"このプールを使用できます"</span>);
+}<span class="hljs-keyword">else</span>{
+  <span class="hljs-built_in">console</span>.log(このプールを使用できません);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-number">110</span>;
+
+<span class="hljs-keyword">if</span>((age &gt; <span class="hljs-number">7</span>)(height == <span class="hljs-number">120</span>)){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"このプールを使用できます"</span>);
+}<span class="hljs-keyword">else</span>{
+  <span class="hljs-built_in">console</span>.log(このプールを使用できません);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-number">110</span>;
+
+<span class="hljs-keyword">if</span>((age &gt; <span class="hljs-number">7</span>) = (height == <span class="hljs-number">120</span>)){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"このプールを使用できます"</span>);
+}<span class="hljs-keyword">else</span>{
+  <span class="hljs-built_in">console</span>.log(このプールを使用できません);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('3').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="3" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題4</b></h2>
+<p>「乗り物に乗れます」出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ticket = <span class="hljs-string">"ある"</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-string">"130"</span>;
+
+<span class="hljs-keyword">if</span>((ticket != <span class="hljs-string">"ない"</span>)(height &gt; <span class="hljs-number">120</span>)){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"乗り物に乗れます"</span>);
+}<span class="hljs-keyword">else</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"乗り物に乗れません"</span>);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ticket = <span class="hljs-string">"ある"</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-string">"130"</span>;
+
+<span class="hljs-keyword">if</span>((ticket != <span class="hljs-string">"ない"</span>) &amp;&amp; (height &gt; <span class="hljs-number">120</span>)){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"乗り物に乗れます"</span>);
+}<span class="hljs-keyword">else</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"乗り物に乗れません"</span>);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ticket = <span class="hljs-string">"ある"</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-string">"130"</span>;
+
+<span class="hljs-keyword">if</span>((ticket == <span class="hljs-string">"ない"</span>)(height &gt; <span class="hljs-number">120</span>)){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"乗り物に乗れます"</span>);
+}<span class="hljs-keyword">else</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"乗り物に乗れません"</span>);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ticket = <span class="hljs-string">"ある"</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-string">"130"</span>;
+
+<span class="hljs-keyword">if</span>((ticket == <span class="hljs-string">"ない"</span>) &amp;&amp; (height &gt; <span class="hljs-number">120</span>)){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"乗り物に乗れます"</span>);
+}<span class="hljs-keyword">else</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"乗り物に乗れません"</span>);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('4').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="4" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題5</b></h2>
+<p>「換気をしてね」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> distance = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">let</span> time = <span class="hljs-number">25</span>;
+
+<span class="hljs-keyword">if</span> ((distance &lt; <span class="hljs-number">2</span>) || (time &gt; <span class="hljs-number">15</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"換気をしてね"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"手洗いとうがいを忘れないでね"</span>);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> distance = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">let</span> time = <span class="hljs-number">25</span>;
+
+<span class="hljs-keyword">if</span> ((distance &lt; <span class="hljs-number">2</span>) &amp;&amp; (time &gt; <span class="hljs-number">15</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"換気をしてね"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"手洗いとうがいを忘れないでね"</span>);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> distance = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">let</span> time = <span class="hljs-number">25</span>;
+
+<span class="hljs-keyword">if</span> ((distance &lt; <span class="hljs-number">2</span>) * (time &gt; <span class="hljs-number">15</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"換気をしてね"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"手洗いとうがいを忘れないでね"</span>);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> distance = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">let</span> time = <span class="hljs-number">25</span>;
+
+<span class="hljs-keyword">if</span> ((distance &lt; <span class="hljs-number">2</span>) !(time &gt; <span class="hljs-number">15</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"換気をしてね"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"手洗いとうがいを忘れないでね"</span>);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('5').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="5" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題6</b></h2>
+<p>「商品は購入可能です。」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> wallet = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">let</span> icCard = <span class="hljs-number">300</span>;
+<span class="hljs-keyword">let</span> price = <span class="hljs-number">150</span>;
+<span class="hljs-keyword">let</span> judge;
+
+<span class="hljs-keyword">if</span> ((wallet &gt; price) || (icCard &gt; price)) {
+    judge = <span class="hljs-string">"可能"</span>;
+} <span class="hljs-keyword">else</span> {
+    judge = <span class="hljs-string">"不可能"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"商品は購入"</span> + judge + <span class="hljs-string">"です。"</span>);
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> wallet = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">let</span> icCard = <span class="hljs-number">300</span>;
+<span class="hljs-keyword">let</span> price = <span class="hljs-number">150</span>;
+<span class="hljs-keyword">let</span> judge;
+
+<span class="hljs-keyword">if</span> ((wallet &gt; price) &amp;&amp; (icCard &gt; price)) {
+    judge = <span class="hljs-string">"可能"</span>;
+} <span class="hljs-keyword">else</span> {
+    judge = <span class="hljs-string">"不可能"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"商品は購入"</span> judge <span class="hljs-string">"です。"</span>);
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> wallet = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">let</span> icCard = <span class="hljs-number">300</span>;
+<span class="hljs-keyword">let</span> price = <span class="hljs-number">150</span>;
+<span class="hljs-keyword">let</span> judge;
+
+<span class="hljs-keyword">if</span> ((wallet &gt; price) || (icCard &gt; price)) {
+    judge = <span class="hljs-string">"可能"</span>;
+} <span class="hljs-keyword">else</span> {
+    judge = <span class="hljs-string">"不可能"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"商品は購入"</span> judge <span class="hljs-string">"です。"</span>);
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> wallet = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">let</span> icCard = <span class="hljs-number">300</span>;
+<span class="hljs-keyword">let</span> price = <span class="hljs-number">150</span>;
+<span class="hljs-keyword">let</span> judge;
+
+<span class="hljs-keyword">if</span> ((wallet &gt; price) &amp;&amp; (icCard &gt; price)) {
+    judge = <span class="hljs-string">"可能"</span>;
+} <span class="hljs-keyword">else</span> {
+    judge = <span class="hljs-string">"不可能"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"商品は購入"</span> + judge + <span class="hljs-string">"です。"</span>);
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('6').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="6" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題7</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。</p>
+<pre class="hljs"><code><div>ペンギンは海の生き物です
+ペンギンは鳥です
+イルカは海の生き物です
+カラスは鳥です
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> animal = [<span class="hljs-string">"ペンギン"</span>, <span class="hljs-string">"イルカ"</span>, <span class="hljs-string">"カラス"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">2</span>) {
+        <span class="hljs-built_in">console</span>.log(animal[i] + <span class="hljs-string">"は海の生き物です"</span>);
+    }
+    <span class="hljs-keyword">if</span> ((i == <span class="hljs-number">0</span>) || (i == <span class="hljs-number">2</span>)) {
+        <span class="hljs-built_in">console</span>.log(animal[i] + <span class="hljs-string">"は鳥です"</span>);
+    }
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> animal = [<span class="hljs-string">"ペンギン"</span>, <span class="hljs-string">"イルカ"</span>, <span class="hljs-string">"カラス"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (i != <span class="hljs-number">2</span>) {
+        <span class="hljs-built_in">console</span>.log(animal[i] + <span class="hljs-string">"は海の生き物です"</span>);
+    }
+    <span class="hljs-keyword">if</span> ((i == <span class="hljs-number">0</span>) &amp;&amp; (i == <span class="hljs-number">2</span>)) {
+        <span class="hljs-built_in">console</span>.log(animal[i] + <span class="hljs-string">"は鳥です"</span>);
+    }
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> animal = [<span class="hljs-string">"ペンギン"</span>, <span class="hljs-string">"イルカ"</span>, <span class="hljs-string">"カラス"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">2</span>) {
+        <span class="hljs-built_in">console</span>.log(animal[i] + <span class="hljs-string">"は海の生き物です"</span>);
+    }
+    <span class="hljs-keyword">if</span> ((i == <span class="hljs-number">0</span>) &amp;&amp; (i == <span class="hljs-number">2</span>)) {
+        <span class="hljs-built_in">console</span>.log(animal[i] + <span class="hljs-string">"は鳥です"</span>);
+    }
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> animal = [<span class="hljs-string">"ペンギン"</span>, <span class="hljs-string">"イルカ"</span>, <span class="hljs-string">"カラス"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (i != <span class="hljs-number">2</span>) {
+        <span class="hljs-built_in">console</span>.log(animal[i] + <span class="hljs-string">"は海の生き物です"</span>);
+    }
+    <span class="hljs-keyword">if</span> ((i == <span class="hljs-number">0</span>) || (i == <span class="hljs-number">2</span>)) {
+        <span class="hljs-built_in">console</span>.log(animal[i] + <span class="hljs-string">"は鳥です"</span>);
+    }
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('7').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="7" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>④</h2>
+</div>
+<hr>
+<h2><b>問題8</b></h2>
+<p>このプログラムを実行した際に出力される結果を選択しなさい。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> pieces = <span class="hljs-number">5</span>;  
+<span class="hljs-keyword">let</span> member = <span class="hljs-number">10</span>;  
+<span class="hljs-keyword">let</span> str;  
+
+<span class="hljs-keyword">if</span> (!(pieces / member &lt; <span class="hljs-number">1</span>)) {  
+    str = <span class="hljs-string">"足りる"</span>;  
+} <span class="hljs-keyword">else</span> {  
+    str = <span class="hljs-string">"足りない"</span>;  
+}  
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"人数分"</span> + str);  
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>人数分足りない
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>人数分
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>人数分足りる
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>人数分
+足りない
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('8').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="8" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題9</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。</p>
+<pre class="hljs"><code><div>numは<span class="hljs-number">2</span>ではない
+numは正の数である
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">if</span> (num != <span class="hljs-number">2</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"numは2ではない"</span>);
+}
+<span class="hljs-keyword">if</span> (num &lt; <span class="hljs-number">1</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"numは正の数である"</span>);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">if</span> (num != <span class="hljs-number">2</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"numは2ではない"</span>);
+}
+<span class="hljs-keyword">if</span> (!(num &lt; <span class="hljs-number">1</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"numは正の数である"</span>);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">if</span> (num == <span class="hljs-number">2</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"numは2ではない"</span>);
+}
+<span class="hljs-keyword">if</span> (!(num &lt; <span class="hljs-number">1</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"numは正の数である"</span>);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">if</span> (num == <span class="hljs-number">2</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"numは2ではない"</span>);
+}
+<span class="hljs-keyword">if</span> (num &lt; <span class="hljs-number">1</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"numは正の数である"</span>);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('9').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="9" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題10</b></h2>
+<p>このプログラムを実行した際に出力される結果を選択しなさい<br>
+※何も出力されない場合は"出力なし"とします</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> name = [<span class="hljs-string">"ケン"</span>, <span class="hljs-string">"ハナ"</span>, <span class="hljs-string">"マイク"</span>];
+<span class="hljs-keyword">let</span> count = <span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">if</span> (count != <span class="hljs-number">1</span>) {
+    <span class="hljs-built_in">console</span>.log(name[count]);
+}
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>出力なし
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>ハナ
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>マイク
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>エラー
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('10').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="10" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題11</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。</p>
+<pre class="hljs"><code><div>火
+水
+木
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weekday = [<span class="hljs-string">"月"</span>, <span class="hljs-string">"火"</span>, <span class="hljs-string">"水"</span>, <span class="hljs-string">"木"</span>, <span class="hljs-string">"金"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>) {
+    <span class="hljs-keyword">if</span> ((i &gt; <span class="hljs-number">0</span>) &amp;&amp; (i &lt; <span class="hljs-number">4</span>)) {
+        <span class="hljs-built_in">console</span>.log(weekday[i]);
+    }
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weekday = [<span class="hljs-string">"月"</span>, <span class="hljs-string">"火"</span>, <span class="hljs-string">"水"</span>, <span class="hljs-string">"木"</span>, <span class="hljs-string">"金"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> ((i &gt; <span class="hljs-number">0</span>) &amp;&amp; (i &lt; <span class="hljs-number">4</span>)){
+        <span class="hljs-built_in">console</span>.log(weekday[i]);
+    }
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weekday = [<span class="hljs-string">"月"</span>, <span class="hljs-string">"火"</span>, <span class="hljs-string">"水"</span>, <span class="hljs-string">"木"</span>, <span class="hljs-string">"金"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>) {
+    <span class="hljs-keyword">if</span> ((i &gt; <span class="hljs-number">0</span>) || (i &lt; <span class="hljs-number">4</span>)) {
+        <span class="hljs-built_in">console</span>.log(weekday[i]);
+    }
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weekday = [<span class="hljs-string">"月"</span>, <span class="hljs-string">"火"</span>, <span class="hljs-string">"水"</span>, <span class="hljs-string">"木"</span>, <span class="hljs-string">"金"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> ((i &gt; <span class="hljs-number">0</span>) || (i &lt; <span class="hljs-number">4</span>)) {
+        <span class="hljs-built_in">console</span>.log(weekday[i]);
+    }
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('11').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="11" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題12</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。</p>
+<pre class="hljs"><code><div><span class="hljs-number">0</span>
+<span class="hljs-number">1</span>
+<span class="hljs-number">4</span>
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> ((i &lt; <span class="hljs-number">2</span>) || (i == <span class="hljs-number">4</span>)) {
+        <span class="hljs-built_in">console</span>.log(i);
+    }
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) {
+    <span class="hljs-keyword">if</span> ((i &lt; <span class="hljs-number">2</span>) || (i == <span class="hljs-number">4</span>)) {
+        <span class="hljs-built_in">console</span>.log(i);
+    }
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> ((i &lt; <span class="hljs-number">2</span>) &amp;&amp; (i == <span class="hljs-number">4</span>)) {
+        <span class="hljs-built_in">console</span>.log(i);
+    }
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) {
+    <span class="hljs-keyword">if</span> ((i &lt; <span class="hljs-number">2</span>) &amp;&amp; (i == <span class="hljs-number">4</span>)) {
+        <span class="hljs-built_in">console</span>.log(i);
+    }
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('12').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="12" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題13</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。</p>
+<pre class="hljs"><code><div>ジャンプ！
+ジャンプ！
+<span class="hljs-number">2</span>回ジャンプしたよ
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> comment = <span class="hljs-string">"ジャンプしよう"</span>;
+<span class="hljs-keyword">if</span> (comment == <span class="hljs-string">"休憩しよう"</span>) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジャンプ！"</span>);
+    }
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"2回ジャンプしたよ"</span>);
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> comment = <span class="hljs-string">"ジャンプしよう"</span>;
+<span class="hljs-keyword">if</span> (!(comment == <span class="hljs-string">"休憩しよう"</span>)) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジャンプ！"</span>);
+    }
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"2回ジャンプしたよ"</span>);
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> comment = <span class="hljs-string">"ジャンプしよう"</span>;
+<span class="hljs-keyword">if</span> (!(comment == <span class="hljs-string">"休憩しよう"</span>)) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジャンプ！"</span>);
+    }
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"2回ジャンプしたよ"</span>);
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> comment = <span class="hljs-string">"ジャンプしよう"</span>;
+<span class="hljs-keyword">if</span> (comment == <span class="hljs-string">"休憩しよう"</span>) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジャンプ！"</span>);
+    }
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"2回ジャンプしたよ"</span>);
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('13').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="13" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>③</h2>
+</div>
+<hr>
+<h2><b>問題14</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。</p>
+<pre class="hljs"><code><div>夏と言えば海
+夏と言えば山
+夏と言えばかき氷
+夏と言えば花火
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> arr = {<span class="hljs-string">"海"</span>, <span class="hljs-string">"山"</span>, <span class="hljs-string">"かき氷"</span>, <span class="hljs-string">"花火"</span>};
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"夏と言えば"</span> + arr[i]);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">"海"</span>, <span class="hljs-string">"山"</span>, <span class="hljs-string">"かき氷"</span>, <span class="hljs-string">"花火"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"夏と言えば"</span> + arr[i]);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> arr = {<span class="hljs-string">"海"</span>, <span class="hljs-string">"山"</span>, <span class="hljs-string">"かき氷"</span>, <span class="hljs-string">"花火"</span>};
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"夏と言えば"</span> arr[i]);
+}
+
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">"海"</span>, <span class="hljs-string">"山"</span>, <span class="hljs-string">"かき氷"</span>, <span class="hljs-string">"花火"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"夏と言えば"</span>  arr[i]);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('14').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="14" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題15</b></h2>
+<p>「火曜日は雨」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weekday = [<span class="hljs-string">"月曜日"</span>, <span class="hljs-string">"火曜日"</span>, <span class="hljs-string">"水曜日"</span>];
+<span class="hljs-keyword">let</span> weather = [<span class="hljs-string">"晴れ"</span>, <span class="hljs-string">"雨"</span>, <span class="hljs-string">"くもり"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> ((weekday[<span class="hljs-number">1</span>] == <span class="hljs-string">"火曜日"</span>) || (weather[i] == <span class="hljs-string">"雨"</span>)) {
+        <span class="hljs-built_in">console</span>.log(weekday[<span class="hljs-number">1</span>] + <span class="hljs-string">"は"</span> + weather[i]);
+    }
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weekday = [<span class="hljs-string">"月曜日"</span>, <span class="hljs-string">"火曜日"</span>, <span class="hljs-string">"水曜日"</span>];
+<span class="hljs-keyword">let</span> weather = [<span class="hljs-string">"晴れ"</span>, <span class="hljs-string">"雨"</span>, <span class="hljs-string">"くもり"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> ((weekday[<span class="hljs-number">1</span>] == <span class="hljs-string">"火曜日"</span>) &amp;&amp; (weather[i] == <span class="hljs-string">"雨"</span>)) {
+        <span class="hljs-built_in">console</span>.log(weekday[<span class="hljs-number">1</span>] + <span class="hljs-string">"は"</span> + weather[i]);
+    }
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weekday = <span class="hljs-string">"月曜日"</span>, <span class="hljs-string">"火曜日"</span>, <span class="hljs-string">"水曜日"</span>;
+<span class="hljs-keyword">let</span> weather = <span class="hljs-string">"晴れ"</span>, <span class="hljs-string">"雨"</span>, <span class="hljs-string">"くもり"</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> ((weekday[<span class="hljs-number">1</span>] == <span class="hljs-string">"火曜日"</span>) &amp;&amp; (weather[i] == <span class="hljs-string">"雨"</span>)) {
+        <span class="hljs-built_in">console</span>.log(weekday[<span class="hljs-number">1</span>] + <span class="hljs-string">"は"</span> + weather[i]);
+    }
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weekday = <span class="hljs-string">"月曜日"</span>, <span class="hljs-string">"火曜日"</span>, <span class="hljs-string">"水曜日"</span>;
+<span class="hljs-keyword">let</span> weather = <span class="hljs-string">"晴れ"</span>, <span class="hljs-string">"雨"</span>, <span class="hljs-string">"くもり"</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> ((weekday[<span class="hljs-number">1</span>] == <span class="hljs-string">"火曜日"</span>) || (weather[i] == <span class="hljs-string">"雨"</span>)) {
+        <span class="hljs-built_in">console</span>.log(weekday[<span class="hljs-number">1</span>] + <span class="hljs-string">"は"</span> + weather[i]);
+    }
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('15').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="15" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題16</b></h2>
+<p>「二郎は馬に乗ることができます」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-number">90</span>;
+<span class="hljs-keyword">let</span> friends = <span class="hljs-string">"太郎"</span>, <span class="hljs-string">"花子"</span>, <span class="hljs-string">"二郎"</span>;
+
+<span class="hljs-keyword">if</span> ((age &gt; <span class="hljs-number">4</span>) &amp;&amp; (height &gt; <span class="hljs-number">100</span>)) {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">2</span>] + <span class="hljs-string">"は馬に乗ることができます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">2</span>] + <span class="hljs-string">"は馬に乗ることができません"</span>);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-number">90</span>;
+<span class="hljs-keyword">let</span> friends = [<span class="hljs-string">"太郎"</span>, <span class="hljs-string">"花子"</span>, <span class="hljs-string">"二郎"</span>];
+
+<span class="hljs-keyword">if</span> ((age &gt; <span class="hljs-number">4</span>) &amp;&amp; (height &gt; <span class="hljs-number">100</span>)) {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">2</span>] + <span class="hljs-string">"は馬に乗ることができます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">2</span>] + <span class="hljs-string">"は馬に乗ることができません"</span>);
+}
+
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-number">90</span>;
+<span class="hljs-keyword">let</span> friends = [<span class="hljs-string">"太郎"</span>, <span class="hljs-string">"花子"</span>, <span class="hljs-string">"二郎"</span>];
+
+<span class="hljs-keyword">if</span> ((age &gt; <span class="hljs-number">4</span>) || (height &gt; <span class="hljs-number">100</span>)) {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">2</span>] + <span class="hljs-string">"は馬に乗ることができます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">2</span>] + <span class="hljs-string">"は馬に乗ることができません"</span>);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-number">90</span>;
+<span class="hljs-keyword">let</span> friends = <span class="hljs-string">"太郎"</span>, <span class="hljs-string">"花子"</span>, <span class="hljs-string">"二郎"</span>;
+
+<span class="hljs-keyword">if</span> ((age &gt; <span class="hljs-number">4</span>) || (height &gt; <span class="hljs-number">100</span>)) {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">2</span>] + <span class="hljs-string">"は馬に乗ることができます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">2</span>] + <span class="hljs-string">"は馬に乗ることができません"</span>);
+}
+
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('16').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="16" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>③</h2>
+</div>
+<hr>
+<h2><b>問題17</b></h2>
+<p>「ストロベリー」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> flavors = [<span class="hljs-string">"バニラ"</span>, <span class="hljs-string">"チョコ"</span>, <span class="hljs-string">"抹茶"</span>, <span class="hljs-string">"ストロベリー"</span>];
+<span class="hljs-built_in">console</span>.log(flavors[<span class="hljs-number">4</span>]);
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> flavors = [<span class="hljs-string">"バニラ"</span>, <span class="hljs-string">"チョコ"</span>, <span class="hljs-string">"抹茶"</span>, <span class="hljs-string">"ストロベリー"</span>];
+<span class="hljs-built_in">console</span>.log(flavors(<span class="hljs-number">4</span>));
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> flavors = [<span class="hljs-string">"バニラ"</span>, <span class="hljs-string">"チョコ"</span>, <span class="hljs-string">"抹茶"</span>, <span class="hljs-string">"ストロベリー"</span>];
+<span class="hljs-built_in">console</span>.log(flavors[<span class="hljs-number">3</span>]);
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> flavors = [<span class="hljs-string">"バニラ"</span>, <span class="hljs-string">"チョコ"</span>, <span class="hljs-string">"抹茶"</span>, <span class="hljs-string">"ストロベリー"</span>];
+<span class="hljs-built_in">console</span>.log(flavors(<span class="hljs-number">3</span>));
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('17').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="17" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>③</h2>
+</div>
+<hr>
+<h2><b>問題18</b></h2>
+<p>このプログラムを実行した際に出力される結果を選択しなさい。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> name = [<span class="hljs-string">"太郎"</span>, <span class="hljs-string">"花子"</span>, <span class="hljs-string">"次郎"</span>];
+<span class="hljs-keyword">let</span> num = <span class="hljs-number">5</span>;
+
+<span class="hljs-keyword">if</span> (num != <span class="hljs-number">10</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"名前は"</span>);
+}
+<span class="hljs-built_in">console</span>.log(name[<span class="hljs-number">1</span>]);
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>名前は
+太郎
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>花子
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>太郎
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>名前は
+花子
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('18').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="18" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>④</h2>
+</div>
+<hr>
+<h2><b>問題19</b></h2>
+<p>「たかしと太郎」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">let</span> friends = [<span class="hljs-string">"たかし"</span>, <span class="hljs-string">"太郎"</span>, <span class="hljs-string">"花子"</span>];
+<span class="hljs-keyword">if</span> (age == <span class="hljs-number">15</span>) {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">2</span>]);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">0</span>] + <span class="hljs-string">"と"</span> + friends[<span class="hljs-number">1</span>]);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">let</span> friends = [<span class="hljs-string">"たかし"</span>, <span class="hljs-string">"太郎"</span>, <span class="hljs-string">"花子"</span>];
+<span class="hljs-keyword">if</span> (age == <span class="hljs-number">15</span>) {
+    <span class="hljs-built_in">console</span>.log(friends <span class="hljs-number">2</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(friends <span class="hljs-number">0</span>  + <span class="hljs-string">"と"</span> + friends <span class="hljs-number">1</span> );
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">let</span> friends = [<span class="hljs-string">"たかし"</span>, <span class="hljs-string">"太郎"</span>, <span class="hljs-string">"花子"</span>];
+<span class="hljs-keyword">if</span> (!(age == <span class="hljs-number">15</span>)) {
+    <span class="hljs-built_in">console</span>.log(friends <span class="hljs-number">2</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(friends <span class="hljs-number">0</span>  + <span class="hljs-string">"と"</span> + friends <span class="hljs-number">1</span> );
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> age = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">let</span> friends = [<span class="hljs-string">"たかし"</span>, <span class="hljs-string">"太郎"</span>, <span class="hljs-string">"花子"</span>];
+<span class="hljs-keyword">if</span> (!(age == <span class="hljs-number">15</span>)) {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">2</span>]);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(friends[<span class="hljs-number">0</span>] + <span class="hljs-string">"と"</span> + friends[<span class="hljs-number">1</span>]);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('19').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="19" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>④</h2>
+</div>
+<hr>
+<h2><b>問題20</b></h2>
+<p>「6」と出力されるプログラムを選択しなさい。<br>
+※ arr.length は配列の長さを返すコードである</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">let</span> max = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length;) {
+    <span class="hljs-keyword">if</span> (max &lt; array[i]) {
+        max = array[i];
+    }
+}
+<span class="hljs-built_in">console</span>.log(max);
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">let</span> max = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length; ) {
+    <span class="hljs-keyword">if</span> (max &lt; array) {
+        max = array;
+    }
+}
+<span class="hljs-built_in">console</span>.log(max);
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">let</span> max = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) {
+    <span class="hljs-keyword">if</span> (max &lt; array[i]) {
+        max = array[i];
+    }
+}
+<span class="hljs-built_in">console</span>.log(max);
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">let</span> max = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) {
+    <span class="hljs-keyword">if</span> (max &lt; array[i]) {
+        max = array;
+    }
+}
+<span class="hljs-built_in">console</span>.log(max);
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('20').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="20" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>③</h2>
+</div>
+<hr>
+<h2><b>問題21</b></h2>
+<p>「好きな色は青」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> colors = <span class="hljs-string">"赤"</span>, <span class="hljs-string">"青"</span>, <span class="hljs-string">"黄"</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"好きな色は"</span> + colors[<span class="hljs-number">1</span>]);
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> colors = <span class="hljs-string">"赤"</span>, <span class="hljs-string">"青"</span>, <span class="hljs-string">"黄"</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"好きな色は"</span> + colors = <span class="hljs-number">1</span>);
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> colors = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"青"</span>, <span class="hljs-string">"黄"</span>];
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"好きな色は"</span> + colors[<span class="hljs-number">1</span>]);
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> colors = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"青"</span>, <span class="hljs-string">"黄"</span>];
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"好きな色は"</span> + colors = <span class="hljs-number">1</span>);
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('21').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="21" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>③</h2>
+</div>
+<hr>
+<h2><b>問題22</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。<br>
+※ arr.length は配列の長さを返すコードである。
+</p>
+<pre class="hljs"><code><div>買った果物の個数は 
+<span class="hljs-number">3</span>
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"りんご"</span>, <span class="hljs-string">"ぶどう"</span>, <span class="hljs-string">"もも"</span>];
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"買った果物の個数は"</span>);
+<span class="hljs-built_in">console</span>.log(length.fruits);
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"りんご"</span>, <span class="hljs-string">"ぶどう"</span>, <span class="hljs-string">"もも"</span>];
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"買った果物の個数は"</span>);
+<span class="hljs-built_in">console</span>.log(fruits.length);
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"りんご"</span>, <span class="hljs-string">"ぶどう"</span>, <span class="hljs-string">"もも"</span>];
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"買った果物の個数は"</span>);
+<span class="hljs-built_in">console</span>.log(length);
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"りんご"</span>, <span class="hljs-string">"ぶどう"</span>, <span class="hljs-string">"もも"</span>];
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"買った果物の個数は"</span>);
+<span class="hljs-built_in">console</span>.log(fruits);
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('22').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="22" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題23</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。<br>
+※ arr.length は配列の長さの値を返すコードである</p>
+<pre class="hljs"><code><div>売られている果物の種類の数は
+<span class="hljs-number">3</span>
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"りんご"</span>, <span class="hljs-string">"メロン"</span>, <span class="hljs-string">"ぶどう"</span>];
+<span class="hljs-keyword">let</span> price = <span class="hljs-number">100</span>;
+
+<span class="hljs-keyword">if</span> ((price &lt; <span class="hljs-number">200</span>) || (price &gt; <span class="hljs-number">150</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"買う果物の種類の数は"</span>);
+    <span class="hljs-built_in">console</span>.log(fruits);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"売られている果物の種類の数は"</span>);
+    <span class="hljs-built_in">console</span>.log(fruits);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"りんご"</span>, <span class="hljs-string">"メロン"</span>, <span class="hljs-string">"ぶどう"</span>];
+<span class="hljs-keyword">let</span> price = <span class="hljs-number">100</span>;
+
+<span class="hljs-keyword">if</span> ((price &lt; <span class="hljs-number">200</span>) || (price &gt; <span class="hljs-number">150</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"買う果物の種類の数は"</span>);
+    <span class="hljs-built_in">console</span>.log(fruits.length);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"売られている果物の種類の数は"</span>);
+    <span class="hljs-built_in">console</span>.log(fruits.length);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"りんご"</span>, <span class="hljs-string">"メロン"</span>, <span class="hljs-string">"ぶどう"</span>];
+<span class="hljs-keyword">let</span> price = <span class="hljs-number">100</span>;
+
+<span class="hljs-keyword">if</span> ((price &lt; <span class="hljs-number">200</span>) &amp;&amp; (price &gt; <span class="hljs-number">150</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"買う果物の種類の数は"</span>);
+    <span class="hljs-built_in">console</span>.log(fruits);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"売られている果物の種類の数は"</span>);
+    <span class="hljs-built_in">console</span>.log(fruits);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"りんご"</span>, <span class="hljs-string">"メロン"</span>, <span class="hljs-string">"ぶどう"</span>];
+<span class="hljs-keyword">let</span> price = <span class="hljs-number">100</span>;
+
+<span class="hljs-keyword">if</span> ((price &lt; <span class="hljs-number">200</span>) &amp;&amp; (price &gt; <span class="hljs-number">150</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"買う果物の種類の数は"</span>);
+    <span class="hljs-built_in">console</span>.log(fruits.length);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"売られている果物の種類の数は"</span>);
+    <span class="hljs-built_in">console</span>.log(fruits.length);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('23').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="23" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>④</h2>
+</div>
+<hr>
+<h2><b>問題24</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。<br>
+※ arr.length は配列の長さの値を返すコードである</p>
+<pre class="hljs"><code><div>タンポポ
+ヒマワリ
+アサガオ
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> flower = [<span class="hljs-string">"タンポポ"</span>, <span class="hljs-string">"ヒマワリ"</span>, <span class="hljs-string">"アサガオ"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &gt; flower; i++) {
+    <span class="hljs-built_in">console</span>.log(flower[i]);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> flower = [<span class="hljs-string">"タンポポ"</span>, <span class="hljs-string">"ヒマワリ"</span>, <span class="hljs-string">"アサガオ"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &gt; flower.length; i++) {
+    <span class="hljs-built_in">console</span>.log(flower[i]);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> flower = [<span class="hljs-string">"タンポポ"</span>, <span class="hljs-string">"ヒマワリ"</span>, <span class="hljs-string">"アサガオ"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; flower; i++) {
+    <span class="hljs-built_in">console</span>.log(flower[i]);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> flower = [<span class="hljs-string">"タンポポ"</span>, <span class="hljs-string">"ヒマワリ"</span>, <span class="hljs-string">"アサガオ"</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; flower.length; i++) {
+    <span class="hljs-built_in">console</span>.log(flower[i]);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('24').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="24" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>④</h2>
+</div>
+<hr>
+<h2><b>問題25</b></h2>
+<p>「あか」と出力されるプログラムを選択しなさい。<br>
+※ arr.length は配列の長さを返すコードである</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> color = [<span class="hljs-string">"あか"</span>, <span class="hljs-string">"みどり"</span>];
+<span class="hljs-keyword">if</span> (color.length == <span class="hljs-number">3</span>) {
+    <span class="hljs-built_in">console</span>.log(color[<span class="hljs-number">0</span>]);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(color[<span class="hljs-number">1</span>]);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> color = [<span class="hljs-string">"あか"</span> <span class="hljs-string">"みどり"</span>];
+<span class="hljs-keyword">if</span> (color.length == <span class="hljs-number">3</span>) {
+    <span class="hljs-built_in">console</span>.log(color[<span class="hljs-number">0</span>]);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(color[<span class="hljs-number">1</span>]);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> color = [<span class="hljs-string">"あか"</span> <span class="hljs-string">"みどり"</span>];
+<span class="hljs-keyword">if</span> (color.length == <span class="hljs-number">2</span>) {
+    <span class="hljs-built_in">console</span>.log(color[<span class="hljs-number">0</span>]);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(color[<span class="hljs-number">1</span>]);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> color = [<span class="hljs-string">"あか"</span>, <span class="hljs-string">"みどり"</span>];
+<span class="hljs-keyword">if</span> (color.length == <span class="hljs-number">2</span>) {
+    <span class="hljs-built_in">console</span>.log(color[<span class="hljs-number">0</span>]);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(color[<span class="hljs-number">1</span>]);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('25').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="25" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>④</h2>
+</div>
+<hr>
+<h1><b>後半</b></h1>
+<h2><b>問題26</b></h2>
+<p>このプログラムを実行した際に出力される結果を選択しなさい。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weather = <span class="hljs-string">"くもり"</span>;
+
+<span class="hljs-keyword">if</span> (weather != <span class="hljs-string">"晴れ"</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"天気は晴れではありません"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"天気は晴れです"</span>);
+}
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>天気は晴れです
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>天気は晴れではありません
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>晴れ
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>くもり
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('26').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="26" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題27</b></h2>
+<p>このプログラムを実行した際に出力される結果を選択しなさい。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> months = [<span class="hljs-string">"8月"</span>, <span class="hljs-string">"9月"</span>, <span class="hljs-string">"10月"</span>];
+<span class="hljs-keyword">let</span> lastDay = [<span class="hljs-string">"31日"</span>, <span class="hljs-string">"30日"</span>, <span class="hljs-string">"31日"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (lastDay[i] != <span class="hljs-string">"31日"</span>) {
+        <span class="hljs-built_in">console</span>.log(months[i] + <span class="hljs-string">"の最後は"</span> + lastDay[i]);
+    }
+}
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-number">9</span>月+の最後は+<span class="hljs-number">30</span>日
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-number">9</span>月の最後は<span class="hljs-number">30</span>日
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-number">8</span>月+の最後は+<span class="hljs-number">31</span>日
+<span class="hljs-number">10</span>月+の最後は+<span class="hljs-number">31</span>日
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-number">8</span>月の最後は<span class="hljs-number">31</span>日
+<span class="hljs-number">10</span>月の最後は<span class="hljs-number">31</span>日
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('27').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="27" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題28</b></h2>
+<p>「試験結果は不合格でした」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> score1 = <span class="hljs-number">70</span>;
+<span class="hljs-keyword">let</span> score2 = <span class="hljs-number">40</span>;
+<span class="hljs-keyword">let</span> result;
+
+<span class="hljs-keyword">if</span> ((score1 &gt; <span class="hljs-number">50</span>) || (score2 &gt; <span class="hljs-number">50</span>)) {
+    result = <span class="hljs-string">"合格"</span>;
+} <span class="hljs-keyword">else</span> {
+    result = <span class="hljs-string">"不合格"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"試験結果は"</span> * result * <span class="hljs-string">"でした"</span>);
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> score1 = <span class="hljs-number">70</span>;
+<span class="hljs-keyword">let</span> score2 = <span class="hljs-number">40</span>;
+<span class="hljs-keyword">let</span> result;
+
+<span class="hljs-keyword">if</span> ((score1 &gt; <span class="hljs-number">50</span>) || (score2 &gt; <span class="hljs-number">50</span>)) {
+    result = <span class="hljs-string">"合格"</span>;
+} <span class="hljs-keyword">else</span> {
+    result = <span class="hljs-string">"不合格"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"試験結果は"</span> + result + <span class="hljs-string">"でした"</span>);
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> score1 = <span class="hljs-number">70</span>;
+<span class="hljs-keyword">let</span> score2 = <span class="hljs-number">40</span>;
+<span class="hljs-keyword">let</span> result;
+
+<span class="hljs-keyword">if</span> ((score1 &gt; <span class="hljs-number">50</span>) &amp;&amp; (score2 &gt; <span class="hljs-number">50</span>)) {
+    result = <span class="hljs-string">"合格"</span>;
+} <span class="hljs-keyword">else</span> {
+    result = <span class="hljs-string">"不合格"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"試験結果は"</span> * result * <span class="hljs-string">"でした"</span>);
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> score1 = <span class="hljs-number">70</span>;
+<span class="hljs-keyword">let</span> score2 = <span class="hljs-number">40</span>;
+<span class="hljs-keyword">let</span> result;
+
+<span class="hljs-keyword">if</span> ((score1 &gt; <span class="hljs-number">50</span>) &amp;&amp; (score2 &gt; <span class="hljs-number">50</span>)) {
+    result = <span class="hljs-string">"合格"</span>;
+} <span class="hljs-keyword">else</span> {
+    result = <span class="hljs-string">"不合格"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"試験結果は"</span> + result + <span class="hljs-string">"でした"</span>);
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('28').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="28" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>④</h2>
+</div>
+<hr>
+<h2><b>問題29</b></h2>
+<p>「定員オーバーです」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> weight = <span class="hljs-number">900</span>;
+
+<span class="hljs-keyword">if</span> ((num &gt; <span class="hljs-number">11</span>) &amp;&amp; (weight &gt; <span class="hljs-number">800</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"定員オーバーです"</span>);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> weight = <span class="hljs-number">900</span>;
+
+<span class="hljs-keyword">if</span> ((num &gt; <span class="hljs-number">11</span>) || (weight &gt; <span class="hljs-number">800</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"定員オーバーです"</span>);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> weight = <span class="hljs-number">900</span>;
+
+<span class="hljs-keyword">if</span> ((num &gt; <span class="hljs-number">11</span>) == (weight &gt; <span class="hljs-number">800</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"定員オーバーです"</span>);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> weight = <span class="hljs-number">900</span>;
+
+<span class="hljs-keyword">if</span> ((num &gt; <span class="hljs-number">11</span>) = (weight &gt; <span class="hljs-number">800</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"定員オーバーです"</span>);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('29').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="29" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題30</b></h2>
+<p>「ジェットコースターに乗れます」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> grade = <span class="hljs-string">"小学生"</span>;
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">6</span>;
+
+<span class="hljs-keyword">if</span> ((grade == <span class="hljs-string">"幼児"</span>) &amp;&amp; (age &gt; <span class="hljs-number">6</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジェットコースターに乗れます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジェットコースターに乗れません"</span>);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> grade = <span class="hljs-string">"小学生"</span>;
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">6</span>;
+
+<span class="hljs-keyword">if</span> ((grade != <span class="hljs-string">"幼児"</span>) || (age &gt; <span class="hljs-number">6</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジェットコースターに乗れます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジェットコースターに乗れません"</span>);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> grade = <span class="hljs-string">"小学生"</span>;
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">6</span>;
+
+<span class="hljs-keyword">if</span> ((grade != <span class="hljs-string">"幼児"</span>) &amp;&amp; (age &gt; <span class="hljs-number">6</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジェットコースターに乗れます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジェットコースターに乗れません"</span>);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> grade = <span class="hljs-string">"小学生"</span>;
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">6</span>;
+
+<span class="hljs-keyword">if</span> ((grade == <span class="hljs-string">"幼児"</span>) || (age &gt; <span class="hljs-number">6</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジェットコースターに乗れます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ジェットコースターに乗れません"</span>);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('30').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="30" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題31</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。</p>
+<pre class="hljs"><code><div>花火大会は開催します
+B席に座ります
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weather = <span class="hljs-string">"晴れ"</span>;
+
+<span class="hljs-keyword">if</span> ((weather == <span class="hljs-string">"晴れ"</span>) || (weather == <span class="hljs-string">"くもり"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"花火大会は開催します"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"花火大会は中止します"</span>);
+}
+
+<span class="hljs-keyword">let</span> ticket = <span class="hljs-string">"ある"</span>;
+<span class="hljs-keyword">let</span> seat = <span class="hljs-string">"B"</span>;
+
+<span class="hljs-keyword">if</span> ((ticket == <span class="hljs-string">"ある"</span>) &amp;&amp; (seat == <span class="hljs-string">"A"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"A席に座ります"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"B席に座ります"</span>);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weather = <span class="hljs-string">"晴れ"</span>;
+
+<span class="hljs-keyword">if</span> ((weather == <span class="hljs-string">"晴れ"</span>) || (weather == <span class="hljs-string">"くもり"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"花火大会は開催します"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"花火大会は中止します"</span>);
+}
+
+<span class="hljs-keyword">let</span> ticket = <span class="hljs-string">"ある"</span>;
+<span class="hljs-keyword">let</span> seat = <span class="hljs-string">"B"</span>;
+
+<span class="hljs-keyword">if</span> ((ticket == <span class="hljs-string">"ある"</span>) || (seat == <span class="hljs-string">"A"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"A席に座ります"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"B席に座ります"</span>);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weather = <span class="hljs-string">"晴れ"</span>;
+
+<span class="hljs-keyword">if</span> ((weather == <span class="hljs-string">"晴れ"</span>) &amp;&amp; (weather == <span class="hljs-string">"くもり"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"花火大会は開催します"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"花火大会は中止します"</span>);
+}
+
+<span class="hljs-keyword">let</span> ticket = <span class="hljs-string">"ある"</span>;
+<span class="hljs-keyword">let</span> seat = <span class="hljs-string">"B"</span>;
+
+<span class="hljs-keyword">if</span> ((ticket == <span class="hljs-string">"ある"</span>) &amp;&amp; (seat == <span class="hljs-string">"A"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"A席に座ります"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"B席に座ります"</span>);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> weather = <span class="hljs-string">"晴れ"</span>;
+
+<span class="hljs-keyword">if</span> ((weather == <span class="hljs-string">"晴れ"</span>) &amp;&amp; (weather == <span class="hljs-string">"くもり"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"花火大会は開催します"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"花火大会は中止します"</span>);
+}
+
+<span class="hljs-keyword">let</span> ticket = <span class="hljs-string">"ある"</span>;
+<span class="hljs-keyword">let</span> seat = <span class="hljs-string">"B"</span>;
+
+<span class="hljs-keyword">if</span> ((ticket == <span class="hljs-string">"ある"</span>) || (seat == <span class="hljs-string">"A"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"A席に座ります"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"B席に座ります"</span>);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('31').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="31" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題32</b></h2>
+<p>このプログラムを実行した際に出力される結果を選択しなさい。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"バナナ"</span>, <span class="hljs-string">"りんご"</span>, <span class="hljs-string">"オレンジ"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (!(i == <span class="hljs-number">1</span>)) {
+        <span class="hljs-built_in">console</span>.log(fruits[i]);
+    }
+}
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>バナナ
+オレンジ
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>りんご
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>バナナ
+りんご
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div>オレンジ
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('32').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="32" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題33</b></h2>
+<p>「あなたは合格です」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> score = <span class="hljs-number">70</span>;
+<span class="hljs-keyword">let</span> judge;
+
+<span class="hljs-keyword">if</span> (score &lt; <span class="hljs-number">60</span>) {
+    judge = <span class="hljs-string">"合格"</span>;
+} <span class="hljs-keyword">else</span> {
+    judge = <span class="hljs-string">"不合格"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"あなたは"</span> + judge + <span class="hljs-string">"です"</span>);
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> score = <span class="hljs-number">70</span>;
+<span class="hljs-keyword">let</span> judge;
+
+<span class="hljs-keyword">if</span> (!(score &lt; <span class="hljs-number">60</span>)) {
+    judge = <span class="hljs-string">"合格"</span>;
+} <span class="hljs-keyword">else</span> {
+    judge = <span class="hljs-string">"不合格"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"あなたは"</span> + judge + <span class="hljs-string">"です"</span>);
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> score = <span class="hljs-number">70</span>;
+<span class="hljs-keyword">let</span> judge;
+
+<span class="hljs-keyword">if</span> (!(score &lt; <span class="hljs-number">60</span>)) {
+    judge = <span class="hljs-string">"合格"</span>;
+} <span class="hljs-keyword">else</span> {
+    judge = <span class="hljs-string">"不合格"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"あなたは "</span> judge <span class="hljs-string">"です"</span>);
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> score = <span class="hljs-number">70</span>;
+<span class="hljs-keyword">let</span> judge;
+
+<span class="hljs-keyword">if</span> (score &lt; <span class="hljs-number">60</span>) {
+    judge = <span class="hljs-string">"合格"</span>;
+} <span class="hljs-keyword">else</span> {
+    judge = <span class="hljs-string">"不合格"</span>;
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"あなたは"</span> judge <span class="hljs-string">"です"</span>);
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('33').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="33" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題34</b></h2>
+<p>このプログラムを実行した際に出力される結果を選択しなさい。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+    <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">2</span> &amp;&amp; i &lt; <span class="hljs-number">8</span>) {
+        <span class="hljs-keyword">if</span> (!(i == <span class="hljs-number">5</span>)) {
+            <span class="hljs-built_in">console</span>.log(i);
+        }
+    }
+}
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-number">3</span>  
+<span class="hljs-number">4</span>  
+<span class="hljs-number">6</span>  
+<span class="hljs-number">7</span>  
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-number">5</span>  
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-number">0</span>  
+<span class="hljs-number">1</span>  
+<span class="hljs-number">2</span>  
+<span class="hljs-number">3</span>  
+<span class="hljs-number">4</span>  
+<span class="hljs-number">6</span>  
+<span class="hljs-number">7</span>  
+<span class="hljs-number">8</span>  
+<span class="hljs-number">9</span>  
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-number">3</span>  
+<span class="hljs-number">4</span>  
+<span class="hljs-number">5</span>  
+<span class="hljs-number">6</span>  
+<span class="hljs-number">7</span>  
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('34').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="34" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題35</b></h2>
+<p>「10」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    num = num + i;
+}
+<span class="hljs-built_in">console</span>.log(num);
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &gt; <span class="hljs-number">5</span>; i++) {
+    num = num + i;
+}
+<span class="hljs-built_in">console</span>.log(num);
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) {
+    num = num + i;
+}
+<span class="hljs-built_in">console</span>.log(num);
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">6</span>; i++) {
+    num = num + i;
+}
+<span class="hljs-built_in">console</span>.log(num);
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('35').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="35" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題36</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。</p>
+<pre class="hljs"><code><div>カレーが食べたい
+ラーメンが食べたい
+ステーキが食べたい
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> foods = [<span class="hljs-string">"カレー"</span>, <span class="hljs-string">"ラーメン"</span>, <span class="hljs-string">"ステーキ"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &gt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-built_in">console</span>.log(foods[i] + <span class="hljs-string">"が食べたい"</span>);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> foods = [<span class="hljs-string">"カレー"</span>, <span class="hljs-string">"ラーメン"</span>, <span class="hljs-string">"ステーキ"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-built_in">console</span>.log(foods[i] + <span class="hljs-string">"が食べたい"</span>);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> foods = [<span class="hljs-string">"カレー"</span>, <span class="hljs-string">"ラーメン"</span>, <span class="hljs-string">"ステーキ"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &gt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-built_in">console</span>.log(foods[i] * <span class="hljs-string">"が食べたい"</span>);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> foods = [<span class="hljs-string">"カレー"</span>, <span class="hljs-string">"ラーメン"</span>, <span class="hljs-string">"ステーキ"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-built_in">console</span>.log(foods[i] * <span class="hljs-string">"が食べたい"</span>);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('36').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="36" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題37</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。<br>
+※arr.lengthは配列の長さの値を返すコードである</p>
+<pre class="hljs"><code><div><span class="hljs-number">350</span>
+エレベーターに乗れません
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> weightList = [<span class="hljs-number">50</span>, <span class="hljs-number">60</span>, <span class="hljs-number">70</span>, <span class="hljs-number">80</span>, <span class="hljs-number">90</span>];
+<span class="hljs-keyword">let</span> count = weightList.length;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; count; i++) {
+    sum = sum + weightList[i];
+}
+
+<span class="hljs-built_in">console</span>.log(sum);
+<span class="hljs-keyword">if</span> ((sum &lt; <span class="hljs-number">300</span>) &amp;&amp; (count &lt; <span class="hljs-number">6</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エレベーターに乗れます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エレベーターに乗れません"</span>);
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> weightList = [<span class="hljs-number">50</span>, <span class="hljs-number">60</span>, <span class="hljs-number">70</span>, <span class="hljs-number">80</span>, <span class="hljs-number">90</span>];
+<span class="hljs-keyword">let</span> count = weightList.length;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; count; i++) {
+    sum = sum + weightList[i];
+}
+
+<span class="hljs-built_in">console</span>.log(sum);
+<span class="hljs-keyword">if</span> ((sum &lt; <span class="hljs-number">300</span>) || (count &lt; <span class="hljs-number">6</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エレベーターに乗れます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エレベーターに乗れません"</span>);
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> weightList = [<span class="hljs-number">50</span>, <span class="hljs-number">60</span>, <span class="hljs-number">70</span>, <span class="hljs-number">80</span>, <span class="hljs-number">90</span>];
+<span class="hljs-keyword">let</span> count = weightList.length;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &gt; count; i++) {
+    sum = sum + weightList[i];
+}
+
+<span class="hljs-built_in">console</span>.log(sum);
+<span class="hljs-keyword">if</span> ((sum &lt; <span class="hljs-number">300</span>) &amp;&amp; (count &lt; <span class="hljs-number">6</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エレベーターに乗れます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エレベーターに乗れません"</span>);
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> weightList = [<span class="hljs-number">50</span>, <span class="hljs-number">60</span>, <span class="hljs-number">70</span>, <span class="hljs-number">80</span>, <span class="hljs-number">90</span>];
+<span class="hljs-keyword">let</span> count = weightList.length;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &gt; count; i++) {
+    sum = sum + weightList[i];
+}
+
+<span class="hljs-built_in">console</span>.log(sum);
+<span class="hljs-keyword">if</span> ((sum &lt; <span class="hljs-number">300</span>) || (count &lt; <span class="hljs-number">6</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エレベーターに乗れます"</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エレベーターに乗れません"</span>);
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('37').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="37" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題38</b></h2>
+<p>「緑茶」と出力されるプログラムを選択しなさい。</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> drinks = [<span class="hljs-string">"緑茶"</span>,<span class="hljs-string">"オレンジ"</span>,<span class="hljs-string">"コーラ"</span>];
+<span class="hljs-built_in">console</span>.log(drinks[<span class="hljs-number">0</span>]);
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> drinks = <span class="hljs-string">"緑茶"</span>, <span class="hljs-string">"オレンジ"</span>, <span class="hljs-string">"コーラ"</span>;
+<span class="hljs-built_in">console</span>.log(drinks[<span class="hljs-number">0</span>]);
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> drinks = [<span class="hljs-string">"緑茶"</span>_<span class="hljs-string">"オレンジ"</span>_<span class="hljs-string">"コーラ"</span>];
+<span class="hljs-built_in">console</span>.log(drinks[<span class="hljs-number">0</span>]);
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> drinks = [<span class="hljs-string">"緑茶"</span> <span class="hljs-string">"オレンジ"</span> <span class="hljs-string">"コーラ"</span>];
+<span class="hljs-built_in">console</span>.log(drinks[<span class="hljs-number">0</span>]);
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('38').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="38" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題39</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。</p>
+<pre class="hljs"><code><div>ぶどうは在庫があります
+柿は在庫があります
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> stocks = [<span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"ぶどう"</span>, <span class="hljs-string">"りんご"</span>, <span class="hljs-string">"柿"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (stocks[i] == <span class="hljs-number">0</span>) {
+        <span class="hljs-built_in">console</span>.log(fruits[i] + <span class="hljs-string">"は在庫があります"</span>);
+    }
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> stocks = <span class="hljs-number">3</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span>;
+<span class="hljs-keyword">let</span> fruits = <span class="hljs-string">"ぶどう"</span> <span class="hljs-string">"りんご"</span> <span class="hljs-string">"柿"</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (stocks[i] != <span class="hljs-number">0</span>) {
+        <span class="hljs-built_in">console</span>.log(fruits[i] + <span class="hljs-string">"は在庫があります"</span>);
+    }
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> stocks = <span class="hljs-number">3</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span>;
+<span class="hljs-keyword">let</span> fruits = <span class="hljs-string">"ぶどう"</span> <span class="hljs-string">"りんご"</span> <span class="hljs-string">"柿"</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (stocks[i] == <span class="hljs-number">0</span>) {
+        <span class="hljs-built_in">console</span>.log(fruits[i] + <span class="hljs-string">"は在庫があります"</span>);
+    }
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> stocks = [<span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"ぶどう"</span>, <span class="hljs-string">"りんご"</span>, <span class="hljs-string">"柿"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (stocks[i] !== <span class="hljs-number">0</span>) {
+        <span class="hljs-built_in">console</span>.log(fruits[i] + <span class="hljs-string">"は在庫があります"</span>);
+    }
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('39').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="39" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>④</h2>
+</div>
+<hr>
+<h2><b>問題40</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい。</p>
+<pre class="hljs"><code><div>マイクは割引券を使えます
+ハナは割引券を使えません
+ジョンは割引券を使えます
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ages = <span class="hljs-number">10</span>, <span class="hljs-number">30</span>, <span class="hljs-number">80</span>;
+<span class="hljs-keyword">let</span> names = <span class="hljs-string">"マイク"</span> <span class="hljs-string">"ハナ"</span> <span class="hljs-string">"ジョン"</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> ((ages[i] &lt; <span class="hljs-number">20</span>) &amp;&amp; (ages[i] &gt; <span class="hljs-number">60</span>)) {
+        <span class="hljs-built_in">console</span>.log(names[i] + <span class="hljs-string">"は割引券を使えます"</span>);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(names[i] + <span class="hljs-string">"は割引券を使えません"</span>);
+    }
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ages = [<span class="hljs-number">10</span>, <span class="hljs-number">30</span>, <span class="hljs-number">80</span>];
+<span class="hljs-keyword">let</span> names = [<span class="hljs-string">"マイク"</span>, <span class="hljs-string">"ハナ"</span>, <span class="hljs-string">"ジョン"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> ((ages[i] &lt; <span class="hljs-number">20</span>) &amp;&amp; (ages[i] &gt; <span class="hljs-number">60</span>)) {
+        <span class="hljs-built_in">console</span>.log(names[i] + <span class="hljs-string">"は割引券を使えます"</span>);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(names[i] + <span class="hljs-string">"は割引券を使えません"</span>);
+    }
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ages = [<span class="hljs-number">10</span>, <span class="hljs-number">30</span>, <span class="hljs-number">80</span>];
+<span class="hljs-keyword">let</span> names = [<span class="hljs-string">"マイク"</span>, <span class="hljs-string">"ハナ"</span>, <span class="hljs-string">"ジョン"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (ages[i] &lt; <span class="hljs-number">20</span> || ages[i] &gt; <span class="hljs-number">60</span>) {
+        <span class="hljs-built_in">console</span>.log(names[i] + <span class="hljs-string">"は割引券を使えます"</span>);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(names[i] + <span class="hljs-string">"は割引券を使えません"</span>);
+    }
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ages = <span class="hljs-number">10</span> <span class="hljs-number">30</span> <span class="hljs-number">80</span>;
+<span class="hljs-keyword">let</span> names = <span class="hljs-string">"マイク"</span> <span class="hljs-string">"ハナ"</span> <span class="hljs-string">"ジョン"</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> ((ages[i] &lt; <span class="hljs-number">20</span> || ages[i] &gt; <span class="hljs-number">60</span>)) {
+        <span class="hljs-built_in">console</span>.log(names[i] + <span class="hljs-string">"は割引券を使えます"</span>);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(names[i] + <span class="hljs-string">"は割引券を使えません"</span>);
+    }
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('40').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="40" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>③</h2>
+</div>
+<hr>
+<h2><b>問題41</b></h2>
+<p>「同じものはレモン」と出力されるプログラムを選択しなさい</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits1 = [<span class="hljs-string">"リンゴ"</span>, <span class="hljs-string">"レモン"</span>, <span class="hljs-string">"オレンジ"</span>];
+<span class="hljs-keyword">let</span> fruits2 = [<span class="hljs-string">"イチゴ"</span>, <span class="hljs-string">"レモン"</span>, <span class="hljs-string">"スイカ"</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (fruits1[i] == fruits2[i]) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"同じものは"</span> + fruits2[i]);
+    }
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits1 = [<span class="hljs-string">"リンゴ"</span>, <span class="hljs-string">"レモン"</span>, <span class="hljs-string">"オレンジ"</span>];
+<span class="hljs-keyword">let</span> fruits2 = [<span class="hljs-string">"イチゴ"</span>, <span class="hljs-string">"レモン"</span>, <span class="hljs-string">"スイカ"</span>];
+
+<span class="hljs-keyword">for</span> {
+    <span class="hljs-keyword">if</span> (fruits1[i] == fruits2[i]) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"同じものは"</span> + fruits2[i]);
+    }
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits1 = <span class="hljs-string">"リンゴ"</span>, <span class="hljs-string">"レモン"</span>, <span class="hljs-string">"オレンジ"</span>;
+<span class="hljs-keyword">let</span> fruits2 = <span class="hljs-string">"イチゴ"</span>, <span class="hljs-string">"レモン"</span>, <span class="hljs-string">"スイカ"</span>;
+
+<span class="hljs-keyword">for</span> {
+    <span class="hljs-keyword">if</span> (fruits1[i] == fruits2[i]) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"同じものは"</span> + fruits2[i]);
+    }
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> fruits1 = <span class="hljs-string">"リンゴ"</span>, <span class="hljs-string">"レモン"</span>, <span class="hljs-string">"オレンジ"</span>;
+<span class="hljs-keyword">let</span> fruits2 = <span class="hljs-string">"イチゴ"</span>, <span class="hljs-string">"レモン"</span>, <span class="hljs-string">"スイカ"</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-keyword">if</span> (fruits1[i] == fruits2[i]) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"同じものは"</span> + fruits2[i]);
+    }
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('41').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="41" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題42</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい<br>
+※ arr.length は配列の長さの値を返すコードである</p>
+<pre class="hljs"><code><div><span class="hljs-number">1</span>
+<span class="hljs-number">3</span>
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+    <span class="hljs-keyword">if</span> (arr == <span class="hljs-number">2</span>) {
+        <span class="hljs-built_in">console</span>.log(arr);
+    }
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+    <span class="hljs-keyword">if</span> (arr[i] != <span class="hljs-number">2</span>) {
+        <span class="hljs-built_in">console</span>.log(arr[i]);
+    }
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+    <span class="hljs-keyword">if</span> (arr[i] == <span class="hljs-number">2</span>) {
+        <span class="hljs-built_in">console</span>.log(arr[i]);
+    }
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+    <span class="hljs-keyword">if</span> (arr != <span class="hljs-number">2</span>) {
+        <span class="hljs-built_in">console</span>.log(arr);
+    }
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('42').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="42" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題43</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい</p>
+<pre class="hljs"><code><div><span class="hljs-number">168</span>
+<span class="hljs-number">174</span>
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> height = [<span class="hljs-number">165</span>, <span class="hljs-number">168</span>, <span class="hljs-number">170</span>, <span class="hljs-number">172</span>, <span class="hljs-number">174</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> ((height{i} == <span class="hljs-number">168</span>) || (height{i} == <span class="hljs-number">174</span>)) {
+        <span class="hljs-built_in">console</span>.log(height[i]);
+    }
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> height = [<span class="hljs-number">165</span>, <span class="hljs-number">168</span>, <span class="hljs-number">170</span>, <span class="hljs-number">172</span>, <span class="hljs-number">174</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> ((height{i} == <span class="hljs-number">168</span>) &amp;&amp; (height{i} == <span class="hljs-number">174</span>)) {
+        <span class="hljs-built_in">console</span>.log(height[i]);
+    }
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> height = [<span class="hljs-number">165</span>, <span class="hljs-number">168</span>, <span class="hljs-number">170</span>, <span class="hljs-number">172</span>, <span class="hljs-number">174</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> ((height[i] == <span class="hljs-number">168</span>) || (height[i] == <span class="hljs-number">174</span>)) {
+        <span class="hljs-built_in">console</span>.log(height[i]);
+    }
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> height = [<span class="hljs-number">165</span>, <span class="hljs-number">168</span>, <span class="hljs-number">170</span>, <span class="hljs-number">172</span>, <span class="hljs-number">174</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> ((height[i] == <span class="hljs-number">168</span>) &amp;&amp; (height[i] == <span class="hljs-number">174</span>)) {
+        <span class="hljs-built_in">console</span>.log(height[i]);
+    }
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('43').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="43" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>③</h2>
+</div>
+<hr>
+<h2><b>問題44</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい</p>
+<pre class="hljs"><code><div>色が異なる組数は
+<span class="hljs-number">3</span>
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> colors1 = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>];
+<span class="hljs-keyword">let</span> colors2 = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"赤"</span>];
+<span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> (colors1[i] == colors2[i]) {
+        count = count + <span class="hljs-number">1</span>;
+    }
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"色が異なる組は"</span>);
+<span class="hljs-built_in">console</span>.log(count);
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> colors1 = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>];
+<span class="hljs-keyword">let</span> colors2 = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"赤"</span>];
+<span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> (!(colors1[i] == colors2[i])) {
+        count = count + <span class="hljs-number">1</span>;
+    }
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"色が異なる組は"</span>);
+<span class="hljs-built_in">console</span>.log(count);
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> colors1 = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>];
+<span class="hljs-keyword">let</span> colors2 = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"赤"</span>];
+<span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> (!(colors1 == colors2)) {
+        count = count + <span class="hljs-number">1</span>;
+    }
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"色が異なる組は"</span>);
+<span class="hljs-built_in">console</span>.log(count);
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> colors1 = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>];
+<span class="hljs-keyword">let</span> colors2 = [<span class="hljs-string">"赤"</span>, <span class="hljs-string">"赤"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"白"</span>, <span class="hljs-string">"赤"</span>];
+<span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> (colors1 == colors2) {
+        count = count + <span class="hljs-number">1</span>;
+    }
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"色が異なる組は"</span>);
+<span class="hljs-built_in">console</span>.log(count);
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('44').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="44" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題45</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい</p>
+<pre class="hljs"><code><div>緯度の読みはいど
+経度の読みはけいど
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> situation = [<span class="hljs-string">"緯度"</span>, <span class="hljs-string">"経度"</span>];  
+<span class="hljs-keyword">let</span> ruby = [<span class="hljs-string">"いど"</span>, <span class="hljs-string">"けいど"</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {  
+    <span class="hljs-built_in">console</span>.log(situation[i] + <span class="hljs-string">"の読みは"</span> + ruby[i]);  
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> situation = [<span class="hljs-string">"緯度"</span>, <span class="hljs-string">"経度"</span>];  
+<span class="hljs-keyword">let</span> ruby = [<span class="hljs-string">"いど"</span>, <span class="hljs-string">"けいど"</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {  
+    <span class="hljs-built_in">console</span>.log(situation + <span class="hljs-string">"の読みは"</span> + ruby);  
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> situation = [<span class="hljs-string">"緯度"</span>, <span class="hljs-string">"経度"</span>];  
+<span class="hljs-keyword">let</span> ruby = [<span class="hljs-string">"いど"</span>, <span class="hljs-string">"けいど"</span>];  
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {  
+    <span class="hljs-built_in">console</span>.log(situation[i] + <span class="hljs-string">"の読みは"</span> + ruby[i]);  
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> situation = [<span class="hljs-string">"緯度"</span>, <span class="hljs-string">"経度"</span>];  
+<span class="hljs-keyword">let</span> ruby = [<span class="hljs-string">"いど"</span>, <span class="hljs-string">"けいど"</span>];  
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {  
+    <span class="hljs-built_in">console</span>.log(situation + <span class="hljs-string">"の読みは"</span> + ruby);  
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('45').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="45" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>①</h2>
+</div>
+<hr>
+<h2><b>問題46</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい<br>
+arr.lengthは配列の長さの値を返すコードである</p>
+<pre class="hljs"><code><div>小説を読みます
+雑誌を読みます
+マンガを読みます
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> books = [<span class="hljs-string">"小説"</span>, <span class="hljs-string">"雑誌"</span>, <span class="hljs-string">"マンガ"</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; books; i++) {  
+    <span class="hljs-built_in">console</span>.log(books[i] || <span class="hljs-string">"を読みます"</span>);  
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> books = [<span class="hljs-string">"小説"</span>, <span class="hljs-string">"雑誌"</span>, <span class="hljs-string">"マンガ"</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; books.length; i++) {  
+    <span class="hljs-built_in">console</span>.log(books[i] + <span class="hljs-string">"を読みます"</span>);  
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> books = [<span class="hljs-string">"小説"</span>, <span class="hljs-string">"雑誌"</span>, <span class="hljs-string">"マンガ"</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; books; i++) {  
+    <span class="hljs-built_in">console</span>.log(books[i] + <span class="hljs-string">"を読みます"</span>);  
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> books = [<span class="hljs-string">"小説"</span>, <span class="hljs-string">"雑誌"</span>, <span class="hljs-string">"マンガ"</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; books.length; i++) {  
+    <span class="hljs-built_in">console</span>.log(books[i] || <span class="hljs-string">"を読みます"</span>);  
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('46').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="46" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題47</b></h2>
+<p>「トップクラスの野球選手です」と出力されるプログラムを選択しなさい<br>
+※arr.lengthは配列の長さの値を返すコードである</p>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> hits = [<span class="hljs-number">70</span>, <span class="hljs-number">100</span>, <span class="hljs-number">120</span>, <span class="hljs-number">210</span>];  
+<span class="hljs-keyword">let</span> hitCount = <span class="hljs-number">0</span>;  
+<span class="hljs-keyword">let</span> maxHits = <span class="hljs-number">0</span>;  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; hits; i++) {  
+    hitCount = hitCount + hits[i];  
+    <span class="hljs-keyword">if</span> (maxHits &lt; hits[i]) {  
+        maxHits = hits[i];  
+    }  
+}  
+
+<span class="hljs-keyword">if</span> ((maxHits &gt; <span class="hljs-number">200</span>) ++ (hitCount &gt; <span class="hljs-number">400</span>)) {  
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"トップクラスの野球選手です"</span>);  
+} <span class="hljs-keyword">else</span> {  
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"野球選手です"</span>);  
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> hits = [<span class="hljs-number">70</span>, <span class="hljs-number">100</span>, <span class="hljs-number">120</span>, <span class="hljs-number">210</span>];  
+<span class="hljs-keyword">let</span> hitCount = <span class="hljs-number">0</span>;  
+<span class="hljs-keyword">let</span> maxHits = <span class="hljs-number">0</span>;  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; hits.length; i++) {  
+    hitCount = hitCount + hits[i];  
+    <span class="hljs-keyword">if</span> (maxHits &lt; hits[i]) {  
+        maxHits = hits[i];  
+    }  
+}  
+
+<span class="hljs-keyword">if</span> ((maxHits &gt; <span class="hljs-number">200</span>) ++ (hitCount &gt; <span class="hljs-number">400</span>)) {  
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"トップクラスの野球選手です"</span>);  
+} <span class="hljs-keyword">else</span> {  
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"野球選手です"</span>);  
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> hits = [<span class="hljs-number">70</span>, <span class="hljs-number">100</span>, <span class="hljs-number">120</span>, <span class="hljs-number">210</span>];  
+<span class="hljs-keyword">let</span> hitCount = <span class="hljs-number">0</span>;  
+<span class="hljs-keyword">let</span> maxHits = <span class="hljs-number">0</span>;  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; hits.length; i++) {  
+    hitCount = hitCount + hits[i];  
+    <span class="hljs-keyword">if</span> (maxHits &lt; hits[i]) {  
+        maxHits = hits[i];  
+    }  
+}  
+
+<span class="hljs-keyword">if</span> ((maxHits &gt; <span class="hljs-number">200</span>) &amp;&amp; (hitCount &gt; <span class="hljs-number">400</span>)) {  
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"トップクラスの野球選手です"</span>);  
+} <span class="hljs-keyword">else</span> {  
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"野球選手です"</span>);  
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> hits = [<span class="hljs-number">70</span>, <span class="hljs-number">100</span>, <span class="hljs-number">120</span>, <span class="hljs-number">210</span>];  
+<span class="hljs-keyword">let</span> hitCount = <span class="hljs-number">0</span>;  
+<span class="hljs-keyword">let</span> maxHits = <span class="hljs-number">0</span>;  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; hits; i++) {  
+    hitCount = hitCount + hits[i];  
+    <span class="hljs-keyword">if</span> (maxHits &gt; hits[i]) {  
+        maxHits = hits[i];  
+    }  
+}  
+
+<span class="hljs-keyword">if</span> ((maxHits &gt; <span class="hljs-number">200</span>) &amp;&amp; (hitCount &gt; <span class="hljs-number">400</span>)) {  
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"トップクラスの野球選手です"</span>);  
+} <span class="hljs-keyword">else</span> {  
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"野球選手です"</span>);  
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('47').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="47" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>③</h2>
+</div>
+<hr>
+<h2><b>問題48</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい<br>
+※arr.lengthは配列の長さの値を返すコードである</p>
+<pre class="hljs"><code><div>未成年です
+成人です
+成人です
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ageList = [<span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">25</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {  
+    <span class="hljs-keyword">if</span> (!(ageList[i] &lt; <span class="hljs-number">18</span>)) {  
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"成人です"</span>);  
+    } <span class="hljs-keyword">else</span> {  
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"未成年です"</span>);  
+    }  
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ageList = [<span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">25</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; ageList.length; i++) {  
+    <span class="hljs-keyword">if</span> (!(ageList[i] &lt; <span class="hljs-number">18</span>)) {  
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"成人です"</span>);  
+    } <span class="hljs-keyword">else</span> {  
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"未成年です"</span>);  
+    }  
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ageList = [<span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">25</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; ageList.length; i++) {  
+    <span class="hljs-keyword">if</span> (ageList[i] &lt; <span class="hljs-number">18</span>) {  
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"成人です"</span>);  
+    } <span class="hljs-keyword">else</span> {  
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"未成年です"</span>);  
+    }  
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> ageList = [<span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">25</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {  
+    <span class="hljs-keyword">if</span> (ageList[i] &lt; <span class="hljs-number">18</span>) {  
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"成人です"</span>);  
+    } <span class="hljs-keyword">else</span> {  
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"未成年です"</span>);  
+    }  
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('48').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="48" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>②</h2>
+</div>
+<hr>
+<h2><b>問題49</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい<br>
+※arr.lengthは配列の長さの値を返すコードである</p>
+<pre class="hljs"><code><div>屋上にはバルコニーがあります
+<span class="hljs-number">2</span>階には服屋があります
+<span class="hljs-number">1</span>階には床屋があります
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> floors = [<span class="hljs-string">"屋上"</span>, <span class="hljs-string">"2階"</span>, <span class="hljs-string">"1階"</span>];  
+<span class="hljs-keyword">let</span> shops = [<span class="hljs-string">"バルコニー"</span>, <span class="hljs-string">"服屋"</span>, <span class="hljs-string">"床屋"</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length.shops; i++) {  
+    <span class="hljs-built_in">console</span>.log(floors[i] + <span class="hljs-string">"には"</span> + shops[i] + <span class="hljs-string">"があります"</span>);  
+}
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> floors = [<span class="hljs-string">"屋上"</span>; <span class="hljs-string">"2階"</span>; <span class="hljs-string">"1階"</span>];  
+<span class="hljs-keyword">let</span> shops = [<span class="hljs-string">"バルコニー"</span>; <span class="hljs-string">"服屋"</span>; <span class="hljs-string">"床屋"</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length.shops; i++) {  
+    <span class="hljs-built_in">console</span>.log(floors[i] + <span class="hljs-string">"には"</span> + shops[i] + <span class="hljs-string">"があります"</span>);  
+}
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> floors = [<span class="hljs-string">"屋上"</span>, <span class="hljs-string">"2階"</span>, <span class="hljs-string">"1階"</span>];  
+<span class="hljs-keyword">let</span> shops = [<span class="hljs-string">"バルコニー"</span>, <span class="hljs-string">"服屋"</span>, <span class="hljs-string">"床屋"</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; shops.length; i++) {  
+    <span class="hljs-built_in">console</span>.log(floors[i] + <span class="hljs-string">"には"</span> + shops[i] + <span class="hljs-string">"があります"</span>);  
+}
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> floors = [<span class="hljs-string">"屋上"</span>; <span class="hljs-string">"2階"</span>; <span class="hljs-string">"1階"</span>];  
+<span class="hljs-keyword">let</span> shops = [<span class="hljs-string">"バルコニー"</span>; <span class="hljs-string">"服屋"</span>; <span class="hljs-string">"床屋"</span>];  
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; shops.length; i++) {  
+    <span class="hljs-built_in">console</span>.log(floors[i] + <span class="hljs-string">"には"</span> + shops[i] + <span class="hljs-string">"があります"</span>);  
+}
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('49').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="49" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>③</h2>
+</div>
+<hr>
+<h2><b>問題50</b></h2>
+<p>以下のように出力されるプログラムを選択しなさい<br>
+※arr.lengthは配列の長さの値を返すコードである</p>
+<pre class="hljs"><code><div>この班のリーダーは太郎さんです
+班の人数は
+<span class="hljs-number">5</span>
+</div></code></pre>
+<h2>①</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> people = [<span class="hljs-string">"花子"</span>, <span class="hljs-string">"太郎"</span>, <span class="hljs-string">"マイク"</span>, <span class="hljs-string">"ブラウン"</span>, <span class="hljs-string">"ジョン"</span>];  
+<span class="hljs-keyword">let</span> num = <span class="hljs-number">1</span>;  
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"この班のリーダーは "</span> + people.num + <span class="hljs-string">" さんです"</span>);  
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"班の人数は"</span>);  
+<span class="hljs-built_in">console</span>.log(people);  
+</div></code></pre>
+<h2>②</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> people = [<span class="hljs-string">"花子"</span>, <span class="hljs-string">"太郎"</span>, <span class="hljs-string">"マイク"</span>, <span class="hljs-string">"ブラウン"</span>, <span class="hljs-string">"ジョン"</span>];  
+<span class="hljs-keyword">let</span> num = <span class="hljs-number">1</span>;  
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"この班のリーダーは "</span> + people.num + <span class="hljs-string">" さんです"</span>);  
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"班の人数は"</span>);  
+<span class="hljs-built_in">console</span>.log(people.length);  
+</div></code></pre>
+<h2>③</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> people = [<span class="hljs-string">"花子"</span>, <span class="hljs-string">"太郎"</span>, <span class="hljs-string">"マイク"</span>, <span class="hljs-string">"ブラウン"</span>, <span class="hljs-string">"ジョン"</span>];  
+<span class="hljs-keyword">let</span> num = <span class="hljs-number">1</span>;  
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"この班のリーダーは "</span> + people[num] + <span class="hljs-string">" さんです"</span>);  
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"班の人数は"</span>);  
+<span class="hljs-built_in">console</span>.log(people);  
+</div></code></pre>
+<h2>④</h2><input type="checkbox"> 
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> people = [<span class="hljs-string">"花子"</span>, <span class="hljs-string">"太郎"</span>, <span class="hljs-string">"マイク"</span>, <span class="hljs-string">"ブラウン"</span>, <span class="hljs-string">"ジョン"</span>];  
+<span class="hljs-keyword">let</span> num = <span class="hljs-number">1</span>;  
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"この班のリーダーは "</span> + people[num] + <span class="hljs-string">" さんです"</span>);  
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"班の人数は"</span>);  
+<span class="hljs-built_in">console</span>.log(people.length);  
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('50').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="50" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<h2>④</h2>
+</div>
+<hr>
+</body>
+</html>
+</body>
+</html>
