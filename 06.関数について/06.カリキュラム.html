@@ -499,6 +499,398 @@ getName(greet);
 <code>greet</code> 関数が実行され、<code>console.log('こんにちは、' + name + 'さん！');</code> という処理が行われ、画面に「こんにちは、ミンクルさん！」と表示されます。</p>
 <img src="../images/hellominkuru.jpg" alt="hellominkuruの画像" style="border: 1px solid black;" >
 <hr>
+<h2><b>オブジェクト指向</b></h2>
+<p>オブジェクト指向とは、データ（値）と処理（関数）をひとつのまとまり（オブジェクト）として扱う考え方 です。<br>
+オブジェクト指向を活用することで、コードの再利用や管理のしやすさが向上します。</p>
+<h2><b>クラスとインスタンス（レシピと料理の関係）</b></h2>
+<p>オブジェクト指向では、クラス を使って オブジェクトの設計図 を作成します。<br>
+このクラスをもとに実際のデータを持つオブジェクトを作ることをインスタンス化と呼びます。</p>
+<p>これを料理に例えてみると分かりやすいので、料理に例えてみます。</p>
+<p><b>クラス（レシピ）</b></p>
+<p>→ 料理を作るための手順や材料の指示が書かれたもの。<br>
+→ たとえば「オムライスのレシピ」があれば、それを見てオムライスを作ることができます。</p>
+<p><b>インスタンス（実際の料理）</b></p>
+<p>→ レシピに従って作られた料理。<br>
+→ 実際に作った「オムライス」は、レシピを元にした具体的な 1つのインスタンス です。</p>
+<p><b>クラスの特徴（レシピの良さ）</b></p>
+<p>→ レシピがあれば、同じ方法で何度でもオムライスを作ることができ、さらにレシピを改良すれば新しいアレンジ料理も簡単に作ることが出来ます。</p>
+<p>オブジェクト指向も同じで、クラス（レシピ） を作っておけば、何度でも同じ構造のオブジェクト（料理）を作ることができる という仕組みになっています。</p>
+<p>このように オブジェクト指向は、プログラムの設計を分かりやすくし、繰り返し使える仕組み を提供してくれます！</p>
+<hr>
+<h2><b>オブジェクトの実装例</b></h2>
+<p>下記コードは、料理のメニューと値段を一覧で表示するというプログラムになっています。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Menu</span> </span>{
+    <span class="hljs-keyword">constructor</span>(menuList) {
+        <span class="hljs-keyword">this</span>.menuList = menuList;
+    }
+
+    announce() {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> dish <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.menuList) {
+            <span class="hljs-built_in">console</span>.log(dish + <span class="hljs-string">" を "</span> + <span class="hljs-keyword">this</span>.menuList[dish] + <span class="hljs-string">" 円で販売します"</span>);
+        }
+    }
+}
+
+<span class="hljs-keyword">let</span> foodPriceList = {
+    <span class="hljs-string">"カレー"</span>: <span class="hljs-number">500</span>,
+    <span class="hljs-string">"オムライス"</span>: <span class="hljs-number">700</span>
+};
+
+<span class="hljs-keyword">let</span> lunchMenu = <span class="hljs-keyword">new</span> Menu(foodPriceList);
+lunchMenu.announce();
+</div></code></pre>
+<p><b>実行結果</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+カレーを<span class="hljs-number">500</span> 円で販売します
+オムライスを<span class="hljs-number">700</span> 円で販売します
+</div></code></pre>
+<p>それでは、上記コードについて解説をしていきます。</p>
+<p><b>クラスの定義</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Menu</span> </span>{
+</div></code></pre>
+<p>Menu クラスを定義しています。クラスは「メニューの情報を管理しやすくするための設計図」のようなものです。<br>
+これを作ることで、あとから簡単にメニューを追加・変更できるようになります。</p>
+<p><b>コンストラクター関数</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">constructor</span>(menuList) {
+    <span class="hljs-keyword">this</span>.menuList = menuList;
+}
+</div></code></pre>
+<p> <code>constructor(menuList)</code> は、 クラスのインスタンスを作るときに自動的に実行される特別な関数で、これを「コンストラクタ関数」と呼びます。
+<br> クラスとは「設計図」のようなもので、そこから「実際に使うオブジェクト（インスタンス）」を作ります。
+</p> 
+<p> そのとき、最初に必要な準備をするのがコンストラクター関数の役割です。 </p> 
+<p> <code>menuList</code> には、料理の名前と値段のリスト（オブジェクト）が渡されます。<br> 
+今回のコードでは、 <code>{ "カレー": 500, "オムライス": 700 }</code> というデータが渡されています。 </p> 
+<p> そして、<code>this.menuList = menuList;</code> というコードでこのデータをクラスの中に保存します。<br>
+ <code>this</code> とは、「このクラスのインスタンス自身」を指す特別なキーワードです。<br> 
+ つまり、<code>this.menuList</code> は、この <code>Menu</code> クラスの中でメニュー表の情報をずっと使えるようにするための変数です。 </p> 
+ <p> こうすることで、<code>announce()</code> のような特別のメソッドの中でも <code>menuList</code> のデータを自由に使うことができるようになります。<br> 
+ もし <code>this.menuList = menuList;</code> がなかった場合、クラスの他の部分ではこのメニューの情報を参照できなくなってしまいます。 </p>
+<p><b>メニューを発表する関数を作る</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+announce() {
+</div></code></pre>
+<p><code>announce（アナウンス）</code>という名前の関数を定義しています。<br>
+関数の名前は何でもOKですが、今回はメニューを発表するための関数なので<code>announce</code>という名前にしています。</p> 
+<p><b>メニューの料理を1つずつ取り出す</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> dish <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.menuList) {
+</div></code></pre>
+<p>for...inループを使って、メニューの料理を1つずつ取り出しています。
+変数dishには、1回目のループでは "カレー", 2回目では "オムライス" が入ります。</p>
+<p><b>取り出した料理を表示</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-built_in">console</span>.log(dish + <span class="hljs-string">" を "</span> + <span class="hljs-keyword">this</span>.menuList[dish] + <span class="hljs-string">" 円で販売します"</span>);
+</div></code></pre>
+<p><code>console.log(...) </code>でメッセージを表示しています。</p>
+<p><code>this.menuList</code> は、{ "カレー": 500, "オムライス": 700 } のデータを持っており、
+<code>this.menuList[dish] </code>は、<code>dish </code>に入っている 料理名をキーとして値を取り出す という意味になります。</p>
+<p>つまり、<code>this.menuList["カレー"]</code> は 500、<code>this.menuList["オムライス"] </code>は 700 を取得するという意味になります。</p>
+<p><b>メニューのリストを作る</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> foodPriceList = {
+    <span class="hljs-string">"カレー"</span>: <span class="hljs-number">500</span>,
+    <span class="hljs-string">"オムライス"</span>: <span class="hljs-number">700</span>
+};
+</div></code></pre>
+<p>このコードでは、<code>foodPriceList</code> という変数の中に、料理の名前と値段のリストを保存しています。<br>
+料理の名前がキー（"カレー"、"オムライス"）、値段が値（500、700）となる「オブジェクト」 を作っています。</p>
+<p><b>Menuクラスを使ってメニューを作る</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> lunchMenu = <span class="hljs-keyword">new</span> Menu(foodPriceList);
+</div></code></pre>
+<p>この1行のコードで、Menu クラスのインスタンスを作成 しています。<br>
+<code>new</code> を使うことで、Menu クラスの設計に基づいたオブジェクト（インスタンス）を作成することが出来ます。</p>
+<p>そして、<code>new Menu(foodPriceList); </code>によって作られた メニュー表（インスタンス）を<code>lunchMenu</code>に代入しています。</p>
+<p><b>メニューを表示する関数の呼び出し</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+lunchMenu.announce();
+</div></code></pre>
+<p><code>announce() </code>は Menu クラスの中にある関数です。<br>
+この関数は「console.logにメニューと値段を表示させる」という関数なので、関数を呼び出すと結果が表示されるようになります。</p>
+<hr>
+<h2><b>クラスの継承</b></h2>
+<p>クラスの継承<code>extends</code>は、あるクラス（親クラス）の機能をそのまま引き継ぎながら、新しい機能を追加する仕組み です。</p>
+<p>たとえば、ゲームを作るときに「すべてのキャラクターが持っている基本的な機能」を Character クラスにまとめておき、それを Hero や Monster クラスが引き継ぐことで、共通する機能を無駄なく使えるようになります。</p>
+<p>extends を使うことで、子クラスは親クラスのすべての機能を引き継ぎます。<br>
+また、super を使えば 「親クラスの処理を実行した後に、新しい処理を追加」 できます。</p>
+<h2><b>クラスの継承の例</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FactoryTour</span> </span>{
+    <span class="hljs-keyword">constructor</span>(product) {
+        <span class="hljs-keyword">this</span>.product = product;
+    }
+
+    intro() {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ここでは"</span> + <span class="hljs-keyword">this</span>.product + <span class="hljs-string">"を製造しています"</span>);
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FoodFactoryTour</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FactoryTour</span> </span>{
+    intro() {
+        <span class="hljs-keyword">super</span>.intro();
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"工場に入る前に髪にネットを着用してください"</span>);
+    }
+}
+
+<span class="hljs-keyword">let</span> iceCreamFactoryTour = <span class="hljs-keyword">new</span> FoodFactoryTour(<span class="hljs-string">"アイスクリーム"</span>);
+iceCreamFactoryTour.intro();
+</div></code></pre>
+<p><b>実行結果</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+ここではアイスクリームを製造しています  
+工場に入る前に髪にネットを着用してください  
+</div></code></pre>
+<p>それでは、上記コードについて解説をしていきます。</p>
+<p><b>クラスの定義</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FactoryTour</span> </span>{
+</div></code></pre>
+<p><code>FactoryTour</code>というクラスを作成しています。</p>
+<p><b>クラスのコンストラクタ（クラスの初期設定）定義</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">constructor</span>(product) {
+    <span class="hljs-keyword">this</span>.product = product;
+}
+</div></code></pre>
+<p>onstructor(product) は、インスタンスが作られたときに自動で実行される関数 です。</p>
+<p>product という 引数（外から渡される値） を受け取ります。</p>
+<p>this.product = product; によって、受け取った値をクラス内部に保存します。<br>
+例えば、今回のコードのように<code>new FactoryTour("アイスクリーム")</code> を作った場合、</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">this</span>.product = <span class="hljs-string">"アイスクリーム"</span>;
+</div></code></pre>
+<p>となり、<code>this.product</code>にはアイスクリームが入ります。</p>
+<p><b>intro() メソッドを定義</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+intro() {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ここでは"</span> + <span class="hljs-keyword">this</span>.product + <span class="hljs-string">"を製造しています"</span>);
+}
+</div></code></pre>
+<p><code>intro()</code> という メソッド（クラスの中の関数） を作成しています。<br>
+関数の中身として、<code>console.log(...)</code> を使って、保存された product を含んだメッセージを表示 します。</p>
+<p>今回は、this.product = "アイスクリーム" なので、</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+ここではアイスクリームを製造しています
+</div></code></pre>
+<p>と表示されます。</p>
+<p><b>クラスの拡張（継承）</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FoodFactoryTour</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FactoryTour</span> </span>{
+</div></code></pre>
+<p><code>FoodFactoryTour</code> という 新しいクラスを作成 しています。<br>
+<code>extends FactoryTour</code> を使うことで、<code>FactoryTour</code> のすべての機能を引き継いでいます（継承）</p>
+<p>これにより、<code>FoodFactoryTour</code> でも <code>FactoryTour</code>の<code> constructor() </code>や <code>intro() </code>が使えるようになります。</p></p>
+<p><b>intro() メソッドの上書き（オーバーライド）</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+intro() {
+</div></code></pre>
+<p>intro() を もう一度定義し直しています<b>（オーバーライドと言います）</b><br>
+こうすることで、親クラスの<code>intro()</code>の処理を変更・拡張できます。</p>
+<p><b>super.intro(); を実行</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">super</span>.intro();
+</div></code></pre>
+<p><code>super</code> は、親クラス（FactoryTour）のメソッドを呼び出す特別なキーワード です。<br>
+ここで <code>super.intro(); </code>を実行すると、親クラスの<code> intro()</code> の処理がそのまま実行 されます。</p>
+<p>今回のように、<code>new FoodFactoryTour("アイスクリーム") </code>の場合、親クラスの <code>intro()</code> が呼ばれて、次のメッセージが表示されます：</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+ここではアイスクリームを製造しています
+</div></code></pre>
+<p><b>console.log(...) で追加のメッセージを表示</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"工場に入る前に髪にネットを着用してください"</span>);
+</div></code></pre>
+<p>新しく追加したい処理 をここに書いています。<br>
+親クラスの<code> intro() </code>を実行した後に、このメッセージが追加で表示されます。<p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+工場に入る前に髪にネットを着用してください
+</div></code></pre>
+<p><b>インスタンスを作成</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> iceCreamFactoryTour = <span class="hljs-keyword">new</span> FoodFactoryTour(<span class="hljs-string">"アイスクリーム"</span>);
+</div></code></pre>
+<p><code>new FoodFactoryTour("アイスクリーム")</code> で 新しいインスタンスを作成 しています。<br>
+<code>constructor(product) </code>が呼ばれ、<code>this.product = "アイスクリーム"; </code>となります。</p>
+<p><b>intro() メソッドを実行</b></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+iceCreamFactoryTour.intro();
+</div></code></pre>
+<p>次の処理が順番に行われます。</p>
+<p>1.super.intro(); を実行 → 親クラスの intro() が実行されるので以下の内容が表示される</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+ここではアイスクリームを製造しています
+</div></code></pre>
+<p>2.追加のメッセージを表示が表示される</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+工場に入る前に髪にネットを着用してください
+</div></code></pre>
+<p><b>まとめ</b></p>
+<style>
+    table {
+        width: 50%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+        padding: 6px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+<table>
+    <tr>
+        <th>行数</th>
+        <th>コード</th>
+        <th>説明</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td><code>class FactoryTour</code></td>
+        <td>基本となる <code>FactoryTour</code> クラスを作成</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><code>constructor(product)</code></td>
+        <td><code>product</code> を受け取って保存</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><code>intro()</code></td>
+        <td>「ここでは〇〇を製造しています」を表示</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><code>class FoodFactoryTour extends FactoryTour</code></td>
+        <td><code>FactoryTour</code> を拡張</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><code>intro()</code></td>
+        <td><code>intro()</code> を上書き（親クラスを拡張）</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td><code>super.intro();</code></td>
+        <td><code>FactoryTour</code> の <code>intro()</code> を実行</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td><code>console.log(...)</code></td>
+        <td>新しいメッセージを追加</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td><code>new FoodFactoryTour("アイスクリーム")</code></td>
+        <td><code>this.product = "アイスクリーム"</code></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td><code>iceCreamFactoryTour.intro();</code></td>
+        <td>2つのメッセージが表示</td>
+    </tr>
+</table>
+<hr>
+<h2><b>エラーハンドリング（例外処理）</b></h2>
+<p>JavaScriptでは、プログラムの実行中にエラーが発生すると、それ以降の処理が止まってしまいます。<br>
+しかし、<code>try...catch（トライキャッチ）</code> を使うことで、エラーが発生してもプログラムを適切に処理することができます。</p>
+<p>また、<code>throw（スロー）</code> を使えば 自分でエラーを発生させることも可能です。</p>
+<p>それでは、<code>try...catch</code>、<code>throw</code>、<code>Error</code> について詳しく見ていきましょう！<br>
+まずは以下のコードを書いてください。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAge</span>(<span class="hljs-params">age</span>) </span>{
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"年齢は0以上を入力してください"</span>);
+        }
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"入力された年齢:"</span>, age);
+    } <span class="hljs-keyword">catch</span> (error) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エラーが発生しました:"</span>, error.message);
+    }
+}
+
+checkAge(<span class="hljs-number">25</span>);  <span class="hljs-comment">// 正常な入力</span>
+checkAge(<span class="hljs-number">-5</span>);  <span class="hljs-comment">// エラーになる</span>
+</div></code></pre>
+<p>上記コードでは、checkAge という関数を作成し、年齢が負の数だった場合にエラーを発生させる仕組みを実装しています。</p>
+<hr>
+<h2><b>try...catch の役割</b></h2>
+<p><code>try...catch</code> は、エラーが発生してもプログラムが止まらないようにするための仕組みです。</p>
+<p>tryブロックの中には エラーが発生する可能性があるコード を記述し、catch ブロックでは エラーが発生したときの処理 を記述します。<br>
+この仕組みによって、プログラム全体が強制終了するのを防ぎ、適切にエラーメッセージを表示することができます。</p>
+<p>この例では、<code>try</code> の中で年齢が負の数かどうかをチェックし、エラーが発生した場合には <code>catch</code> に処理が移り、エラーメッセージを表示するようになっています。</p>
+<hr>
+<h2><b>throw の役割</b></h2>
+<p><code>throw</code> は、意図的にエラーを発生させるための機能です。</p>
+<p>通常、プログラムの実行中にエラーが発生すると、JavaScriptが自動的にエラーをスローしますが、<code>throw </code>を使うと 開発者が自分でエラーを発生させることができます。<p>
+<p>プログラムの実行中に <code>throw </code>を実行すると、それ以降の try ブロックの処理はすべて中断され、catch ブロックに移動します。<br>
+この流れを、次の<code>checkAge</code>関数の例を使って詳しく解説します。</p>
+<h3><b>checkAge(-5); の場合（エラーが発生する入力）</b></h3>
+<p>実行の流れ</p>
+<p>1.<code>checkAge(-5)</code> が呼び出され、<code>age </code>の値は -5 になる。</p>
+<p>2.try ブロックに入る。</p>
+<p>3.<code>if (age < 0)</code> の条件をチェックする。</p>
+<p>4.<code>age</code> は -5 なので true になり、<code>throw new Error("年齢は0以上を入力してください"); </code>が実行される。</p>
+<p>5.<code>throw</code> が実行された瞬間、try ブロックの残りのコード（console.log("入力された年齢:", age);）は すべてスキップ される。</p>
+<p>6.<code>catch (error)</code> ブロックに移動する。</p>
+<p>7.<code>console.log("エラーが発生しました:", error.message);</code> が実行される。</p>
+<p>8.<code>error.message</code> には、<code>new Error("年齢は0以上を入力してください")</code> で指定した "年齢は0以上を入力してください" が入っているため、"エラーが発生しました: 年齢は0以上を入力してください" が表示される。</p>
+<hr>
+<h3><b>throw new Error("年齢は0以上を入力してください"); の処理の詳細</b></h3>
+<p>この throw の処理の流れを細かく分解すると、以下のようになります。</p>
+<p>1.throw が実行されると新しい Error オブジェクトが作成され、Errorオブジェクトには以下の情報が含まれます。</p>
+<style>
+        table {
+            width: 35%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+ <table>
+        <tr>
+            <th>プロパティ</th>
+            <th>値</th>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td><code>"Error"</code>（エラーの種類）</td>
+        </tr>
+        <tr>
+            <td><code>message</code></td>
+            <td><code>"年齢は0以上を入力してください"</code>（エラーメッセージ）</td>
+        </tr>
+    </table>
+<p>2.throw によって、プログラムの実行が 強制的に中断されます。</p>
+<p>3.<code>catch (error)</code> に Error オブジェクトが渡される。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エラーが発生しました:"</span>, error.message);
+}
+</div></code></pre>
+<p><code>catch (error)</code> で、<code>throw </code>によって発生した Error オブジェクトを受け取る。</p>
+<p><code>error.message</code> を<code> console.log</code> すると、"年齢は0以上を入力してください" が表示される。</p>
+<h2><b>Errorオブジェクトとは？</b></h2>
+<p>Error オブジェクトは、エラーの情報を含む特別なオブジェクトです。<br>
+<code>new Error("エラーメッセージ") </code>の形式で使用し、エラーメッセージを指定することができます。</p>
+<p>この例では、<code>new Error("年齢は0以上を入力してください") </code>を作成し、エラー情報を catch に渡しています。</p>
+<hr>
 <h2><b>組み込み関数について</b></h2>
 <p>組み込み関数とは、JavaScriptなどのプログラミング言語であらかじめ用意されている関数のことです。<br>
 これらの関数は特定の動作を簡単に実行できるように設計されており、開発者が一から作らなくても便利に使える機能がたくさんあります。</p>
@@ -658,6 +1050,18 @@ JavaScriptには、ランダムな数を作るための <code>Math.random()</cod
 <p>・setInterval() を使用して、1秒ごとに count の値を1減らしてください。</p>
 <p>・count の値が 0 以下になったら、clearInterval() を使って繰り返し処理を停止し、「カウントダウンが終了しました」というメッセージを表示してください。</p>
 <img src="../images/countdown.jpg" alt="countdownの画像" style="border: 1px solid black;" >
+<p>③checkNumber(num) という関数を作成し、以下の条件でエラーハンドリングを行うプログラムを作成してみましょう！</p>
+<p><b>条件</b></p>
+<p>・num が 100 以上ならエラーを発生させる。<br>
+エラーメッセージ："100未満の数を入力してください"</p>
+<p>・条件を満たす場合は、console.logで("入力された数"：num); を表示</p>
+<p>try...catch を使って、エラーが発生してもプログラムが止まらないようにする。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// 実行結果</span>
+<span class="hljs-comment">// script.js</span>
+入力された数: <span class="hljs-number">50</span>
+入力された数: <span class="hljs-number">99</span>
+エラーが発生しました: <span class="hljs-number">100</span>未満の数を入力してください
+</div></code></pre>
 <!-- 折り畳み展開ポインタ -->
  <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
     <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
@@ -685,7 +1089,24 @@ JavaScriptには、ランダムな数を作るための <code>Math.random()</cod
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"カウントダウンが終了しました"</span>);
   }
 }, <span class="hljs-number">1000</span>);
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// 練習問題③</span>
+<span class="hljs-comment">// script.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkNumber</span>(<span class="hljs-params">num</span>) </span>{
+   <span class="hljs-keyword">try</span> {
+       <span class="hljs-keyword">if</span> (num &gt;= <span class="hljs-number">100</span>) {
+           <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"100未満の数を入力してください"</span>);
+       }
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"入力された数:"</span>, num);
+   } <span class="hljs-keyword">catch</span> (error) {
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エラーが発生しました:"</span>, error.message);
+   }
+}
 
+<span class="hljs-comment">// テストケース</span>
+checkNumber(<span class="hljs-number">50</span>);  <span class="hljs-comment">//  正常な入力</span>
+checkNumber(<span class="hljs-number">99</span>);  <span class="hljs-comment">//  正常な入力</span>
+checkNumber(<span class="hljs-number">150</span>); <span class="hljs-comment">//  エラー（100以上）</span>
 </div></code></pre>
 <!--// 折り畳まれ部分 -->
 </div>
