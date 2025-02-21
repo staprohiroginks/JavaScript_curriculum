@@ -457,10 +457,10 @@ ID、クラス名、タグ名など、CSSで指定するのと同じ方法で選
 このイベントを使うことで、ボタンやリンク、画像などをクリックした際に特定の処理を実行することが出来ます。</p>
 <p>まずは、「ボタンがクリックされたらアラートが表示される」というプログラムを作成していきます。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- html --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"start_button"</span>&gt;</span>ゲームスタート<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"startButton"</span>&gt;</span>ゲームスタート<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </div></code></pre>
 <pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
-<span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'start_button'</span>);
+<span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'startButton'</span>);
 
 startButton.addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
     alert(<span class="hljs-string">'ボタンが押されました！'</span>)
@@ -469,9 +469,9 @@ startButton.addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
 <p>実行結果をブラウザで確かめてみると、このようにアラートが出てきます！</p>
 <img src="../images/alert.jpg" alt="alertの画像" style="border: 1px solid black;" >
 <p>それでは、上記コードの意味を解説していきます。</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'start_button'</span>);
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'startButton'</span>);
 </div></code></pre>
-<p>まず、<code>getElementById</code>を使ってID<code>start_button</code>の情報を取得しています。<br>
+<p>まず、<code>getElementById</code>を使ってID<code>startButton</code>の情報を取得しています。<br>
 そして、取得した情報を<code>startButton</code>という変数に代入しています。</p>
 <pre class="hljs"><code><div>startButton.addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
 
@@ -628,7 +628,7 @@ startButton.classList.add(<span class="hljs-string">"hidden"</span>);
 <p>クラスリストリムーブと読みます。</p>
 <p>今回は「解答を見る」というボタンを押すとテキストが表示されるプログラムを作成してみましょう。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"start_button"</span>&gt;</span>解答を見る<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"startButton"</span>&gt;</span>解答を見る<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"message"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hidden"</span>&gt;</span>こちらが解答です！<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </div></code></pre>
 <pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
@@ -637,7 +637,7 @@ startButton.classList.add(<span class="hljs-string">"hidden"</span>);
 }
 </div></code></pre>
 <pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
-<span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'start_button'</span>);
+<span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'startButton'</span>);
 <span class="hljs-keyword">const</span> message = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'message'</span>);
 
 startButton.addEventListener(<span class="hljs-string">"click"</span>, () =&gt;{
@@ -649,11 +649,11 @@ message.classList.remove(<span class="hljs-string">"hidden"</span>);
 <img src="../images/remove.jpg" alt="removeの画像" style="border: 1px solid black;" >
 <p>それでは、上記コードの意味を解説していきます。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
-<span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'start_button'</span>);
+<span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'startButton'</span>);
 <span class="hljs-keyword">const</span> message = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'message'</span>);
 </div></code></pre>
-<p>まず、<code>getElementById</code>を使ってID<code>start_button</code>と<code>message</code>の情報を取得しています。</br>
-ここでいう<code>start_button</code>と<code>message</code>はボタンとpタグの情報になります。</p>
+<p>まず、<code>getElementById</code>を使ってID<code>startButton</code>と<code>message</code>の情報を取得しています。</br>
+ここでいう<code>startButton</code>と<code>message</code>はボタンとpタグの情報になります。</p>
 <p>そして、取得した情報を変数に代入しています。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
 startButton.addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
