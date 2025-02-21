@@ -576,7 +576,7 @@ item.textContent = <span class="hljs-string">'DOM操作の実践'</span>;
 <p>クラスリストアドと読みます。</p>
 <p>今回はスタートボタンを作成し、スタートボタンを押すとボタンが消えるプログラムを作成してみましょう。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"start_button"</span>&gt;</span>ゲームスタート<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"startButton"</span>&gt;</span>ゲームスタート<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </div></code></pre>
 <pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
 <span class="hljs-selector-class">.hidden</span> {
@@ -584,7 +584,7 @@ item.textContent = <span class="hljs-string">'DOM操作の実践'</span>;
 }
 </div></code></pre>
 <pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
-    <span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'start_button'</span>);
+    <span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'startButton'</span>);
 
     startButton.addEventListener(<span class="hljs-string">"click"</span>, () =&gt;{
     startButton.classList.add(<span class="hljs-string">"hidden"</span>);
@@ -595,9 +595,9 @@ item.textContent = <span class="hljs-string">'DOM操作の実践'</span>;
 <img src="../images/startbutton.jpg" alt="startbuttonの画像" style="border: 1px solid black;" >
 <p>それでは、上記コードの意味を解説していきます。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
-<span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'start_button'</span>);
+<span class="hljs-keyword">const</span> startButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'startButton'</span>);
 </div></code></pre>
-<p>まず、<code>getElementById</code>を使ってID<code>start_button</code>の情報を取得しています。<br>
+<p>まず、<code>getElementById</code>を使ってID<code>startButton</code>の情報を取得しています。<br>
 そして、取得した情報を<code>startButton</code>という変数に代入しています。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
 startButton.addEventListener(<span class="hljs-string">'click'</span>, () =&gt;{
