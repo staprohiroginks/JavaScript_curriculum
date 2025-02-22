@@ -358,7 +358,7 @@ header ul li a:hover{
     font-size: 4rem;
 }
 
-.learnings img {
+.learning_img img{
     width: 40%;
     height: 300px;
     margin: 10px;
@@ -369,7 +369,6 @@ header ul li a:hover{
     margin: 0 auto;
     font-size: 1.6rem;
 }
-
 
 /* contact */
 .contact{
