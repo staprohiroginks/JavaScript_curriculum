@@ -379,7 +379,7 @@ code {
 <h1>ハンバーガーメニューを作成してみよう！</h1>
 <p>今回の学習より、webサイト制作でよく使われるJavaScriptの技術を学習していきます！<br>
 最終的には、見本のような動きのあるサイトを作成していきます！</p>
-<h2><a href="https://staprohiroginks.github.io/JavaScript_curriculum/js%E3%83%9B%E3%82%9A%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/index.html" target="_blank" rel="noopener noreferrer">見本はこちら</a></h2>
+<h2><a href="../jsポートフォリオ/index.html" target="_blank" rel="noopener noreferrer">見本はこちら</a></h2>
 <p>今回の学習では、ハンバーガーメニューと呼ばれる部分の作成をしていきましょう！</p>
 <h2><b>「11.ポートフォリオ編集用」というフォルダの中に入っているファイルを編集して使ってください。</b></h2>
 <hr>
@@ -399,14 +399,14 @@ code {
 コードを記述する場所は、下記画像を参考にしてください。<p>
 <img src="images/html.jpg" alt="メニューの画像">
 <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"humburger"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
  
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"humburger_ul"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger_ul"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"index.html"</span>&gt;</span>ホーム<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"about.html"</span>&gt;</span>私について<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -419,7 +419,7 @@ code {
 </div></code></pre>
 <p>それでは、上記コードの意味を解説していきます。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"humburger"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
@@ -427,12 +427,12 @@ code {
 </div></code></pre>
 <p>この部分では、ハンバーガーメニューのアイコン部分を作っています。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"humburger"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger"</span>&gt;</span>
   
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </div></code></pre>
 <p>まず、ハンバーガーメニューのアイコン全体を囲むdivタグを用意しています。<br>
-クラス名は分かりやすくするために<code>humburger</code>にしています。</p>
+クラス名は分かりやすくするために<code>hamburger</code>にしています。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
@@ -443,7 +443,7 @@ code {
 <p>タグ内にテキストはありませんが、CSSで横線の太さや色を指定することで「線」を作っていきます。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"humburger_ul"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger_ul"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"index.html"</span>&gt;</span>ホーム<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"about.html"</span>&gt;</span>私について<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -465,7 +465,7 @@ code {
 <p>この部分は、ハンバーガーメニュー全体を囲むdivタグです。<br>
 <code>box</code>というクラスに対してcssを当てて、メニューの表示・非表示を切り替えます。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"humburger_ul"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger_ul"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"index.html"</span>&gt;</span>ホーム<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"about.html"</span>&gt;</span>私について<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -476,7 +476,7 @@ code {
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </div></code></pre>
 <p>この部分は、実際のメニュー項目のコードです。<br>
-<code>humburger_ul</code>というクラスに対してcssを当ててメニューの位置を調整するために、divタグを用意しています。</p>
+<code>hamburger_ul</code>というクラスに対してcssを当ててメニューの位置を調整するために、divタグを用意しています。</p>
 <p>中に<code>li</code>タグが入っていますが、ここがメニューの部分になります。<br>
 言い換えると、これまでheaderに表示していたメニューがここに入るということになります。</p>
 <h2><b>これでHTMLの記述は終了です！次はcssを記述していきましょう！</b></h2>
@@ -505,7 +505,7 @@ cssを記述していきましょう！</p>
     <span class="hljs-attribute">display</span>: none;
 }
 
-<span class="hljs-selector-class">.humburger</span>{
+<span class="hljs-selector-class">.hamburger</span>{
     <span class="hljs-attribute">position</span>: fixed;
     <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
@@ -515,7 +515,7 @@ cssを記述していきましょう！</p>
     <span class="hljs-attribute">z-index</span>: <span class="hljs-number">2</span>;
 }
 
-<span class="hljs-selector-class">.humburger</span> <span class="hljs-selector-tag">span</span>{
+<span class="hljs-selector-class">.hamburger</span> <span class="hljs-selector-tag">span</span>{
     <span class="hljs-attribute">position</span>: absolute;
     <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>;
     <span class="hljs-attribute">height</span>: <span class="hljs-number">2px</span>;
@@ -524,27 +524,27 @@ cssを記述していきましょう！</p>
     <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">10px</span>;
 }
 
-<span class="hljs-selector-class">.humburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(1)</span>{
+<span class="hljs-selector-class">.hamburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(1)</span>{
     <span class="hljs-attribute">top</span>: <span class="hljs-number">15px</span>;
 }
 
-<span class="hljs-selector-class">.humburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(2)</span>{
+<span class="hljs-selector-class">.hamburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(2)</span>{
     <span class="hljs-attribute">top</span>: <span class="hljs-number">25px</span>;
 }
 
-<span class="hljs-selector-class">.humburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(3)</span>{
+<span class="hljs-selector-class">.hamburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(3)</span>{
     <span class="hljs-attribute">top</span>: <span class="hljs-number">35px</span>;
 }
 
-<span class="hljs-selector-class">.humburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(1)</span>{
+<span class="hljs-selector-class">.hamburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(1)</span>{
     <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">translateY</span>(<span class="hljs-number">10px</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">45deg</span>);
 }
 
-<span class="hljs-selector-class">.humburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(2)</span>{
+<span class="hljs-selector-class">.hamburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(2)</span>{
     <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
 }
 
-<span class="hljs-selector-class">.humburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(3)</span>{
+<span class="hljs-selector-class">.hamburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(3)</span>{
     <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">translateY</span>(-<span class="hljs-number">10px</span>) <span class="hljs-built_in">rotate</span>(-<span class="hljs-number">45deg</span>);
 }
 
@@ -568,25 +568,25 @@ cssを記述していきましょう！</p>
     <span class="hljs-attribute">pointer-events</span>: auto;
 }
 
-<span class="hljs-selector-class">.humburger_ul</span>{
+<span class="hljs-selector-class">.hamburger_ul</span>{
     <span class="hljs-attribute">width</span>: <span class="hljs-number">90%</span>;
     <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;
     <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;
     <span class="hljs-attribute">text-align</span>: center;
 }
 
-<span class="hljs-selector-class">.humburger_ul</span> <span class="hljs-selector-tag">ul</span>{
+<span class="hljs-selector-class">.hamburger_ul</span> <span class="hljs-selector-tag">ul</span>{
     <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">50%</span>;
 }
 
-<span class="hljs-selector-class">.humburger_ul</span> <span class="hljs-selector-tag">li</span>{     
+<span class="hljs-selector-class">.hamburger_ul</span> <span class="hljs-selector-tag">li</span>{     
     <span class="hljs-attribute">list-style</span>: none;
     <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
     <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
 }
 
-<span class="hljs-selector-class">.humburger_ul</span> <span class="hljs-selector-tag">a</span>{
+<span class="hljs-selector-class">.hamburger_ul</span> <span class="hljs-selector-tag">a</span>{
     <span class="hljs-attribute">color</span>: black;
     <span class="hljs-attribute">text-decoration</span>: none;
 }
@@ -602,7 +602,7 @@ cssを記述していきましょう！</p>
 つまりは元々headerにあったメニューの部分(画像の箇所)を隠すためにこのコードが必要ということになります。</p>
 <img src="images/htmlmenu.jpg" alt="メニューの画像">
 <pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
-<span class="hljs-selector-class">.humburger</span>{
+<span class="hljs-selector-class">.hamburger</span>{
     <span class="hljs-attribute">position</span>: fixed; <span class="hljs-comment">/* ハンバーガーメニューを画面に固定 */</span>
     <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;　<span class="hljs-comment">/* 上から0の位置にする（これで上に固定） */</span>
     <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;　<span class="hljs-comment">/* 右から0の位置にする（これで右端に固定） */</span>
@@ -615,8 +615,8 @@ cssを記述していきましょう！</p>
 <p>ここでは、ハンバーガーメニューを画面の右上に固定させています。<br>
 <code>position: fixed;</code>を使って固定しているところがポイントです。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
-<span class="hljs-selector-class">.humburger</span> <span class="hljs-selector-tag">span</span>{
-    <span class="hljs-attribute">position</span>: absolute; <span class="hljs-comment">/* 各横線の位置をhumburger内で自由に配置する設定。 */</span>
+<span class="hljs-selector-class">.hamburger</span> <span class="hljs-selector-tag">span</span>{
+    <span class="hljs-attribute">position</span>: absolute; <span class="hljs-comment">/* 各横線の位置をhamburger内で自由に配置する設定。 */</span>
     <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>; <span class="hljs-comment">/* 横幅を30pxに設定 */</span>
     <span class="hljs-attribute">height</span>: <span class="hljs-number">2px</span>; <span class="hljs-comment">/* 縦幅を2pxに設定 */</span>
     <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>; <span class="hljs-comment">/* 背景色を白にする */</span>
@@ -628,15 +628,15 @@ cssを記述していきましょう！</p>
 <code>position: absolute;</code>を使ってspanタグのレイアウトを調整しているところがポイントです。</p>
 </p>
 <pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
-<span class="hljs-selector-class">.humburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(1)</span>{
+<span class="hljs-selector-class">.hamburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(1)</span>{
     <span class="hljs-attribute">top</span>: <span class="hljs-number">15px</span>;
 }
 
-<span class="hljs-selector-class">.humburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(2)</span>{
+<span class="hljs-selector-class">.hamburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(2)</span>{
     <span class="hljs-attribute">top</span>: <span class="hljs-number">25px</span>;
 }
 
-<span class="hljs-selector-class">.humburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(3)</span>{
+<span class="hljs-selector-class">.hamburger</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(3)</span>{
     <span class="hljs-attribute">top</span>: <span class="hljs-number">35px</span>;
 }
 </div></code></pre>
@@ -649,21 +649,21 @@ cssを記述していきましょう！</p>
 <p><code>span:nth-of-type(3)</code>では、3つ目の<code>span</code>タグに対して上から15pxの位置に線を調整したいため
 <code>top: 35px;</code>という命令を当てています。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
-<span class="hljs-selector-class">.humburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(1)</span>{
+<span class="hljs-selector-class">.hamburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(1)</span>{
     <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">translateY</span>(<span class="hljs-number">10px</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">45deg</span>);
 }
 
-<span class="hljs-selector-class">.humburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(2)</span>{
+<span class="hljs-selector-class">.hamburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(2)</span>{
     <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
 }
 
-<span class="hljs-selector-class">.humburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(3)</span>{
+<span class="hljs-selector-class">.hamburger</span><span class="hljs-selector-class">.open</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:nth-of-type(3)</span>{
     <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">translateY</span>(-<span class="hljs-number">10px</span>) <span class="hljs-built_in">rotate</span>(-<span class="hljs-number">45deg</span>);
 }
 </div></code></pre>
 <p>ここでは、ハンバーガーメニューのアニメーション（×に変化させる動き）を作っています。</p>
 <p>後ほどJavaScriptで「ハンバーガーメニューがクリックされたら<code>opan</code>というクラスを付ける」という命令を書いていきます。<br>
-ここでは、<code>.humburger</code>に<code>open</code>というクラスが設定された時の動き、つまりハンバーガーメニューがクリックされた時のアニメーションを作成しています。</p>
+ここでは、<code>.hamburger</code>に<code>open</code>というクラスが設定された時の動き、つまりハンバーガーメニューがクリックされた時のアニメーションを作成しています。</p>
 <p>まず、<code>span</code>タグの1つ目（線の1本目）に対して<code>transform:translateY(10px) rotate(45deg);</code>という命令を当てていますが<code>、transform</code>は要素の位置や回転傾きを変更するCSSプロパティになります。</p>
 <p><code>translateY(10px)</code>は要素を縦方向(Y軸)に10px移動するという命令になります。</p>
 <p><code>rotate(45deg)</code>は要素を時計回りに45度回転させるという命令になります。</p>
@@ -705,25 +705,25 @@ cssを記述していきましょう！</p>
 <p>ここでは、boxに<code>open</code>というクラスが付いた時（ハンバーガーメニューがクリックされた時）の処理を記述しています。</p>
 <p>クリックされると元々設定していた白い背景を表示させたいので、<code>opacity: 1;</code>として要素を表示させています。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">/* style.css */</span>
-<span class="hljs-selector-class">.humburger_ul</span>{
+<span class="hljs-selector-class">.hamburger_ul</span>{
     <span class="hljs-attribute">width</span>: <span class="hljs-number">90%</span>; <span class="hljs-comment">/* 横幅を90%に設定 */</span>
     <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto; <span class="hljs-comment">/* 要素を中央にする */</span>
     <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>; <span class="hljs-comment">/* 文字の大きさを1rem(16px)に設定 */</span>
     <span class="hljs-attribute">text-align</span>: center; <span class="hljs-comment">/* テキストを中央に寄せる */</span>
 }
 
-<span class="hljs-selector-class">.humburger_ul</span> <span class="hljs-selector-tag">ul</span>{
+<span class="hljs-selector-class">.hamburger_ul</span> <span class="hljs-selector-tag">ul</span>{
     <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>; <span class="hljs-comment">/* 左側の余白を0にする */</span>
     <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">50%</span>;　<span class="hljs-comment">/* 上側の余白を50%空ける */</span>
 }
 
-<span class="hljs-selector-class">.humburger_ul</span> <span class="hljs-selector-tag">li</span>{     
+<span class="hljs-selector-class">.hamburger_ul</span> <span class="hljs-selector-tag">li</span>{     
     <span class="hljs-attribute">list-style</span>: none; <span class="hljs-comment">/* リストの黒点をなくす */</span>
     <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>; <span class="hljs-comment">/* 下側の余白を20px空ける */</span>
     <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>; <span class="hljs-comment">/* 文字の大きさを2rem(32px)に設定 */</span>
 }
 
-<span class="hljs-selector-class">.humburger_ul</span> <span class="hljs-selector-tag">a</span>{
+<span class="hljs-selector-class">.hamburger_ul</span> <span class="hljs-selector-tag">a</span>{
     <span class="hljs-attribute">color</span>: black;  <span class="hljs-comment">/* 文字の色を黒にする */</span>
     <span class="hljs-attribute">text-decoration</span>: none; <span class="hljs-comment">/* aタグにデフォルトで付いている下線をなくす */</span>
 }
@@ -748,39 +748,39 @@ cssを記述していきましょう！</p>
 </div></code></pre>
 <p>ファイルの準備が出来たら、以下のコードをscript.jsのファイルに記述していきましょう！</p>
 <pre class="hljs"><code><div><span class="hljs-comment">/* script.js */</span>
-<span class="hljs-keyword">const</span> humburger = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">".humburger"</span>);
+<span class="hljs-keyword">const</span> hamburger = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">".hamburger"</span>);
 <span class="hljs-keyword">const</span> box = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">".box"</span>);
 
-humburger.addEventListener(<span class="hljs-string">"click"</span>, () =&gt; {
-humburger.classList.toggle(<span class="hljs-string">"open"</span>);
+hamburger.addEventListener(<span class="hljs-string">"click"</span>, () =&gt; {
+hamburger.classList.toggle(<span class="hljs-string">"open"</span>);
 box.classList.toggle(<span class="hljs-string">"open"</span>);
 });
 </div></code></pre>
 <p>それでは、上記コードの意味を解説していきます。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">/* script.js */</span>
-<span class="hljs-keyword">const</span> humburger = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">".humburger"</span>);
+<span class="hljs-keyword">const</span> hamburger = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">".hamburger"</span>);
 <span class="hljs-keyword">const</span> box = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">".box"</span>);
 </div></code></pre>
 <p>この部分では、<code>document.querySelector();</code>を使用して<br>
-<code>humburger</code>というクラスと<code>box</code>というクラスが付いた要素を取得しています。</p>
+<code>hamburger</code>というクラスと<code>box</code>というクラスが付いた要素を取得しています。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">/* script.js */</span>
-humburger.addEventListener(<span class="hljs-string">"click"</span>, () =&gt; {
-humburger.classList.toggle(<span class="hljs-string">"open"</span>);
+hamburger.addEventListener(<span class="hljs-string">"click"</span>, () =&gt; {
+hamburger.classList.toggle(<span class="hljs-string">"open"</span>);
 box.classList.toggle(<span class="hljs-string">"open"</span>);
 });
 </div></code></pre>
 <p>この部分では、ハンバーガーメニューがクリックされた時に「開く」「閉じる」動作を実現するための処理を行っています。
 </p>
 <pre class="hljs"><code><div><span class="hljs-comment">/* script.js */</span>
-humburger.addEventListener(<span class="hljs-string">"click"</span>, () =&gt;
+hamburger.addEventListener(<span class="hljs-string">"click"</span>, () =&gt;
 </div></code></pre>
-<p>ここで、「<code>humburger</code>がクリックされたら〜」という処理をしており、</p>
+<p>ここで、「<code>hamburger</code>がクリックされたら〜」という処理をしており、</p>
 <pre class="hljs"><code><div><span class="hljs-comment">/* script.js */</span>
-humburger.classList.toggle(<span class="hljs-string">"open"</span>);
+hamburger.classList.toggle(<span class="hljs-string">"open"</span>);
 </div></code></pre>
-<p><code>humburger</code>に対して、<code>classList.toggle("open")</code>を指定しているので、<br>
+<p><code>hamburger</code>に対して、<code>classList.toggle("open")</code>を指定しているので、<br>
 「<code>open</code>というクラスがなければ付ける、あれば取り外す」という処理をしています。</p>
-<p><code>humburger</code>に対して<code>open</code>というクラスが付くと<br>
+<p><code>hamburger</code>に対して<code>open</code>というクラスが付くと<br>
 ハンバーガーメニューが開くプログラムを設定しているので、線が動くようになってハンバーガーメニューが '×' の形に変化します。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">/* script.js */</span>
 box.classList.toggle(<span class="hljs-string">"open"</span>);
@@ -811,7 +811,7 @@ box.classList.toggle(<span class="hljs-string">"open"</span>);
     自由に記述してください。-->
 <pre class="hljs"><code><div>// 練習問題① 
 <span class="hljs-comment">/* style.css */</span>
-<span class="hljs-selector-class">.humburger</span> <span class="hljs-selector-tag">span</span>{
+<span class="hljs-selector-class">.hamburger</span> <span class="hljs-selector-tag">span</span>{
    <span class="hljs-attribute">background-color</span>: yellow;
 }
 </div></code></pre>
@@ -821,13 +821,13 @@ box.classList.toggle(<span class="hljs-string">"open"</span>);
    <span class="hljs-attribute">background-color</span>: gray;
 }
 
-<span class="hljs-selector-class">.humburger_ul</span> <span class="hljs-selector-tag">a</span>{
+<span class="hljs-selector-class">.hamburger_ul</span> <span class="hljs-selector-tag">a</span>{
    <span class="hljs-attribute">color</span>: white;
 }
 </div></code></pre>
 <pre class="hljs"><code><div>// 練習問題③
 <span class="hljs-comment">/* style.css */</span>
-<span class="hljs-selector-class">.humburger</span>{
+<span class="hljs-selector-class">.hamburger</span>{
    <span class="hljs-attribute">position</span>: fixed;
    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
