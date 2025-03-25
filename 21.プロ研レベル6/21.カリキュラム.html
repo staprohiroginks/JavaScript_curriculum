@@ -1105,9 +1105,9 @@ stationLocker.isAvailable();
 
 <span class="hljs-keyword">let</span> cafe = <span class="hljs-keyword">new</span> StoreManager(cafeMenu);
 
-cafe.calculateProceeds(<span class="hljs-string">"オムライス"</span>, <span class="hljs-number">3</span>);
-cafe.calculateProceeds(<span class="hljs-string">"プリン"</span>, <span class="hljs-number">1</span>);
-cafe.calculateProceeds(<span class="hljs-string">"コーヒー"</span>, <span class="hljs-number">2</span>);
+calculateProceeds(<span class="hljs-string">"オムライス"</span>, <span class="hljs-number">3</span>);
+calculateProceeds(<span class="hljs-string">"プリン"</span>, <span class="hljs-number">1</span>);
+calculateProceeds(<span class="hljs-string">"コーヒー"</span>, <span class="hljs-number">2</span>);
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"収益は "</span> + cafe.totalSales + <span class="hljs-string">" 円です"</span>);
 </div></code></pre>
 <h2>②</h2><input type="checkbox"> 
@@ -1160,9 +1160,9 @@ cafe.calculateProceeds(<span class="hljs-string">"コーヒー"</span>, <span cl
 };
 <span class="hljs-keyword">let</span> cafe = <span class="hljs-keyword">new</span> StoreManager(cafeMenu);
 
-cafe.calculateProceeds(<span class="hljs-string">"オムライス"</span>, <span class="hljs-number">3</span>);
-cafe.calculateProceeds(<span class="hljs-string">"プリン"</span>, <span class="hljs-number">1</span>);
-cafe.calculateProceeds(<span class="hljs-string">"コーヒー"</span>, <span class="hljs-number">2</span>);
+calculateProceeds(<span class="hljs-string">"オムライス"</span>, <span class="hljs-number">3</span>);
+calculateProceeds(<span class="hljs-string">"プリン"</span>, <span class="hljs-number">1</span>);
+calculateProceeds(<span class="hljs-string">"コーヒー"</span>, <span class="hljs-number">2</span>);
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"収益は "</span> + cafe.totalSales + <span class="hljs-string">" 円です"</span>);
 </div></code></pre>
 <h2>④</h2><input type="checkbox"> 
@@ -1780,7 +1780,7 @@ iceCreamFactoryTour.intro();
     }
 }
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FoodFactoryTour</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FactoryTour</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FoodFactoryTour</span> </span>{
     intro() {
         <span class="hljs-keyword">super</span>.intro();
         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"工場に入る前にほこりを落としてください"</span>);
