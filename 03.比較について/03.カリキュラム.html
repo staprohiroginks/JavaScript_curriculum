@@ -567,6 +567,18 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <p>小なりイコール演算子（<=）は、左側の値が右側の値以下であるかどうかを比較するために使用します。<br>
 今回のif文では、「12以下であるか」を確認しているため、12も含むことになります。</p>
 <p>よって、consoleに文字が出力されます。</p>
+<p>⑦等しくない演算子（!=）</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> color = <span class="hljs-string">"blue"</span>;
+
+<span class="hljs-keyword">if</span> (color != <span class="hljs-string">"red"</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"赤以外の色が選ばれました"</span>);
+}
+</div></code></pre>
+<p>!= は 「等しくない」 ことを判定する比較演算子です。<br>
+<code>color != "red"</code> という条件は、「変数 <code>color</code> の値が "red" ではないか？」をチェックしています。</p>
+<p>この場合、<code>color</code> の値は "blue" なので、"red" とは等しくありません。<br>
+そのため、条件式は <code>true</code> となり、<code>console.log("赤以外の色が選ばれました");</code>が実行されます。</p>
 <hr>
 <h2><b>剰余演算子（%）について</b></h2>
 <p>「%」は剰余演算子と呼ばれ、割り算の余りを求めるために使います。</p>
