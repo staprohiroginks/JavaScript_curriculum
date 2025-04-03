@@ -514,60 +514,7 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 </div></code></pre>
 <p>厳密等価演算子(===)は、2つの値が型も含めて等しいかどうかを比較します。<br>
 今回の場合、変数<code>number</code>と20は等しいのでconsoleに文字が出力されます。</p>
-<p>②厳密不等価演算子(!==)</p>
-<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
-<span class="hljs-keyword">let</span> userInput = <span class="hljs-string">"20"</span>; 
-
-<span class="hljs-keyword">if</span> (userInput !== <span class="hljs-number">20</span>) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"入力された値は数値の20とは異なります"</span>);
-}
-</div></code></pre>
-<p>厳密不等価演算子(!==)は、2つの値が型も含めて等しくないかどうかを比較します。<br>
-今回の場合、<code>userInput</code> は "20" という文字列であり、数値の20とは型が異なるため、consoleに文字が出力されます。</p>
-<p>③大なり演算子(>)</p>
-<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
-<span class="hljs-keyword">let</span> score = <span class="hljs-number">100</span>;
-
-<span class="hljs-keyword">if</span> (score &gt; <span class="hljs-number">70</span>) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"合格です"</span>);
-}
-</div></code></pre>
-<p>大なり演算子(>)は左側の値が右側の値よりも大きいかどうかを比較します。<br>
-今回の場合、変数<code>score</code>には100が代入されており70よりも大きいため、consoleに文字が出力されます。</p>
-<p>④小なり演算子 (<)</p>
-<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
-<span class="hljs-keyword">let</span> age = <span class="hljs-number">16</span>;
-
-<span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">18</span>) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"年齢制限があります"</span>);
-}
-</div></code></pre>
-<p>小なり演算子 (<)は左側の値が右側の値より小さいかどうかを比較するために使用します。<br>
-今回の場合、変数<code>age</code>には16が代入されており18よりも小さいため、consoleに文字が出力されます。</p>
-<p>⑤大なりイコール演算子 (>=)</p>
-<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
-<span class="hljs-keyword">let</span> age = <span class="hljs-number">18</span>;
-
-<span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">18</span>) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"成人です"</span>);
-}
-</div></code></pre>
-<p>大なりイコール演算子（>=）は、左側の値が右側の値以上であるかどうかを比較するために使用します。<br>
-今回のif文では、「18以上であるか」を確認しているため、18も含むことになります。</p>
-<p>よって、consoleに文字が出力されます。</p>
-<p>⑥小なりイコール演算子（<=）</p>
-<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
-<span class="hljs-keyword">let</span> age = <span class="hljs-number">12</span>;
-
-<span class="hljs-keyword">if</span> (age &lt;= <span class="hljs-number">12</span>) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"このアトラクションに参加できます"</span>);
-}
-
-</div></code></pre>
-<p>小なりイコール演算子（<=）は、左側の値が右側の値以下であるかどうかを比較するために使用します。<br>
-今回のif文では、「12以下であるか」を確認しているため、12も含むことになります。</p>
-<p>よって、consoleに文字が出力されます。</p>
-<p>⑦等しくない演算子（!=）</p>
+<p>②等しくない演算子（!=）</p>
 <pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
 <span class="hljs-keyword">let</span> color = <span class="hljs-string">"blue"</span>;
 
@@ -579,6 +526,93 @@ elseの命令が実行され「"違うよ！"」という文字列が返って�
 <code>color != "red"</code> という条件は、「変数 <code>color</code> の値が "red" ではないか？」をチェックしています。</p>
 <p>この場合、<code>color</code> の値は "blue" なので、"red" とは等しくありません。<br>
 そのため、条件式は <code>true</code> となり、<code>console.log("赤以外の色が選ばれました");</code>が実行されます。</p>
+<p>③厳密不等価演算子(!==)</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> userInput = <span class="hljs-string">"20"</span>; 
+
+<span class="hljs-keyword">if</span> (userInput !== <span class="hljs-number">20</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"入力された値は数値の20とは異なります"</span>);
+}
+</div></code></pre>
+<p>厳密不等価演算子(!==)は、2つの値が型も含めて等しくないかどうかを比較します。<br>
+今回の場合、<code>userInput</code> は "20" という文字列であり、数値の20とは型が異なるため、consoleに文字が出力されます。</p>
+<p>④大なり演算子(>)</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> score = <span class="hljs-number">100</span>;
+
+<span class="hljs-keyword">if</span> (score &gt; <span class="hljs-number">70</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"合格です"</span>);
+}
+</div></code></pre>
+<p>大なり演算子(>)は左側の値が右側の値よりも大きいかどうかを比較します。<br>
+今回の場合、変数<code>score</code>には100が代入されており70よりも大きいため、consoleに文字が出力されます。</p>
+<p>⑤小なり演算子 (<)</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">16</span>;
+
+<span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">18</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"年齢制限があります"</span>);
+}
+</div></code></pre>
+<p>小なり演算子 (<)は左側の値が右側の値より小さいかどうかを比較するために使用します。<br>
+今回の場合、変数<code>age</code>には16が代入されており18よりも小さいため、consoleに文字が出力されます。</p>
+<p>⑥大なりイコール演算子 (>=)</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">18</span>;
+
+<span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">18</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"成人です"</span>);
+}
+</div></code></pre>
+<p>大なりイコール演算子（>=）は、左側の値が右側の値以上であるかどうかを比較するために使用します。<br>
+今回のif文では、「18以上であるか」を確認しているため、18も含むことになります。</p>
+<p>よって、consoleに文字が出力されます。</p>
+<p>⑦小なりイコール演算子（<=）</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">12</span>;
+
+<span class="hljs-keyword">if</span> (age &lt;= <span class="hljs-number">12</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"このアトラクションに参加できます"</span>);
+}
+
+</div></code></pre>
+<p>小なりイコール演算子（<=）は、左側の値が右側の値以下であるかどうかを比較するために使用します。<br>
+今回のif文では、「12以下であるか」を確認しているため、12も含むことになります。</p>
+<p>よって、consoleに文字が出力されます。</p>
+<hr>
+<h2><b>論理演算子について</b></h2>
+<p>論理演算子（ろんりえんざんし） とは、複数の条件（true / false）を組み合わせて、最終的にどう判断するかを決めるための記号（演算子）です。</p>
+<h3><b>①論理積（&&）</b></h3>
+<p><code>&&</code> は「アンド」と読み、論理演算子の一つで「論理積(ろんりせき)」と呼ばれます。<br>
+この演算子は、複数の条件がすべて満たされている場合にのみ処理を実行したいときに使用されます。</p>
+<p>具体的には、左側と右側の条件がどちらも true（真）であるときに、全体の条件式が true になります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-number">130</span>;
+
+<span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">7</span> &amp;&amp; height &gt;= <span class="hljs-number">120</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"このアトラクションに参加できます"</span>);
+}
+</div></code></pre>
+<p>このコードでは、「年齢が7歳以上であること」と「身長が120cm以上であること」という2つの条件が書かれています。<br>
+&& を使ってこれらをつなげることで、両方の条件を同時に満たしている場合にだけ、console.log の処理が実行されるようになります。</p>
+<p>実際にこのコードでは、<code>age</code> が10で <code>height</code> が130なので、どちらの条件も満たしており、「このアトラクションに参加できます」と表示されます。</p>
+<h3><b>②論理和（||）</b></h3>
+<p><code>||</code> は「オア」と読み、論理演算子の一つで「論理和（ろんりわ）」と呼ばれます。<br>
+この演算子は、複数の条件のうち、いずれか一つでも満たされていれば処理を実行したいという場合に使われます。</p>
+<p><code>||</code> を使った条件式は、左側または右側、どちらかの条件が true（真）であれば、全体の条件式が true になります。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// script.js</span>
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">6</span>;
+<span class="hljs-keyword">let</span> height = <span class="hljs-number">130</span>;
+
+<span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">7</span> || height &gt;= <span class="hljs-number">120</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"このアトラクションに参加できます"</span>);
+}
+</div></code></pre>
+<p>このコードでは、「年齢が7歳以上」または「身長が120cm以上」のどちらかを満たしていれば、アトラクションに参加できる、という条件を表しています。</p>
+<p>今回の例では、<code>age</code> は 6 なので「年齢が7歳以上」という条件は満たしていません（false）<br>
+しかし、<code>height</code> は 130 なので「身長が120cm以上」という条件は満たしています（true）</p>
+<p><code>||</code> は「どちらか一方でも <code>true</code> であれば全体が <code>true</code>になるため、結果としてこの <code>if</code> 文の条件は <code>true</code> となり、console.logが実行されます。</p>
 <hr>
 <h2><b>剰余演算子（%）について</b></h2>
 <p>「%」は剰余演算子と呼ばれ、割り算の余りを求めるために使います。</p>
