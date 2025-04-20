@@ -2925,7 +2925,7 @@ idが変更されていません
     <span class="hljs-keyword">let</span> num = idList.indexOf(oldId);
 
     <span class="hljs-keyword">if</span> (id === oldId) {
-        <span class="hljs-keyword">throw</span> <span class="hljs-string">"idが変更されていません"</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"idが変更されていません"</span>;
     } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (idList.includes(id)) {
         <span class="hljs-keyword">return</span> <span class="hljs-string">"そのidは使えません"</span>;
     }
@@ -2960,8 +2960,8 @@ idが変更されていません
 <span class="hljs-keyword">let</span> userIdList = [<span class="hljs-string">"006"</span>, <span class="hljs-string">"557"</span>, <span class="hljs-string">"567"</span>, <span class="hljs-string">"753"</span>, <span class="hljs-string">"335"</span>];
 
 <span class="hljs-keyword">try</span> {
-    changeId(<span class="hljs-string">"995"</span>, <span class="hljs-string">"006"</span>, userIdList);
-    changeId(<span class="hljs-string">"567"</span>, <span class="hljs-string">"567"</span>, userIdList);
+    changeId(<span class="hljs-number">995</span>, <span class="hljs-string">"006"</span>, userIdList);
+    changeId(<span class="hljs-number">567</span>, <span class="hljs-string">"567"</span>, userIdList);
 } <span class="hljs-keyword">catch</span> (error) {
     <span class="hljs-built_in">console</span>.log(error);
 }
@@ -2984,8 +2984,8 @@ idが変更されていません
 <span class="hljs-keyword">let</span> userIdList = [<span class="hljs-string">"006"</span>, <span class="hljs-string">"557"</span>, <span class="hljs-string">"567"</span>, <span class="hljs-string">"753"</span>, <span class="hljs-string">"335"</span>];
 
 <span class="hljs-keyword">try</span> {
-    changeId(<span class="hljs-number">995</span>, <span class="hljs-string">"006"</span>, userIdList);
-    changeId(<span class="hljs-number">567</span>, <span class="hljs-string">"567"</span>, userIdList);
+    changeId(<span class="hljs-string">"995"</span>, <span class="hljs-string">"006"</span>, userIdList);
+    changeId(<span class="hljs-string">"567"</span>, <span class="hljs-string">"567"</span>, userIdList);
 } <span class="hljs-keyword">catch</span> (error) {
     <span class="hljs-built_in">console</span>.log(error);
 }
