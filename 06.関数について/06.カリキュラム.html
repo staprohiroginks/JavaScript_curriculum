@@ -1050,18 +1050,6 @@ JavaScriptには、ランダムな数を作るための <code>Math.random()</cod
 <p>・setInterval() を使用して、1秒ごとに count の値を1減らしてください。</p>
 <p>・count の値が 0 以下になったら、clearInterval() を使って繰り返し処理を停止し、「カウントダウンが終了しました」というメッセージを表示してください。</p>
 <img src="../images/countdown.jpg" alt="countdownの画像" style="border: 1px solid black;" >
-<p>③checkNumber(num) という関数を作成し、以下の条件でエラーハンドリングを行うプログラムを作成してみましょう！</p>
-<p><b>条件</b></p>
-<p>・num が 100 以上ならエラーを発生させる。<br>
-エラーメッセージ："100未満の数を入力してください"</p>
-<p>・条件を満たす場合は、console.logで("入力された数"：num); を表示</p>
-<p>try...catch を使って、エラーが発生してもプログラムが止まらないようにする。</p>
-<pre class="hljs"><code><div><span class="hljs-comment">// 実行結果</span>
-<span class="hljs-comment">// script.js</span>
-入力された数: <span class="hljs-number">50</span>
-入力された数: <span class="hljs-number">99</span>
-エラーが発生しました: <span class="hljs-number">100</span>未満の数を入力してください
-</div></code></pre>
 <!-- 折り畳み展開ポインタ -->
  <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
     <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
@@ -1090,26 +1078,6 @@ JavaScriptには、ランダムな数を作るための <code>Math.random()</cod
   }
 }, <span class="hljs-number">1000</span>);
 </div></code></pre>
-<pre class="hljs"><code><div><span class="hljs-comment">// 練習問題③</span>
-<span class="hljs-comment">// script.js</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkNumber</span>(<span class="hljs-params">num</span>) </span>{
-   <span class="hljs-keyword">try</span> {
-       <span class="hljs-keyword">if</span> (num &gt;= <span class="hljs-number">100</span>) {
-           <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"100未満の数を入力してください"</span>);
-       }
-       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"入力された数:"</span>, num);
-   } <span class="hljs-keyword">catch</span> (error) {
-       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"エラーが発生しました:"</span>, error.message);
-   }
-}
-
-<span class="hljs-comment">// テストケース</span>
-checkNumber(<span class="hljs-number">50</span>);  <span class="hljs-comment">//  正常な入力</span>
-checkNumber(<span class="hljs-number">99</span>);  <span class="hljs-comment">//  正常な入力</span>
-checkNumber(<span class="hljs-number">150</span>); <span class="hljs-comment">//  エラー（100以上）</span>
-</div></code></pre>
-<!--// 折り畳まれ部分 -->
-</div>
 
 </body>
 </html>
