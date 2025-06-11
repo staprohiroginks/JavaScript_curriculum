@@ -2000,6 +2000,49 @@ Math.floor(num) は num 以下の最大の整数を取得する</p>
 <h2>③</h2>
 </div>
 <hr>
+<h2><b>問題51（実装式問題）<br>
+VSコードに問題をコピペして貼り付けて、その後VSコード内でコードを書いて問題を解いてください。</b></h2>
+<p>配列 numbers の要素のうち、最も大きい値を出力するプログラムを作成しなさい</p>
+<p>・配列の要素数は1以上99以下とする<br>
+   ・配列の要素は数値型とし、値の範囲は -100 以上 100 以下とする</p>
+<p>例）numbers = [15, 60, -90, 20] の場合、<br>
+60</p>
+<h1>問題プログラム</h1>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findMaxNum</span>(<span class="hljs-params">array</span>) </span>{
+  <span class="hljs-comment">// 回答欄</span>
+}
+
+<span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">15</span>, <span class="hljs-number">60</span>, <span class="hljs-number">-90</span>, <span class="hljs-number">20</span>];
+
+findMaxNum(numbers);
+</div></code></pre>
+<!-- 折り畳み展開ポインタ -->
+ <div onclick="obj=document.getElementById('51').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+    </div>
+    <!--// 折り畳み展開ポインタ -->  
+    <!-- 折り畳まれ部分 -->
+    <div id="51" style="display:none;clear:both;">  
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findMaxNum</span>(<span class="hljs-params">array</span>) </span>{
+  <span class="hljs-keyword">let</span> maxNum = <span class="hljs-number">0</span>;
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> num <span class="hljs-keyword">of</span> array) {
+    <span class="hljs-keyword">if</span> (maxNum &lt; num) {
+      maxNum = num;
+    }
+  }
+
+  <span class="hljs-built_in">console</span>.log(maxNum);
+}
+
+<span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">15</span>, <span class="hljs-number">60</span>, <span class="hljs-number">-90</span>, <span class="hljs-number">20</span>];
+
+findMaxNum(numbers);
+
+</div></code></pre>
+</div>
 </body>
 </html>
 </body>
